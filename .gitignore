@@ -40,5 +40,5 @@ public/system/
 #ignore file with test runs
 spec/examples.txt
 
-#/.idea
-#/.c9
+/.idea
+/.c9
