@@ -4,7 +4,7 @@
 // HEADERS
 @import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
 
-
+// COLORS
 $primary: #00EBFF;
 $text-dark: #2D2D2D;
 
@@ -32,6 +32,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
 }
 
 #hero-carousel .carousel-inner .carousel-item {
+
   img {
     display: block;
     width: 100vw;
@@ -49,7 +50,6 @@ nav .navbar-nav .nav-item.active a.nav-link {
   left: 10%;
   right: 10%;
   padding-bottom: 70px;
-
 
   h3 {
     font-size: 36pt;
@@ -72,3 +72,87 @@ nav .navbar-nav .nav-item.active a.nav-link {
     padding: 5px;
   }
 }
+
+.hero-slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+  img {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+
+  button.slick-next,
+  button.slick-prev {
+    position: absolute;
+    top: 50%;
+    color: red;
+    z-index: 999;
+
+  }
+  button.slick-next {
+    right: 20px;
+    visibility: hidden;
+    &:before {
+      visibility: visible;
+      content: "";
+      display: block;
+      width: 27px;
+      height: 44px;
+      -moz-background-size: auto;
+      -webkit-background-size: auto;
+      background-size: auto;
+      background-color: $primary;
+      -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+      mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+    }
+  }
+  button.slick-prev {
+    left: 20px;
+    visibility: hidden;
+    &:before {
+      visibility:visible;
+      content: " ";
+      display: block;
+      width: 27px;
+      height: 44px;
+      -moz-background-size: auto;
+      -webkit-background-size: auto;
+      background-size: auto;
+      background-color: $primary;
+      -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+      mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+    }
+  }
+  .slider-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    right: 10%;
+    padding-bottom: 70px;
+
+    h3 {
+      font-size: 36pt;
+      text-transform: uppercase;
+      background-color: white;
+      color: $text-dark;
+      font-family: 'Ropa Sans', sans-serif;
+      float: left;
+      padding: 5px;
+    }
+    p {
+      font-size: 24pt;
+      text-transform: uppercase;
+      background-color: $text-dark;
+      color: rgba(255, 255, 255, 0.7);
+      font-family: 'Ropa Sans', sans-serif;
+      float: left;
+      padding: 5px;
+    }
+  }
+}
+
