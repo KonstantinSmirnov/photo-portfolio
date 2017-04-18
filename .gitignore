@@ -39,3 +39,5 @@ public/system/
 
 #ignore file with test runs
 spec/examples.txt
+
+.idea/*

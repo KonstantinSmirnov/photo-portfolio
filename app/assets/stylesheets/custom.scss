@@ -1,0 +1,74 @@
+
+// LOGO FONT
+@import url('https://fonts.googleapis.com/css?family=Marcellus+SC');
+// HEADERS
+@import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
+
+
+$primary: #00EBFF;
+$text-dark: #2D2D2D;
+
+
+nav.navbar.transparent {
+  background-color:transparent;
+  background-color: rgba(30,30,30,0.5);
+}
+
+nav .navbar-brand {
+  text-transform: uppercase;
+  font-family: 'Marcellus SC', serif;
+  font-size: 28pt;
+}
+
+nav .navbar-nav .nav-item {
+  padding-left: 30px;
+  font-size: 12pt;
+  text-transform: uppercase;
+}
+
+nav .navbar-nav .nav-item.active a.nav-link {
+  color: $primary;
+  font-weight: bold;
+}
+
+#hero-carousel .carousel-inner .carousel-item {
+  img {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+}
+
+#hero-carousel a.carousel-control-prev,
+#hero-carousel a.carousel-control-next {
+  width: 130px;
+}
+
+#hero-carousel .carousel-inner .carousel-item .carousel-caption {
+  left: 10%;
+  right: 10%;
+  padding-bottom: 70px;
+
+
+  h3 {
+    font-size: 36pt;
+    text-transform: uppercase;
+    background-color: white;
+    color: $text-dark;
+    font-family: 'Ropa Sans', sans-serif;
+    display: inline-block;
+    float: left;
+    padding: 5px;
+  }
+  p {
+    font-size: 24pt;
+    text-transform: uppercase;
+    background-color: $text-dark;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Ropa Sans', sans-serif;
+    display: inline-block;
+    float: left;
+    padding: 5px;
+  }
+}
