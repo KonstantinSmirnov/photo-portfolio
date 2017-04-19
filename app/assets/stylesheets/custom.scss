@@ -90,7 +90,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
 
   }
   button.slick-next {
-    right: 20px;
+    right: 10px;
     visibility: hidden;
     &:before {
       visibility: visible;
@@ -101,13 +101,13 @@ nav .navbar-nav .nav-item.active a.nav-link {
       -moz-background-size: auto;
       -webkit-background-size: auto;
       background-size: auto;
-      background-color: $primary;
+      background-color: $text-medium;
       -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
       mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
     }
   }
   button.slick-prev {
-    left: 20px;
+    left: 10px;
     visibility: hidden;
     &:before {
       visibility:visible;
@@ -118,7 +118,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
       -moz-background-size: auto;
       -webkit-background-size: auto;
       background-size: auto;
-      background-color: $primary;
+      background-color: $text-medium;
       -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
       mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
     }
@@ -177,12 +177,35 @@ nav .navbar-nav .nav-item.active a.nav-link {
 /* ===================== RECENT PROJECTS ====================== */
 .recent-projects-section {
   display: block;
-  height: 1000px;
   width: 100%;
   background-color: #1E1E1E;
+  padding-bottom: 60px;
 
   h2 {
     color: $text-light;
   }
+  div[class^="col-sm"] {
+    padding: 0;
+    margin: 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .overlay {
+      position:absolute;
+      top:0;
+      left:0;
+      width:100px;
+      height:100px;
+      background:$text-dark;
+      opacity:0;
+    }
+    :hover .overlay {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+  }
+
 }
 /* ===================== END RECENT PROJECTS ================== */
