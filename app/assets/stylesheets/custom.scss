@@ -4,7 +4,7 @@
 // HEADERS
 @import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
 // PARAGRAPH
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
 
 
 // COLORS
@@ -14,7 +14,7 @@ $text-light: #FFF;
 $text-medium: rgba(255, 255, 255, 0.7);
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1, h2 {
@@ -36,8 +36,8 @@ h2 {
 
 p {
   color: $text-dark;
-  font-size: 17px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 200;
   line-height: 30px;
 }
 
@@ -73,14 +73,14 @@ nav .navbar-nav .nav-item.active a.nav-link {
   height: 100%;
   overflow: hidden;
   background-color: $text-dark;
-  
+
   img {
     display: block;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
   }
-  
+
 
   button.slick-next,
   button.slick-prev {
