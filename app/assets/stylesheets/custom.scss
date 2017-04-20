@@ -9,7 +9,7 @@
 
 // COLORS
 $primary: #00EBFF;
-$text-dark: #2D2D2D;
+$text-dark: #1E1E1E;
 $text-light: #FFF;
 $text-medium: #CCC;
 
@@ -53,7 +53,7 @@ h3 {
 
 p {
   color: $text-dark;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 200;
   line-height: 30px;
 }
@@ -205,6 +205,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
   .description {
     background-color: rgba(255,255,255,0.7);
     padding: 10px;
+    text-align: justify;
     img.signature {
       margin-top: 30px;
       margin-bottom: 30px;
@@ -219,7 +220,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
 #recent-projects-section {
   display: block;
   width: 100%;
-  background-color: #1E1E1E;
+  background-color: $text-dark;
 
   h2 {
     color: $text-light;
@@ -336,7 +337,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
       margin-bottom: 35px;
     }
   }
-  .instagram-gallery {
+  .gallery {
     padding: 0;
     margin: 0;
     @media (min-width: 766px) {
