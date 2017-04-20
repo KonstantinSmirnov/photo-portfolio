@@ -13,4 +13,4 @@ jQuery(document).on 'turbolinks:load', ->
     infinite: true,
     speed: 1000,
     autoplay: true
-    })
+    });
