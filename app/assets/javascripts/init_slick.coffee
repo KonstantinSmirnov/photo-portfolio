@@ -2,7 +2,7 @@ jQuery(document).on 'turbolinks:load', ->
   $('#hero-slider').slick({
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 2000,
     fade: true,
     cssEase: 'ease-out',
     autoplay: true,

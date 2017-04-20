@@ -59,4 +59,5 @@ source 'https://rails-assets.org' do
 end
 # Slick slider
 gem "jquery-slick-rails"
-
+# Animate
+gem "animate-rails"

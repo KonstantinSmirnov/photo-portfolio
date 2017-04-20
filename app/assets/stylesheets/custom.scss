@@ -13,6 +13,14 @@ $text-dark: #2D2D2D;
 $text-light: #FFF;
 $text-medium: #CCC;
 
+// For animations when visible in viewport
+.hidden{
+     opacity:0;
+}
+.visible{
+     opacity:1;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
