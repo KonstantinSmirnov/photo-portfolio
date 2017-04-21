@@ -61,3 +61,12 @@ end
 gem "jquery-slick-rails"
 # Animate
 gem "animate-rails"
+
+# Testing
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+  gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+end
