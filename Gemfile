@@ -70,3 +70,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
 end
+
+gem 'sorcery'
+gem 'simple_form'
