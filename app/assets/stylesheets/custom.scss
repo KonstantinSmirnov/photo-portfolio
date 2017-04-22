@@ -86,9 +86,10 @@ p {
 }
 
 .flash-alert-wrapper {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 15px;
+  z-index: 9999;
 
   .flash-alert {
     position: relative;
@@ -100,7 +101,7 @@ p {
     font-family: 'Ropa Sans', sans-serif;
     color: $text-light;
     margin: 0;
-    z-index: 9999;
+
   }
   .flash-danger {
     color: $text-light;

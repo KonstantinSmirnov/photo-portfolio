@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'dashboard' => 'dashboard#index'
     get 'account' => 'account#index'
-    patch 'user' => 'account#update'
+    patch 'account' => 'account#update'
+    get 'hero_carousel' => 'hero_carousel#index'
   end
 
 end

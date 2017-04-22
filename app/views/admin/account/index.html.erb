@@ -1,6 +1,6 @@
 <h3>Update email</h3>
 
-<%= simple_form_for current_user, url: admin_user_path(target: :email) do |f| %>
+<%= simple_form_for current_user, url: admin_account_path(target: :email) do |f| %>
   <%= f.input :email, input_html: { id: 'update_email_email' }, error: false %>
   <%= f.input :password, input_html: { id: 'update_email_password' }, error: false %>
 
@@ -10,7 +10,7 @@
 <hr>
 
 <h3>Change password</h3>
-<%= simple_form_for current_user, url: admin_user_path(target: :password) do |f| %>
+<%= simple_form_for current_user, url: admin_account_path(target: :password) do |f| %>
   <%= f.input :password, input_html: { id: 'update_password_password' }, error: false %>
   <%= f.input :new_password, input_html: { id: 'update_password_new_password' }, error: false %>
   <%= f.input :new_password_confirmation, input_html: { id: 'update_password_new_password_confirmation' }, error: false %>
