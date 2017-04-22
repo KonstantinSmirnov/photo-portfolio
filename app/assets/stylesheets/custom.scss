@@ -71,6 +71,31 @@ p {
     cursor: pointer;
   }
 }
+.flash-alert-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+
+  .flash-alert {
+    position: relative;
+    left: -50%;
+    border: 1px solid $text-light;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-family: 'Ropa Sans', sans-serif;
+    color: $text-light;
+    margin: 0;
+    z-index: 9999;
+  }
+  .flash-danger {
+    border-color: red;
+    color: red;
+  }
+  .flash-success {
+    border-color: $primary;
+    color: $primary;
+  }
+}
 
 /* ===================== SLICK SLIDER COMMON ========== */
 
@@ -396,3 +421,17 @@ footer {
   }
 }
 /* ===================== END FOOTER ============================== */
+
+/* ===================== SESSIONS ================================ */
+.new-session {
+  display: block;
+  width: 100%;
+  min-height: 85vh;
+  background-color: $text-dark;
+  color: $text-light;
+  padding-top: 100px;
+  h2 {
+    color: $text-light;
+  }
+}
+/* ===================== END SESSIONS ============================ */
