@@ -88,7 +88,7 @@ p {
 .flash-alert-wrapper {
   position: absolute;
   left: 50%;
-  top: 10px;
+  top: 15px;
 
   .flash-alert {
     position: relative;
@@ -96,18 +96,19 @@ p {
     border: 1px solid $text-light;
     padding: 5px 10px;
     text-transform: uppercase;
+    font-weight: bold;
     font-family: 'Ropa Sans', sans-serif;
     color: $text-light;
     margin: 0;
     z-index: 9999;
   }
   .flash-danger {
-    border-color: red;
-    color: red;
+    color: $text-light;
+    background-color: red;
   }
   .flash-success {
-    border-color: $primary;
-    color: $primary;
+    color: $text-light;
+    background-color: green;
   }
 }
 
