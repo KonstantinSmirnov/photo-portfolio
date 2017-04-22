@@ -1,6 +1,6 @@
 
 // LOGO FONT
-@import url('https://fonts.googleapis.com/css?family=Marcellus+SC');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
 // HEADERS
 @import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
 // PARAGRAPH
@@ -153,7 +153,7 @@ nav.navbar.transparent {
 
 .navbar-brand {
   text-transform: uppercase;
-  font-family: 'Marcellus SC', serif;
+  font-family: 'Libre Baskerville', serif;
   font-size: 20pt;
 }
 
@@ -166,6 +166,9 @@ nav .navbar-nav .nav-item a.nav-link {
   font-family: 'Ropa Sans', sans-serif;
   font-size: 14pt;
   color: $text-light;
+  &:hover {
+    color: $primary;
+  }
 }
 
 nav .navbar-nav .nav-item.active a.nav-link {
@@ -422,14 +425,18 @@ footer {
 }
 /* ===================== END FOOTER ============================== */
 
+.new-session,
+.admin_dashboard {
+  padding-top: 70px;
+}
 /* ===================== SESSIONS ================================ */
 .new-session {
   display: block;
   width: 100%;
   min-height: 85vh;
+  padding-top: 100px;
   background-color: $text-dark;
   color: $text-light;
-  padding-top: 100px;
   h2 {
     color: $text-light;
   }

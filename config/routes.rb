@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  namespace :admin do
+    get 'dashboard' => 'dashboard#index'
+  end
+
 end

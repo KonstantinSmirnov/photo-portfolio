@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     if @admin = login(params[:user][:email], params[:user][:password])
       flash[:success] = 'You logged in'
-      redirect_back_or_to root_path
+      redirect_back_or_to admin_dashboard_path
     else
       @admin = User.new
       flash.now[:danger] = 'Login or password is invalid'

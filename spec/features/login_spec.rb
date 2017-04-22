@@ -41,6 +41,6 @@ feature 'LOGIN' do
     click_button 'Go'
 
     expect(page).to have_selector('.flash-alert.flash-success', text: 'You logged in')
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(admin_dashboard_path)
   end
 end
