@@ -11,5 +11,6 @@ feature "LOGOUT" do
     click_link 'Log out'
 
     expect(page).to have_selector('.flash-alert.flash-success', text: 'You successfully logged out')
+    expect(current_path).to eq(login_path)
   end
 end
