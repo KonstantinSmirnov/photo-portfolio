@@ -1,24 +1,11 @@
 module ApplicationHelper
-  def is_active?(item)
-    case item
-    when 'home'
-      'active' if controller?('static_pages')
-    when 'admin'
-      'active' if namespace?('admin')
-    when 'admin/dashboard'
-      'active' if controller?('admin/dashboard')
-    end
+
+  def is_active?(controller)
+    'active' if controller.include?(params[:controller])
   end
 
-  def namespace?(namespace)
-      namespace.include?(params[:controller].split('/').first)
+  def is_active_namespace?(namespace)
+    'active' if namespace.include?(params[:controller].split('/').first)
   end
 
-  def controller?(controller)
-    controller.include?(params[:controller])
-  end
-
-  def action?(action)
-    action.include?(params[:action])
-  end
 end

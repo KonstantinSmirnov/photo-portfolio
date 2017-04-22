@@ -1,0 +1,10 @@
+<h3>Update email</h3>
+
+<%= simple_form_for current_user, url: admin_user_path do |f| %>
+  <%= f.input :email, input_html: { id: 'update_email_email' } %>
+  <%= f.input :password, input_html: { id: 'update_email_password' } %>
+
+  <%= f.submit 'Update', class: 'btn btn-default-light' %>
+<% end %>
+
+<h3>Change password</h3>

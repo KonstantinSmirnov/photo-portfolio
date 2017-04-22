@@ -71,6 +71,20 @@ p {
     cursor: pointer;
   }
 }
+.btn-default-light {
+  background-color: transparent;
+  border: 1px solid $text-dark;
+  border-radius: 0;
+  text-transform: uppercase;
+  color: $text-dark;
+  padding: 10px 20px;
+  &:hover {
+    color: $primary;
+    border-color: $primary;
+    cursor: pointer;
+  }
+}
+
 .flash-alert-wrapper {
   position: absolute;
   left: 50%;
@@ -173,7 +187,6 @@ nav .navbar-nav .nav-item a.nav-link {
 
 nav .navbar-nav .nav-item.active a.nav-link {
   color: $primary;
-  font-weight: bold;
 }
 /* ===================== END NAVBAR ======================= */
 
@@ -442,3 +455,12 @@ footer {
   }
 }
 /* ===================== END SESSIONS ============================ */
+
+/* ===================== ADMIN =================================== */
+.admin_dashboard {
+  h1, h2, h3 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+}
+/* ===================== END ADMIN =============================== */
