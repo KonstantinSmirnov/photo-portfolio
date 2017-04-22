@@ -1,0 +1,11 @@
+<div class="col-md-3">
+  <img src="http://placehold.it/300x200" class="img-fluid" alt="">
+</div>
+<div class="col-md-9">
+  <%= simple_form_for @hero_carousel_slide, url: admin_hero_carousel_slide_path(@hero_carousel_slide), remote: true do |f| %>
+    <%= f.input :title, label: false, placeholder: 'Title' %>
+    <%= f.input :subtitle, label: false, placeholder: 'Subtitle' %>
+    <%= f.submit 'Update', class: 'btn btn-default-light' %>
+    <%= link_to 'Cancel', admin_hero_carousel_slide_path(@hero_carousel_slide), remote: true, class: 'btn btn-default-light' %>
+  <% end %>
+</div>

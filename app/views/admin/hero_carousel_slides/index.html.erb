@@ -1,0 +1,9 @@
+<h3>Slides</h3>
+
+<%= link_to 'Add', new_admin_hero_carousel_slide_path, remote: true, class: 'btn btn-default-light' %>
+<hr>
+<div id="slides-list">
+  <% @slides.each do |slide| %>
+    <%= render 'show', object: slide %>
+  <% end %>
+</div>

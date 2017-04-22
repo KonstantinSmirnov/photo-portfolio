@@ -1,0 +1,2 @@
+$("#slide-<%= params[:slide_id] %>").replaceWith("<%= escape_javascript(render 'new', object: @hero_carousel_slide) %>");
+$("#flash").html("<%= escape_javascript(render 'shared/flash') %>");

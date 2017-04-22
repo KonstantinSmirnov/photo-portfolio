@@ -1,2 +1,2 @@
-jQuery(document).on "turbolinks:load", ->
-  $('.flash-alert').delay(5000).fadeOut("slow")
+jQuery(document).on "turbolinks:load ajaxComplete", ->
+  $('.flash-alert').delay(3000).fadeOut("slow")

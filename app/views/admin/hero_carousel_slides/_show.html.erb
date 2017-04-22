@@ -1,0 +1,11 @@
+<div id="slide-<%= object.id %>" class="row">
+  <div class="col-md-3">
+    <img src="http://placehold.it/300x200" class="img-fluid" alt="">
+  </div>
+  <div class="col-md-9">
+    <h3><%= object.title %></h3>
+    <h5><%= object.subtitle %></h5>
+    <%= link_to 'Edit', edit_admin_hero_carousel_slide_path(object), remote: true, class: 'btn btn-default-light' %>
+    <%= link_to 'Delete', admin_hero_carousel_slide_path(object), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'btn btn-default-light' %>
+  </div>
+</div>

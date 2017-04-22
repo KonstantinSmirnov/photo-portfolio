@@ -12,7 +12,9 @@
   <body>
     <div class="container-fluid">
       <%= render 'shared/navbar' %>
-      <%= render 'shared/flash' %>
+      <div id="flash">
+        <%= render 'shared/flash' %>
+      </div>
       <div class="admin_dashboard row">
         <div class="col-md-3">
           <%= render 'shared/admin_panel' %>

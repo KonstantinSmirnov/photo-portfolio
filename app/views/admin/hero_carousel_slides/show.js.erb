@@ -1,0 +1,2 @@
+$("#slide-<%= @hero_carousel_slide.id %>").replaceWith("<%= escape_javascript( render 'show', object: @hero_carousel_slide ) %>");
+$("#flash").html("<%= escape_javascript(render 'shared/flash') %>");
