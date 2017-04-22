@@ -78,6 +78,6 @@ class Admin::HeroCarouselSlidesController < AdminController
   private
 
   def slide_params
-    params.require(:hero_carousel_slide).permit(:title, :subtitle)
+    params.require(:hero_carousel_slide).permit(:title, :subtitle, :image)
   end
 end

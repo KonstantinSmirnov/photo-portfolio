@@ -22,20 +22,27 @@ RSpec.describe HeroCarouselSlide, type: :model do
       expect(hero_carousel_slide.errors[:subtitle]).to include("is too short (minimum is 1 character)")
     end
 
+    it 'is invalid without image' do
+      hero_carousel_slide = FactoryGirl.build(:hero_carousel_slide, image: '')
+
+      expect(hero_carousel_slide).to be_invalid
+      expect(hero_carousel_slide.errors[:image]).to include("can't be blank")
+    end
+
     it 'is invalid with title longer than permitted' do
-      long_title = "a"*11
+      long_title = "a"*51
       hero_carousel_slide = FactoryGirl.build(:hero_carousel_slide, title: long_title)
 
       expect(hero_carousel_slide).to be_invalid
-      expect(hero_carousel_slide.errors[:title]).to include("is too long (maximum is 10 characters)")
+      expect(hero_carousel_slide.errors[:title]).to include("is too long (maximum is 50 characters)")
     end
 
     it 'is invalid with subtitle longer than permitted' do
-      long_subtitle = "a"*21
+      long_subtitle = "a"*71
       hero_carousel_slide = FactoryGirl.build(:hero_carousel_slide, subtitle: long_subtitle)
 
       expect(hero_carousel_slide).to be_invalid
-      expect(hero_carousel_slide.errors[:subtitle]).to include("is too long (maximum is 20 characters)")
+      expect(hero_carousel_slide.errors[:subtitle]).to include("is too long (maximum is 70 characters)")
     end
 
     it 'is valid with title and subtitle' do
@@ -60,23 +67,22 @@ RSpec.describe HeroCarouselSlide, type: :model do
 
       expect(hero_carousel_slide).to be_invalid
       expect(hero_carousel_slide.errors[:subtitle]).to include ("is too short (minimum is 1 character)")
-
     end
 
     it 'is invalid if title is longer than permitted' do
-      long_title = "a"*11
+      long_title = "a"*51
       hero_carousel_slide.title = long_title
 
       expect(hero_carousel_slide).to be_invalid
-      expect(hero_carousel_slide.errors[:title]).to include("is too long (maximum is 10 characters)")
+      expect(hero_carousel_slide.errors[:title]).to include("is too long (maximum is 50 characters)")
     end
 
     it 'is invalid if subtitle is longer than permitted' do
-      long_subtitle = "a"*21
+      long_subtitle = "a"*71
       hero_carousel_slide.subtitle = long_subtitle
 
       expect(hero_carousel_slide).to be_invalid
-      expect(hero_carousel_slide.errors[:subtitle]).to include("is too long (maximum is 20 characters)")
+      expect(hero_carousel_slide.errors[:subtitle]).to include("is too long (maximum is 70 characters)")
     end
 
     it 'is valid with valid title and subtitle ' do

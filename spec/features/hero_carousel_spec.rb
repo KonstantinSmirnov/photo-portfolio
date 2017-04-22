@@ -9,9 +9,22 @@ feature 'HERO CAROUSEL', js: true do
   end
 
   context 'Add new slide' do
+
+    scenario 'it fails without image' do
+      click_link 'Add'
+
+      fill_in 'hero_carousel_slide_title', with: 'some test'
+      fill_in 'hero_carousel_slide_subtitle', with: 'some text'
+      click_button 'Create'
+
+      expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
+      expect(page).to have_selector('.hero_carousel_slide_image.has-error span.help-block', text: "can't be blank")
+    end
+
     scenario 'it fails without title' do
       click_link 'Add'
 
+      page.attach_file('hero_carousel_slide_image', Rails.root + 'public/images/test_image.png')
       fill_in 'hero_carousel_slide_title', with: ''
       fill_in 'hero_carousel_slide_subtitle', with: 'some text'
       click_button 'Create'
@@ -23,6 +36,7 @@ feature 'HERO CAROUSEL', js: true do
     scenario 'it fails without subtitle' do
       click_link 'Add'
 
+      page.attach_file('hero_carousel_slide_image', Rails.root + 'public/images/test_image.png')
       fill_in 'hero_carousel_slide_title', with: 'some text'
       fill_in 'hero_carousel_slide_subtitle', with: ''
       click_button 'Create'
@@ -34,6 +48,7 @@ feature 'HERO CAROUSEL', js: true do
     scenario 'it succeed with valid data' do
       click_link 'Add'
 
+      page.attach_file('hero_carousel_slide_image', Rails.root + 'public/images/test_image.png')
       fill_in 'hero_carousel_slide_title', with: 'some text'
       fill_in 'hero_carousel_slide_subtitle', with: 'some text'
       click_button 'Create'
@@ -55,6 +70,7 @@ feature 'HERO CAROUSEL', js: true do
     before(:each) do
       click_link 'Add'
 
+      page.attach_file('hero_carousel_slide_image', Rails.root + 'public/images/test_image.png')
       fill_in 'hero_carousel_slide_title', with: 'some text'
       fill_in 'hero_carousel_slide_subtitle', with: 'some text'
 

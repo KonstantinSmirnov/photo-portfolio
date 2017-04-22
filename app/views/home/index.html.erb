@@ -1,27 +1,15 @@
   <!-- SECTION HERO SLIDER -->
   <div class="row">
     <div id="hero-slider">
-      <div>
-        <img class="img-fluid" src="https://z-1-scontent-fra3-1.xx.fbcdn.net/v/t1.0-9/14517524_1245752005496907_5808567290812415914_n.jpg?oh=687cbd192856c31aae90da0c04fcb31a&oe=598CE09D">
-        <div class="slider-caption">
-          <h1>Sed posuere consectetur est at lobortis.</h1>
-          <p>Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+      <% @hero_carousel_slides.each do |slide| %>
+        <div>
+          <%= image_tag slide.image.url(:cover), class: 'img-fluid' %>
+          <div class="slider-caption">
+            <h1><%= slide.title %></h1>
+            <p><%= slide.subtitle %></p>
+          </div>
         </div>
-      </div>
-      <div>
-        <img class="img-fluid" src="http://www.hdwallpapers.in/walls/taj_mahal_india_5k-wide.jpg">
-        <div class="slider-caption">
-          <h1>Sed posuere cofghjnsectetur est at lobortis.</h1>
-          <p>Nullam quis rfhjisus eget urna mollis ornare vel eu leo.</p>
-        </div>
-      </div>
-      <div>
-        <img class="img-fluid" src="http://www.hdwallpapers.in/walls/chicago_cultural_center_dome-HD.jpg">
-        <div class="slider-caption">
-          <h1>Sed posuerefsdfg consectetur est at lobortis.</h1>
-          <p>Nullam quissdfgsfg risus eget urna mollis ornare vel eu leo.</p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
   <!-- END SECTION HERO SLIDER -->
@@ -228,6 +216,3 @@
       </div>
   </div>
   <!-- END INSTAGRAM -->
-
-
-

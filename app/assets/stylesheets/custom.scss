@@ -112,6 +112,13 @@ p {
   }
 }
 
+.simple_form {
+  span.help-block {
+    font-size: 10pt;
+    color: red;
+  }
+}
+
 /* ===================== SLICK SLIDER COMMON ========== */
 
 button.slick-next,
@@ -212,24 +219,35 @@ nav .navbar-nav .nav-item.active a.nav-link {
     left: 10%;
     right: 10%;
     padding-bottom: 70px;
-
     h1 {
-      background-color: $text-light;
       float: left;
+      background-color: $text-light;
       padding: 5px;
     }
     p {
+      clear: both;
+      float: left;
       font-size: 24pt;
       text-transform: uppercase;
       background-color: $text-dark;
       color: $text-medium;
       font-family: 'Ropa Sans', sans-serif;
-      float: left;
       padding: 5px;
     }
   }
 }
-/* ===================== END HERO SLIDER======================= */
+/* ===================== HERO SLIDER ADMIN ==================== */
+#slides-list {
+  img {
+    width: 100%;
+
+  }
+  .slide,
+  .slide-new {
+    margin-bottom: 10px;
+  }
+}
+/* ===================== END HERO SLIDER ======================= */
 
 /* ===================== ABOUT ME ============================= */
 #about-me-section {

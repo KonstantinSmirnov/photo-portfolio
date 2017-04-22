@@ -1,8 +1,8 @@
-<div id="slide-<%= object.id %>" class="row">
-  <div class="col-md-3">
-    <img src="http://placehold.it/300x200" class="img-fluid" alt="">
+<div id="slide-<%= object.id %>" class="row slide">
+  <div class="col-12 col-sm-5 col-lg-4">
+    <%= image_tag object.image.url(:thumb), class: 'img-fluid' %>
   </div>
-  <div class="col-md-9">
+  <div class="col-12 col-sm-7 col-lg-8">
     <h3><%= object.title %></h3>
     <h5><%= object.subtitle %></h5>
     <%= link_to 'Edit', edit_admin_hero_carousel_slide_path(object), remote: true, class: 'btn btn-default-light' %>
