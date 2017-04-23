@@ -5,7 +5,7 @@ class Instagram < ApplicationRecord
 
   def get_last_posts
     return false if access_token.nil?
-    
+
     content = open("https://api.instagram.com/v1/users/self/media/recent/?access_token=#{access_token}&count=8").read
     parsed_content = JSON.parse(content)
 
