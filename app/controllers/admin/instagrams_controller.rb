@@ -1,4 +1,6 @@
 class Admin::InstagramsController < AdminController
+  require 'net/http'
+
   def show
     @instagram = Instagram.first
   end
@@ -61,6 +63,39 @@ class Admin::InstagramsController < AdminController
     respond_to do |format|
       format.js { render 'update_show' }
     end
+  end
+
+  def access_token
+    uri = URI.parse("https://api.instagram.com/oauth/access_token")
+
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+
+    request = Net::HTTP::Post.new(uri.request_uri)
+    request.set_form_data({
+      "client_id" => ENV['INSTAGRAM_CLIENT_ID'],
+      "client_secret" => ENV['INSTAGRAM_CLIENT_SECRET'],
+      "grant_type" => 'authorization_code',
+      "redirect_uri" => 'http://localhost:3000/admin/instagram/access_token',
+      "code" => params[:code]
+      })
+
+    response = http.request(request)
+
+    parsed_json = JSON.parse(response.body)
+
+    access_token = parsed_json['access_token']
+    username = parsed_json['user']['username']
+    profile_picture = parsed_json['user']['profile_picture']
+
+    @instagram = Instagram.first
+    @instagram.update_attributes(
+      :access_token => access_token,
+      :username => username,
+      :profile_picture => profile_picture
+      )
+    @instagram.save!
+    redirect_to admin_instagram_path
   end
 
   private

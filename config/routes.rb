@@ -19,8 +19,8 @@ Rails.application.routes.draw do
     end
     resource :instagram do
       get 'cancel' => 'instagrams#cancel'
+      get 'access_token' => 'instagrams#access_token'
     end
-
   end
 
 end

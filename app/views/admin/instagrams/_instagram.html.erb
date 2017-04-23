@@ -1,12 +1,28 @@
 <% if !@instagram.nil? %>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4">
+      <% if @instagram.access_token.nil? %>
+        <h3>Not Authorized</h3>
+        <p>In order to get access to your last photos, you need to authorize.</p>
+      <% else %>
+        <h3><%= @instagram.username %></h3>
+        <%= image_tag @instagram.profile_picture %>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <h3>Text</h3>
       <p><%= simple_format @instagram.text %></p>
     </div>
   </div>
   <hr>
+  <a class="btn btn-default-light" href=<%= get_instagram_access_token_url %>>
+    <%= @instagram.access_token.nil? ? 'Authorize' : 'Reauthorize' %>
+  </a>
   <%= link_to 'Edit', edit_admin_instagram_path, remote: true, class: 'btn btn-default-light' %>
   <%= link_to 'Delete', admin_instagram_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
+
+  <hr>
+
 <% else %>
   <h3>Section is not created</h3>
   <%= link_to 'Create', new_admin_instagram_path, class: 'btn btn-default-light', remote: true %>
