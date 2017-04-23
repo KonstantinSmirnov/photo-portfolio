@@ -72,16 +72,16 @@ class Admin::InstagramsController < AdminController
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
 
-    request = Net::HTTP::Post.new(uri.request_uri)
-    request.set_form_data({
+    request_to_instagram = Net::HTTP::Post.new(uri.request_uri)
+    request_to_instagram.set_form_data({
       "client_id" => ENV['INSTAGRAM_CLIENT_ID'],
       "client_secret" => ENV['INSTAGRAM_CLIENT_SECRET'],
       "grant_type" => 'authorization_code',
-      "redirect_uri" => 'http://localhost:3000/admin/instagram/access_token',
+      "redirect_uri" => "#{request.base_url}/admin/instagram/access_token",
       "code" => params[:code]
       })
 
-    response = http.request(request)
+    response = http.request(request_to_instagram)
 
     parsed_json = JSON.parse(response.body)
 
