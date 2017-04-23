@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     patch 'account' => 'account#update'
     resources :hero_carousel_slides
     delete 'remove_new_form' => 'hero_carousel_slides#remove_new_form'
+    resource :about do
+      get 'cancel' => 'abouts#cancel'
+    end
+
   end
 
 end

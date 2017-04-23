@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170422182605) do
+ActiveRecord::Schema.define(version: 20170422201841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "text"
+    t.string   "portrait_file_name"
+    t.string   "portrait_content_type"
+    t.integer  "portrait_file_size"
+    t.datetime "portrait_updated_at"
+    t.string   "signature_file_name"
+    t.string   "signature_content_type"
+    t.integer  "signature_file_size"
+    t.datetime "signature_updated_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "hero_carousel_slides", force: :cascade do |t|
     t.string   "title"

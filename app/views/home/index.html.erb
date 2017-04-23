@@ -15,38 +15,23 @@
   <!-- END SECTION HERO SLIDER -->
 
   <!-- SECTION ABOUT ME -->
-  <div class="row">
-    <div id="about-me-section">
-      <div class="col-md-12">
-        <img class="portrait" src="https://z-1-scontent-fra3-1.xx.fbcdn.net/v/t1.0-9/16807641_1426663770739062_1627099748089375799_n.jpg?oh=75113cb3884d9c4aadc84362771026f4&oe=59843551">
+  <% if @about %>
+    <div class="row">
+      <div id="about-me-section">
+        <div class="col-md-12">
+          <%= image_tag @about.portrait.url(:normal), class: 'portrait' %>
 
-        <div class="offset-md-5 description">
-          <h2 class="text-center">About me</h2>
-          <p>
-            Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus.
-            Aenean
-            eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna
-            mollis
-            euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere
-            consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper.
-          </p>
-          <p>
-            Risus Porta Vestibulum<br>
-            - Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.<br>
-            - Nulla vitae elit libero, a pharetra augue.<br>
-            - Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-          </p>
-          <p>
-            Phone: +12-345-6789<br>
-            E-mail: info@savannahmay.com
-          </p>
-          <div class="text-center">
-            <img class="signature" src="https://openclipart.org/image/2400px/svg_to_png/232911/Richard_M_Nixon_Signature.png">
+          <div class="offset-md-5 description">
+            <h2 class="text-center"><%= @about.title %></h2>
+            <p><%= @about.text %></p>
+            <div class="text-center">
+              <%= image_tag @about.signature.url(:normal), class: 'signature' %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
   <!-- END SECTION ABOUT ME -->
 
   <!-- RECENT PROJECTS -->

@@ -1,0 +1,18 @@
+<% if !@about.nil? %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag @about.portrait.url(:thumb) %>
+    </div>
+    <div class="col-md-8">
+      <h3><%= @about.title %></h3>
+      <p><%= @about.text %></p>
+      <%= image_tag @about.signature.url(:thumb) %>
+    </div>
+  </div>
+  <hr>
+  <%= link_to 'Edit', edit_admin_about_path, remote: true, class: 'btn btn-default-light' %>
+  <%= link_to 'Delete', admin_about_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
+<% else %>
+  <h3>Section is not created</h3>
+  <%= link_to 'Create', new_admin_about_path, class: 'btn btn-default-light', remote: true %>
+<% end %>
