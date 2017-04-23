@@ -1,0 +1,13 @@
+<% if !@instagram.nil? %>
+  <div class="row">
+    <div class="col-md-12">
+      <p><%= simple_format @instagram.text %></p>
+    </div>
+  </div>
+  <hr>
+  <%= link_to 'Edit', edit_admin_instagram_path, remote: true, class: 'btn btn-default-light' %>
+  <%= link_to 'Delete', admin_instagram_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
+<% else %>
+  <h3>Section is not created</h3>
+  <%= link_to 'Create', new_admin_instagram_path, class: 'btn btn-default-light', remote: true %>
+<% end %>

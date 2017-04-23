@@ -4,5 +4,5 @@
   <%= f.input :portrait, as: :file %>
   <%= f.input :signature, as: :file %>
   <%= f.submit class: 'btn btn-default-light' %>
-  <%= link_to 'Cancel', cancel_admin_about_path, class: 'btn btn-default-light', remote: true if @about.persisted? %>
+  <%= link_to 'Cancel', cancel_admin_about_path, class: 'btn btn-default-light', remote: true %>
 <% end %>

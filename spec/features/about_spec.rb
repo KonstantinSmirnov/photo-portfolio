@@ -65,7 +65,7 @@ feature "ABOUT", js: true do
       page.attach_file('about_signature', Rails.root + 'public/images/test_image.png')
       click_button 'Create About'
 
-      expect(page).to have_selector('.flash-alert.flash-success', text: 'ABOUT PAGE HAS BEEN CREATED')
+      expect(page).to have_selector('.flash-alert.flash-success', text: 'ABOUT SECTION HAS BEEN CREATED')
       expect(current_path).to eq(admin_about_path)
       expect(page).to have_text(control_text)
     end
@@ -82,6 +82,12 @@ feature "ABOUT", js: true do
       visit root_path
       expect(page).to have_selector('h2', text: title.upcase)
       expect(page).to have_selector('p', text: text)
+    end
+
+    scenario 'it has cancel button' do
+      click_link 'Cancel'
+
+      expect(page).to have_selector('h3', text: 'SECTION IS NOT CREATED')
     end
   end
 
@@ -109,6 +115,12 @@ feature "ABOUT", js: true do
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
       expect(page).to have_selector('.about_text.has-error span.help-block', text: "can't be blank")
+    end
+
+    scenario 'it has cancel button' do
+      click_link 'Cancel'
+
+      expect(page).to have_selector('h3', text: about.title.upcase)
     end
 
     scenario 'delete about section' do

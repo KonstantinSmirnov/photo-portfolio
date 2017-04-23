@@ -1,10 +1,10 @@
-class Admin::AboutsController < AdminController
+class Admin::InstagramsController < AdminController
   def show
-    @about = About.first
+    @instagram = Instagram.first
   end
 
   def new
-    @about = About.new
+    @instagram = Instagram.new
 
     respond_to do |format|
       format.js { render 'render_form' }
@@ -12,12 +12,12 @@ class Admin::AboutsController < AdminController
   end
 
   def create
-    @about = About.new(about_params)
+    @instagram = Instagram.new(instagram_params)
 
     respond_to do |format|
-      if @about.save
-        flash.now[:success] = 'About section has been created'
-        format.js { render 'update_show'}
+      if @instagram.save
+        flash.now[:success] = 'Instagram section has been created'
+        format.js { render 'update_show' }
       else
         flash.now[:danger] = 'Please check errors'
         format.js { render 'render_form' }
@@ -26,7 +26,7 @@ class Admin::AboutsController < AdminController
   end
 
   def edit
-    @about = About.first
+    @instagram = Instagram.first
 
     respond_to do |format|
       format.js { render 'render_form' }
@@ -34,11 +34,11 @@ class Admin::AboutsController < AdminController
   end
 
   def update
-    @about = About.first
+    @instagram = Instagram.first
 
     respond_to do |format|
-      if @about.update_attributes(about_params)
-        flash.now[:success] = 'About section has been updated'
+      if @instagram.update_attributes(instagram_params)
+        flash.now[:success] = 'Instagram section has been updated'
         format.js { render 'update_show' }
       else
         flash.now[:danger] = 'Please check errors'
@@ -48,24 +48,24 @@ class Admin::AboutsController < AdminController
   end
 
   def destroy
-    @about = About.first
-    @about.delete
+    @instagram = Instagram.first
+    @instagram.delete
 
     flash[:success] = 'Successfully deleted'
-    redirect_to admin_about_path
+    redirect_to admin_instagram_path
   end
 
   def cancel
-    @about = About.first
+    @instagram = Instagram.first
 
     respond_to do |format|
-      format.js { render 'update_show'}
+      format.js { render 'update_show' }
     end
   end
 
   private
 
-  def about_params
-    params.require(:about).permit(:title, :text, :portrait, :signature)
+  def instagram_params
+    params.require(:instagram).permit(:text)
   end
 end

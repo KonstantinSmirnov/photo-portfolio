@@ -18,5 +18,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require viewportchecker
-//= require pace.min
 //= require_tree .

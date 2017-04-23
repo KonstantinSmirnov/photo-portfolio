@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     resource :about do
       get 'cancel' => 'abouts#cancel'
     end
+    resource :instagram do
+      get 'cancel' => 'instagrams#cancel'
+    end
 
   end
 
