@@ -52,9 +52,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Deploy
-gem 'dotenv-rails'
-
 # Bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha6'
 source 'https://rails-assets.org' do
@@ -80,3 +77,13 @@ gem 'simple_form'
 gem "paperclip", "~> 5.0.0"
 # Remote files upload
 gem 'remotipart', '~> 1.2'
+
+# Deploy
+gem 'dotenv-rails'
+group :development do
+  gem 'capistrano-rbenv',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano',         require: false
+  gem 'capistrano3-puma',   require: false
+end
