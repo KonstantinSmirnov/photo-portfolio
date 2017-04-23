@@ -156,15 +156,15 @@ button.slick-prev {
 button.slick-next {
   right: 10px;
   &:before {
-    -webkit-mask-image: url("right-chevron.svg");
-    mask-image: url("right-chevron.svg");
+    -webkit-mask-image: image-url("right-chevron.svg");
+    mask-image: image-url("right-chevron.svg");
   }
 }
 button.slick-prev {
   left: 3px;
   &:before {
-    -webkit-mask-image: url("left-chevron.svg");
-    mask-image: url("left-chevron.svg");
+    -webkit-mask-image: image-url("left-chevron.svg");
+    mask-image: image-url("left-chevron.svg");
   }
 }
 
