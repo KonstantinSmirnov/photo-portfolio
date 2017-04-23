@@ -23,7 +23,7 @@
 
           <div class="offset-md-5 description">
             <h2 class="text-center"><%= @about.title %></h2>
-            <p><%= @about.text %></p>
+            <p><%= simple_format @about.text %></p>
             <div class="text-center">
               <%= image_tag @about.signature.url(:normal), class: 'signature' %>
             </div>

@@ -1,6 +1,6 @@
 <%= simple_form_for @about, url: admin_about_path, remote: true do |f| %>
   <%= f.input :title %>
-  <%= f.input :text %>
+  <%= f.input :text, input_html: { class: 'textarea-resizable' } %>
   <%= f.input :portrait, as: :file %>
   <%= f.input :signature, as: :file %>
   <%= f.submit class: 'btn btn-default-light' %>
