@@ -1,5 +1,6 @@
 class Admin::InstagramsController < AdminController
   require 'net/http'
+  require 'open-uri'
 
   def show
     @instagram = Instagram.first

@@ -424,6 +424,12 @@ nav .navbar-nav .nav-item.active a.nav-link {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        opacity: 1;
+      	-webkit-transition: .3s ease-in-out;
+      	transition: .3s ease-in-out;
+        &:hover {
+          opacity: .5;
+        }
       }
     }
   }
