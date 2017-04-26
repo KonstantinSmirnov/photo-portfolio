@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'home/index', as: 'index'
+  get 'contact' => 'contacts#show'
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
@@ -20,6 +21,9 @@ Rails.application.routes.draw do
     resource :instagram do
       get 'cancel' => 'instagrams#cancel'
       get 'access_token' => 'instagrams#access_token'
+    end
+    resource :contact do
+      get 'cancel' => 'contacts#cancel'
     end
   end
 

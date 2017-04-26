@@ -49,6 +49,7 @@ class Admin::AboutsController < AdminController
 
   def destroy
     @about = About.first
+
     @about.delete
 
     flash[:success] = 'Successfully deleted'

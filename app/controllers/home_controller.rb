@@ -5,5 +5,6 @@ class HomeController < ApplicationController
     if @instagram = Instagram.first
       @last_instagram_fotos = Instagram.first.get_last_posts
     end
+    @contact = Contact.first
   end
 end
