@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index', as: 'index'
   get 'contact' => 'contacts#show'
+  post 'contact' => 'contacts#create'
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
