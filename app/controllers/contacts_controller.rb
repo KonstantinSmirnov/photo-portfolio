@@ -6,9 +6,11 @@ class ContactsController < ApplicationController
 
   def create
     @email = Email.new(email_params)
-    if @email.valid?
-      ContactMailer.new_contact_email(@email).deliver
+    if @email.valid? && ContactMailer.new_contact_email(@email).deliver
+      flash[:success] = 'Email has been sent'
+      redirect_to contact_path
     else
+      flash.now[:danger] = 'Please review errors'
       render :show
     end
   end
