@@ -1,5 +1,6 @@
-Hi,
-
-A new record has been added: <%= @email.message %>
-
-Thanks
+Hi! You have a new letter from <%= request.base_url %>
+====================================================
+Name:     <%= @email.name %>
+Email:    <%= @email.email %>
+Topic:    <%= @email.topic %>
+Message:  <%= @email.message %>
