@@ -123,11 +123,27 @@ p {
   }
 }
 
-.simple_form {
+.simple_form.light {
   span.help-block {
     font-size: 10pt;
     color: red;
   }
+  input.form-control, textarea.form-control {
+    border-radius: 0px;
+    border-color: $text-light;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: 'Raleway', sans-serif;
+    color: $text-light;
+    &::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }
+    &:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }
+    &::-moz-placeholder { color: rgba(255, 255, 255, 0.5); }
+    &:-ms-input-placeholder { color: rgba(255, 255, 255, 0.5); }
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: $text-light;
+    }
+  }
+
 }
 
 /* ===================== SLICK SLIDER COMMON ========== */
@@ -439,8 +455,36 @@ nav .navbar-nav .nav-item.active a.nav-link {
 
 /* ===================== END INSTAGRAM ======================= */
 
+/* ===================== CONTACT PAGE ======================== */
+#contact-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  img {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+  #contact-form {
+    display: block;
+    width: 100vw;
+    min-height: calc(100vh - 100px);
+    padding-top: 75px;
+    padding-bottom: 30px;
+    h2, p, form {
+      color: $text-light;
+    }
+  }
+}
+/* ===================== END CONTACT PAGE ==================== */
+
 /* ===================== FOOTER ============================== */
 footer {
+  display: block;
   width: 100%;
   height: auto;
   background-color: $text-light;
@@ -471,7 +515,7 @@ footer {
   }
   div.creator {
     position: absolute;
-    bottom: 0;
+    top: 70px;
     right: 15px;
   }
 }
