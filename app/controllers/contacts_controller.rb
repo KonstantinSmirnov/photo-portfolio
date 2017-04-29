@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
       flash[:success] = 'Email has been sent'
       redirect_to contact_path
     else
-      flash.now[:danger] = 'Please review errors'
+      flash.now[:danger] = 'Please check errors'
       render :show
     end
   end

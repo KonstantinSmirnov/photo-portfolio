@@ -99,4 +99,59 @@ feature 'CONTACT PAGE', js: true do
       expect(page).to have_selector('.flash-alert.flash-success', text: 'SUCCESSFULLY DELETED')
     end
   end
+
+  context 'Send a letter' do
+    let!(:contact) { FactoryGirl.create(:contact) }
+
+    before(:each) do
+      visit contact_path
+    end
+
+    scenario 'it fails without name' do
+      fill_in 'email_name', with: ''
+
+      click_button 'Send'
+
+      expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
+      expect(page).to have_selector('.email_name.has-error span.help-block', text: "can't be blank")
+    end
+
+    scenario 'it fails without email' do
+      fill_in 'email_email', with: ''
+
+      click_button 'Send'
+
+      expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
+      expect(page).to have_selector('.email_email.has-error span.help-block', text: "can't be blank")
+    end
+
+    scenario 'it fails without topic' do
+      fill_in 'email_topic', with: ''
+
+      click_button 'Send'
+
+      expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
+      expect(page).to have_selector('.email_topic.has-error span.help-block', text: "can't be blank")
+    end
+
+    scenario 'it fails without message' do
+      fill_in 'email_message', with: ''
+
+      click_button 'Send'
+
+      expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
+      expect(page).to have_selector('.email_message.has-error span.help-block', text: "can't be blank")
+    end
+
+    scenario 'it sends if all data is provided' do
+      fill_in 'email_name', with: 'test name'
+      fill_in 'email_email', with: 'test@email.com'
+      fill_in 'email_topic', with: 'test topic'
+      fill_in 'email_message', with: 'test message'
+
+      click_button 'Send'
+
+      expect(page).to have_selector('.flash-alert.flash-success', text: 'EMAIL HAS BEEN SENT')
+    end
+  end
 end
