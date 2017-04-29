@@ -1,0 +1,7 @@
+<div id="project-<%= project.id %>">
+  <h3><%= project.title %></h3>
+  <p><%= project.description %></p>
+  <p>There is a gallery</p>
+  <%= link_to 'Show', admin_project_path(project), class: 'btn btn-default-light' %>
+  <%= link_to 'Delete', admin_project_path(project), class: 'btn btn-default-light', method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+</div>

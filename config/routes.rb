@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'home#index'
-  get 'home/index', as: 'index'
+  get '/' => 'home#index'
+  get 'portfolio' => 'projects#index'
   get 'contact' => 'contacts#show'
   post 'contact' => 'contacts#create'
 
@@ -22,6 +23,10 @@ Rails.application.routes.draw do
     resource :instagram do
       get 'cancel' => 'instagrams#cancel'
       get 'access_token' => 'instagrams#access_token'
+    end
+    resources :projects do
+      get 'cancel' => 'projects#cancel'
+      resources :photos
     end
     resource :contact do
       get 'cancel' => 'contacts#cancel'

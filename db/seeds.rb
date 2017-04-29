@@ -8,6 +8,6 @@
 
 admin = User.create(
     email: 'test@test.com',
-    password: 'password',
-    password_confirmation: 'password'
+    password: '123123',
+    password_confirmation: '123123'
 )

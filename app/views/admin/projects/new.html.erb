@@ -1,0 +1,8 @@
+<h3>New project</h3>
+
+<%= simple_form_for [:admin, @project], html: { autocomplete: 'off' } do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit 'Create', class: 'btn btn-default-light' %>
+  <%= link_to 'Back', admin_projects_path, class: 'btn btn-default-light' %>
+<% end %>

@@ -123,16 +123,21 @@ p {
   }
 }
 
-.simple_form.light {
+.simple_form {
   span.help-block {
     font-size: 10pt;
     color: red;
   }
   input.form-control, textarea.form-control {
     border-radius: 0px;
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+.simple_form.light {
+  input.form-control, textarea.form-control {
     border-color: $text-light;
     background-color: rgba(255, 255, 255, 0.2);
-    font-family: 'Raleway', sans-serif;
     color: $text-light;
     &::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }
     &:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }
