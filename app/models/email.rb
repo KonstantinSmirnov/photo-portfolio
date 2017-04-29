@@ -16,6 +16,10 @@ class Email
     end
   end
 
+  def send_contact_email
+    ContactMailer.new_contact_email(self).deliver
+  end
+
   def persisted?
     false
   end
