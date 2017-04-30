@@ -78,7 +78,7 @@ $text-medium: #CCC;
     line-height: 1;
 
     opacity: .75;
-    color: $primary;
+    color: $text-medium;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -125,7 +125,7 @@ $text-medium: #CCC;
 /* Dots */
 .slick-dotted.slick-slider
 {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .slick-dots
@@ -142,6 +142,7 @@ $text-medium: #CCC;
     list-style: none;
 
     text-align: center;
+    background-color: $text-light;
 }
 .slick-dots li
 {

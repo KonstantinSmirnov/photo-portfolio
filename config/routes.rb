@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  resources :projects, only: [:index, :show]
+
   namespace :admin do
     get 'dashboard' => 'dashboard#index'
     get 'account' => 'account#index'
@@ -29,7 +31,7 @@ Rails.application.routes.draw do
       resources :photos
       delete 'remove_new_photo' => 'photos#remove_new_form'
     end
-    
+
     resource :contact do
       get 'cancel' => 'contacts#cancel'
     end

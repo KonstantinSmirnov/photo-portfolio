@@ -18,5 +18,23 @@ jQuery(document).on 'turbolinks:load', ->
     dots: true;
     infinite: true,
     slidesToShow: 5,
-    slidesToScroll: 5
+    slidesToScroll: 5,
+    variableWidth: true
     });
+  $('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider-nav'
+  });
+  $('.slider-nav').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    infinite: true,
+    asNavFor: '.slider-for',
+    #dots: true,
+    centerMode: true,
+    focusOnSelect: true,
+    variableWidth: true
+  });
