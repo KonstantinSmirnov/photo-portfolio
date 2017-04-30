@@ -26,6 +26,9 @@ Rails.application.routes.draw do
       get 'cancel' => 'instagrams#cancel'
       get 'access_token' => 'instagrams#access_token'
     end
+    resource :portfolio do
+      get 'cancel' => 'portfolios#cancel'
+    end
     resources :projects do
       get 'cancel' => 'projects#cancel'
       resources :photos
