@@ -1,19 +1,17 @@
 class Admin::ProjectsController < AdminController
 
-  def index
-    @projects = Project.all
-  end
-
   def show
     @project = Project.find(params[:id])
   end
 
   def new
-    @project = Project.new
+    @portfolio = Portfolio.first
+    @project = @portfolio.projects.new
   end
 
   def create
-    @project = Project.new(project_params)
+    @portfolio = Portfolio.first
+    @project = @portfolio.projects.new(project_params)
 
     if @project.save
       flash[:success] = "Project has been created"

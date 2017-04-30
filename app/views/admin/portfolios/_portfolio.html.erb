@@ -1,14 +1,22 @@
 <% if !@portfolio.nil? %>
   <div class="row">
     <div class="col-md-12">
-      <h2><%= @portfolio.title %></h2>
-      <h5><%= @portfolio.home_title %></h5>
+      <h3>Title: <%= @portfolio.title %></h3>
+      <h3>Home page title: <%= @portfolio.home_title %></h3>
       <p><%= simple_format @portfolio.description %></p>
     </div>
   </div>
-  <hr>
   <%= link_to 'Edit', edit_admin_portfolio_path, remote: true, class: 'btn btn-default-light' %>
   <%= link_to 'Delete', admin_portfolio_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
+  <hr>
+  <h3>Projects</h3>
+  <%= link_to 'Add project', new_admin_project_path, class: 'btn btn-default-light' %>
+  <hr>
+  <div id="projects">
+    <% @portfolio.projects.each do |project| %>
+      <%= render partial: 'admin/projects/project', locals: { project: project } %>
+    <% end %>
+  </div>
 <% else %>
   <h3>Page is not created</h3>
   <%= link_to 'Create', new_admin_portfolio_path, class: 'btn btn-default-light', remote: true %>

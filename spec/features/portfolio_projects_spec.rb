@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'PORTFOLIO PROJECTS', js: true do
   let(:admin) { FactoryGirl.create(:admin) }
+  let!(:portfolio) { FactoryGirl.create(:portfolio) }
 
   before(:each) do
     log_in_with(admin.email, 'password')
@@ -9,14 +10,14 @@ feature 'PORTFOLIO PROJECTS', js: true do
 
   context 'Add project' do
     before(:each) do
-      visit admin_projects_path
+      visit admin_portfolio_path
       click_link 'Add project'
     end
 
     scenario 'it has a button to go back to the list' do
       click_link 'Back'
 
-      expect(current_path).to eq(admin_projects_path)
+      expect(current_path).to eq(admin_portfolio_path)
       expect(page).to have_selector('h3', text: 'PROJECTS')
     end
 
@@ -50,10 +51,10 @@ feature 'PORTFOLIO PROJECTS', js: true do
   end
 
   context 'See and delete project' do
-    let!(:project) { FactoryGirl.create(:project) }
+    let!(:project) { FactoryGirl.create(:project, portfolio: portfolio) }
 
     before(:each) do
-      visit admin_projects_path
+      visit admin_portfolio_path
     end
 
     scenario 'it has show button on index page' do
@@ -63,7 +64,9 @@ feature 'PORTFOLIO PROJECTS', js: true do
     end
 
     scenario 'it has delete button on index page' do
-      click_link 'Delete'
+      within "#projects" do
+        first(:link, "Delete").click
+      end
       page.driver.browser.switch_to.alert.accept
 
       expect(page).to have_selector('.flash-alert.flash-success', text: 'PROJECT HAS BEEN DELETED')

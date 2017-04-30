@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get '/' => 'home#index'
-  get 'portfolio' => 'projects#index'
+  get 'portfolio' => 'portfolios#show'
   get 'contact' => 'contacts#show'
   post 'contact' => 'contacts#create'
 
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  resources :projects, only: [:index, :show]
+  resources :projects, only: [:show]
 
   namespace :admin do
     get 'dashboard' => 'dashboard#index'

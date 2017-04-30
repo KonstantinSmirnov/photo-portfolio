@@ -58,6 +58,26 @@ feature 'PORTFOLIO', js: true do
 
       expect(page).to have_selector('h3', text: 'PAGE IS NOT CREATED')
     end
+
+    scenario 'is not visible if not created' do
+      visit root_path
+
+      expect(page).not_to have_selector('a.nav-link', text: 'PORTFOLIO')
+    end
+
+    scenario 'is visible if created' do
+      portfolio = FactoryGirl.create(:portfolio)
+
+      visit root_path
+
+      expect(page).to have_selector('a.nav-link', text: 'PORTFOLIO')
+      expect(page).to have_selector('h2', text: portfolio.home_title.upcase)
+
+      visit portfolio_path
+
+      expect(page).to have_selector('h2', text: portfolio.title.upcase)
+      expect(page).to have_selector('p', text: portfolio.description)
+    end
   end
 
   context 'Update portfolio page' do

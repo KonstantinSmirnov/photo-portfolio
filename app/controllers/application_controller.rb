@@ -5,5 +5,6 @@ class ApplicationController < ActionController::Base
 
   def login_header_items
     @contact = Contact.first
+    @portfolio = Portfolio.first
   end
 end

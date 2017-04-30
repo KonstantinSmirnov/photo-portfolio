@@ -2,7 +2,8 @@ require 'rails_helper'
 
 feature 'PORTFOLIO PHOTO', js: true do
   let(:admin) { FactoryGirl.create(:admin) }
-  let!(:project) { FactoryGirl.create(:project) }
+  let!(:portfolio) { FactoryGirl.create(:portfolio) }
+  let!(:project) { FactoryGirl.create(:project, portfolio: portfolio) }
 
   before(:each) do
     log_in_with(admin.email, 'password')
