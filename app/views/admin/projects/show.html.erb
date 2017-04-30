@@ -1,3 +1,15 @@
 <div id="project-data">
   <%= render 'project_data' %>
 </div>
+
+<hr>
+
+<h3>Photos</h3>
+
+<div id="project-photos">
+  <% @project.photos.each do |photo| %>
+    <%= render partial: 'admin/photos/show', locals: { object: photo } %>
+  <% end %>
+</div>
+
+<%= link_to 'Add', new_admin_project_photo_path(@project), class: 'btn btn-default-light', remote: true %>

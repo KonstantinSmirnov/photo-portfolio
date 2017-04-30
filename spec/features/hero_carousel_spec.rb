@@ -61,7 +61,7 @@ feature 'HERO CAROUSEL', js: true do
 
       click_link 'Cancel'
 
-      expect(page).not_to have_text('CREATE')
+      expect(page).not_to have_text('CANCEL')
     end
   end
 

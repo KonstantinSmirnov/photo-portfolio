@@ -1,0 +1,2 @@
+$("#photo-<%= params[:photo_id] %>").replaceWith("<%= escape_javascript(render 'new', object: @photo) %>");
+$("#flash").html("<%= escape_javascript(render 'shared/flash') %>");

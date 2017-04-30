@@ -1,0 +1,11 @@
+<div class="col-12 col-sm-5 col-lg-4">
+  <%= image_tag @photo.image.url(:thumb), class: 'img-fluid' %>
+</div>
+<div class="col-12 col-sm-7 col-lg-8">
+  <%= simple_form_for @photo, url: admin_project_photo_path(@photo), remote: true do |f| %>
+    <%= f.input :image, as: :file %>
+    <%= f.input :alt, label: false, placeholder: 'Alt text' %>
+    <%= f.submit 'Update', class: 'btn btn-default-light' %>
+    <%= link_to 'Cancel', admin_project_photo_path(@photo), remote: true, class: 'btn btn-default-light' %>
+  <% end %>
+</div>

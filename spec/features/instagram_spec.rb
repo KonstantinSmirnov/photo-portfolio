@@ -31,14 +31,14 @@ feature "INSTGRAM", js: true do
       expect(page).to have_text(control_text)
     end
 
-    scenario 'added instagram section is visible on home page' do
+    scenario 'added instagram section is invisible on home page without authorization' do
       text = 'test text line'
       fill_in 'instagram_text', with: text
       click_button 'Create Instagram'
 
       visit root_path
 
-      expect(page).to have_selector('p', text: text, visible: false)
+      expect(page).not_to have_selector('p', text: text, visible: false)
     end
 
     scenario 'it has cancel button' do

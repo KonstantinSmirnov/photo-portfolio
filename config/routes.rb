@@ -27,7 +27,9 @@ Rails.application.routes.draw do
     resources :projects do
       get 'cancel' => 'projects#cancel'
       resources :photos
+      delete 'remove_new_photo' => 'photos#remove_new_form'
     end
+    
     resource :contact do
       get 'cancel' => 'contacts#cancel'
     end
