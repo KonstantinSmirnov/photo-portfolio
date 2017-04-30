@@ -1,6 +1,6 @@
 jQuery(document).on 'turbolinks:load', ->
   $('#hero-slider').slick({
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 2000,
     fade: true,
@@ -13,4 +13,10 @@ jQuery(document).on 'turbolinks:load', ->
     infinite: true,
     speed: 1000,
     autoplay: true
+    });
+  $('.project-gallery').slick({
+    dots: true;
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 5
     });
