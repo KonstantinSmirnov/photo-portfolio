@@ -1,5 +1,22 @@
 <div class="row">
   <div id="portfolio-page">
-    <h2>There are different portfolios</h2>
+    <div class="col-12">
+      <h2 class="text-center">This is my portfolio</h2>
+      <p>Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue.</p>
+    </div>
+    <div class="col-sm-12" id="projects-section">
+      <div class="row">
+        <% @projects.each do |project| %>
+          <div class="col-sm-3 project-preview">
+            <%= link_to project_path(project) do %>
+              <div class="overlay">
+                <h3 class="text-center"><%= project.title %></h3>
+              </div>
+            <% end %>
+            <%= image_tag project.photos.first.image.url(:thumb), class: 'img-fluid', alt: project.photos.first.alt %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

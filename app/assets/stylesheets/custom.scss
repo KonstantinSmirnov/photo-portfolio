@@ -313,7 +313,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
 /* ===================== END ABOUT ME ========================= */
 
 /* ===================== RECENT PROJECTS ====================== */
-#recent-projects-section {
+#projects-section {
   display: block;
   width: 100%;
   background-color: $text-dark;
@@ -362,6 +362,9 @@ nav .navbar-nav .nav-item.active a.nav-link {
   }
 }
 /* ========== PORTFOLIO PAGE */
+#portfolio-page {
+  margin-top: 70px;
+}
 #project-page {
   width: 100%;
   height: 100%;
