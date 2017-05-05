@@ -1,0 +1,15 @@
+<div class="row opinion-new" id="opinion-<%= @opinion.id %>">
+  <div class="col-12 col-sm-5 col-lg-4">
+    <%= image_tag 'default_image.png', class: 'img-fluid' %>
+  </div>
+  <div class="col-12 col-sm-7 col-lg-8">
+    <%= simple_form_for @opinion, url: admin_opinions_path(opinion_id: @opinion.id), remote: true, authenticity_token: true do |f| %>
+      <%= f.input :image, as: :file %>
+      <%= f.input :text, label: false, placeholder: 'Text', input_html: { class: 'textarea-resizable' } %>
+      <%= f.input :author, label: false, placeholder: 'Author' %>
+      <%= f.submit 'Create', class: 'btn btn-default-light' %>
+      <%= link_to 'Cancel', admin_remove_new_opinion_form_path(opinion_id: @opinion.id), method: :delete, remote: true, class: 'btn btn-default-light' %>
+    <% end %>
+
+  </div>
+</div>

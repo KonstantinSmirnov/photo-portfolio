@@ -10,7 +10,6 @@ RSpec.describe Photo, type: :model do
 
   it 'is invalid without alt text' do
     photo = FactoryGirl.build(:photo, alt: '')
-    photo.alt = ''
 
     expect(photo).to be_invalid
     expect(photo.errors[:alt]).to include("can't be blank")
@@ -18,7 +17,6 @@ RSpec.describe Photo, type: :model do
 
   it 'is invalid without image' do
     photo = FactoryGirl.build(:photo, image: '')
-    photo.image = ''
 
     expect(photo).to be_invalid
     expect(photo.errors[:image]).to include("can't be blank")

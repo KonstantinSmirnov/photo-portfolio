@@ -41,7 +41,7 @@ RSpec.describe Portfolio, type: :model do
     end
 
     it 'is invalid without home title' do
-      portfolio.title = ''
+      portfolio.home_title = ''
 
       expect(portfolio).to be_invalid
       expect(portfolio.errors[:home_title]).to include("can't be blank")

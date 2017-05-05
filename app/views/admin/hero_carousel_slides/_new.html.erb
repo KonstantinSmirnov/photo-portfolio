@@ -8,7 +8,7 @@
       <%= f.input :title, label: false, placeholder: 'Title' %>
       <%= f.input :subtitle, label: false, placeholder: 'Subtitle' %>
       <%= f.submit 'Create', class: 'btn btn-default-light' %>
-      <%= link_to 'Cancel', admin_remove_new_form_path(slide_id: @hero_carousel_slide.id), method: :delete, remote: true, class: 'btn btn-default-light' %>
+      <%= link_to 'Cancel', admin_remove_new_slide_form_path(slide_id: @hero_carousel_slide.id), method: :delete, remote: true, class: 'btn btn-default-light' %>
     <% end %>
 
   </div>

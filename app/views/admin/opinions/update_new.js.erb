@@ -1,0 +1,2 @@
+$("#opinion-<%= params[:opinion_id] %>").replaceWith("<%= escape_javascript(render 'new', object: @opinion) %>");
+$("#flash").html("<%= escape_javascript(render 'shared/flash') %>");

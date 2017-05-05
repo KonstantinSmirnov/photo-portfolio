@@ -68,46 +68,28 @@
   <!-- END RECENT PROJECTS -->
 
   <!-- OPINIONS -->
-  <div class="row">
-    <div id="slick-opinions-header">
-      <h2 class="text-center">Opinions</h2>
-    </div>
-      <div id="opinions-section">
-        <div class="opinion">
-          <div class="col-md-12">
-            <div class="col-12 col-md-4">
-              <img class="img-fluid mx-auto d-block" src="https://z-1-scontent-fra3-1.xx.fbcdn.net/v/t1.0-9/13428458_1089272627811513_7023440657904062519_n.jpg?oh=27d2333d7d6208727a3c802f37e4e4c4&oe=59869FE7" alt="">
-            </div>
-            <div class="col-md-8">
-              <p>Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-              <i>Magna Adipiscing</i>
-            </div>
-          </div>
-        </div>
-        <div class="opinion">
-          <div class="col-md-12">
-            <div class="col-12 col-md-4">
-              <img class="img-fluid mx-auto d-block" src="https://z-1-scontent-fra3-1.xx.fbcdn.net/v/t1.0-9/13718788_1117513431654099_2236134438050820268_n.jpg?oh=9fb71bbd24e15250273a5e173e11dfc6&oe=5985E163" alt="">
-            </div>
-            <div class="col-md-8">
-              <p>Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vestibulum id ligula porta felis euismod semper.</p>
-              <i>Mattis Ullamcorper</i>
-            </div>
-          </div>
-        </div>
-        <div class="opinion">
-          <div class="col-md-12">
-            <div class="col-12 col-md-4">
-              <img class="img-fluid mx-auto d-block" src="https://z-1-scontent-fra3-1.xx.fbcdn.net/v/t1.0-9/14517524_1245752005496907_5808567290812415914_n.jpg?oh=687cbd192856c31aae90da0c04fcb31a&oe=598CE09D" alt="">
-            </div>
-            <div class="col-md-8">
-              <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-              <i>Tristique</i>
-            </div>
-          </div>
-        </div>
+  <% if @opinions.any? %>
+    <div class="row">
+      <div id="slick-opinions-header">
+        <h2 class="text-center">Opinions</h2>
       </div>
-  </div>
+      <div id="opinions-section">
+        <% @opinions.each do |opinion| %>
+          <div class="opinion">
+            <div class="col-md-12">
+              <div class="col-12 col-md-4">
+                <%= image_tag opinion.image.url(:thumb), class: 'img-fluid mx-auto d-block' %>
+              </div>
+              <div class="col-md-8">
+                <p><%= opinion.text %></p>
+                <i><%= opinion.author %></i>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
   <!-- END OPINIONS -->
 
   <!-- INSTAGRAM -->

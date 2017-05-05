@@ -1,0 +1,9 @@
+<h3>Opinions</h3>
+
+<%= link_to 'Add', new_admin_opinion_path, remote: true, class: 'btn btn-default-light' %>
+<hr>
+<div id="opinions-list">
+  <% @opinions.each do |opinion| %>
+    <%= render 'show', object: opinion %>
+  <% end %>
+</div>

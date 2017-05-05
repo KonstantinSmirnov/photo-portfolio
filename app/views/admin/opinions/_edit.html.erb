@@ -1,0 +1,12 @@
+<div class="col-12 col-sm-5 col-lg-4">
+  <%= image_tag @opinion.image.url(:thumb), class: 'img-fluid' %>
+</div>
+<div class="col-12 col-sm-7 col-lg-8">
+  <%= simple_form_for @opinion, url: admin_opinion_path(@opinion), remote: true do |f| %>
+    <%= f.input :image, as: :file %>
+    <%= f.input :text, label: false, placeholder: 'Text', input_html: { class: 'textarea-resizable' } %>
+    <%= f.input :author, label: false, placeholder: 'Subtitle' %>
+    <%= f.submit 'Update', class: 'btn btn-default-light' %>
+    <%= link_to 'Cancel', admin_opinion_path(@opinion), remote: true, class: 'btn btn-default-light' %>
+  <% end %>
+</div>

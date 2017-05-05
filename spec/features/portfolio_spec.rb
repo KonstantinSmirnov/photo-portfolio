@@ -28,7 +28,7 @@ feature 'PORTFOLIO', js: true do
       fill_in 'portfolio_home_title', with: ''
       fill_in 'portfolio_description', with: 'some text'
       click_button 'Create Portfolio'
-
+      
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
       expect(page).to have_selector('.portfolio_home_title.has-error span.help-block', text: "can't be blank")
     end
@@ -131,7 +131,7 @@ feature 'PORTFOLIO', js: true do
     scenario 'it has cancel button' do
       click_link 'Cancel'
 
-      expect(page).to have_selector('h2', text: portfolio.title.upcase)
+      expect(page).to have_selector('h3', text: portfolio.title.upcase)
     end
 
     scenario 'delete about section' do
