@@ -2,8 +2,8 @@
   <div id="project-page">
     <div class="slider-for">
       <% @project.photos.each do |photo| %>
-        <div>
-          <%= image_tag photo.image.url(:cover), class: 'img-fluid slider-cover-photo' %>
+        <div class="slider-cover-photo">
+          <%= image_tag photo.image.url(:cover), class: '' %>
         </div>
       <% end %>
     </div>
