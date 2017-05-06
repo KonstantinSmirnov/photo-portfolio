@@ -12,14 +12,10 @@ jQuery(document).on 'turbolinks:load', ->
     offset: 100
   });
 
-  $('#projects-section .project-preview').addClass('hidden').viewportChecker({
+  $('#projects-section .project-preview.animated').addClass('hidden').viewportChecker({
     classToAdd: 'visible animated slideInUp',
     offset: 100
   });
-  # $('#recent-projects-section .project-preview.right').addClass('hidden').viewportChecker({
-  #   classToAdd: 'visible animated fadeInRight',
-  #   offset: 100
-  # });
 
   $('#instagram-section .capture').addClass('hidden').viewportChecker({
     classToAdd: 'visible animated slideInUp',
