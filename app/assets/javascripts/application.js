@@ -19,36 +19,3 @@
 //= require turbolinks
 //= require viewportchecker
 //= require_tree .
-
-// делаем хак для мобильных устройств Apple
-if (navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.platform == 'iPod')
-    {
-
-      // вешаем хэндлер на скролл
-      window.onscroll = function()
-      {
-        // высчитываем значение текущей прокрутки позиции
-        var iPadPosition = window.pageYOffset;
-
-        // изменяем фиксированное позиционирование на абсолютное
-        $(".about-portrait").css("position", "absolute");
-
-       //  изменяем значение позиционирования от верха
-        $(".about-portrait").css("top", iPadPosition);
-      };
-
-      // вешаем хэндлер на прикосновение пальцем к экрану
-      window.ontouchstart = function ()
-      {
-        // возвращаем фиксированное позиционирование
-        $(".about-portrait").css("position", "fixed");
-        // возвращаем значение позиционирования от верха
-        $(".about-portrait").css("top", "0");
-      };
-
-      // вешаем хэндлер на "убирание" пальца с экрана
-      window.ontouchend = function () {
-        // возвращаем фиксированное позиционирование
-        $(".about-portrait").css("position", "fixed");
-      };
-    }
