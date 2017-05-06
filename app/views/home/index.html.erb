@@ -25,8 +25,9 @@
     <div class="row">
       <div id="about-me-section">
         <div class="col-md-12">
-          <%= image_tag @about.portrait.url(:normal), class: 'portrait' %>
-
+          <div class="about-portrait">
+            <%= image_tag @about.portrait.url(:normal) %>
+          </div>
           <div class="offset-md-5 description">
             <h2 class="text-center"><%= @about.title %></h2>
             <p><%= simple_format @about.text %></p>
