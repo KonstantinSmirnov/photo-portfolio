@@ -277,9 +277,11 @@ nav .navbar-nav .nav-item.active a.nav-link {
   div.project-preview {
     padding: 0;
     margin: 0;
+    overflow: hidden;
     img {
       width: 100%;
       height: auto;
+      min-height: 100%;
     }
     .overlay {
       display: none;
