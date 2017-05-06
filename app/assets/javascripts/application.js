@@ -19,11 +19,3 @@
 //= require turbolinks
 //= require viewportchecker
 //= require_tree .
-
-// Add image class depend on its orientation
-$(window).load(function(){
- $('.slider-for').find('img').each(function(){
-  var imgClass = (this.width/this.height > 1) ? 'wide' : 'tall';
-  $(this).addClass(imgClass);
- })
-})

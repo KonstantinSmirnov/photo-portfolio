@@ -3,7 +3,7 @@
     <div class="slider-for">
       <% @project.photos.each do |photo| %>
         <div class="slider-cover-photo">
-          <%= image_tag photo.image.url(:cover), class: '' %>
+          <%= image_tag photo.image.url(:cover) %>
         </div>
       <% end %>
     </div>
