@@ -1,4 +1,4 @@
-<%= simple_form_for @about, url: admin_about_path, remote: true do |f| %>
+<%= simple_form_for @about, url: admin_about_path, html: { autocomplete: 'off' }, remote: true do |f| %>
   <%= f.input :title %>
   <%= f.input :text, input_html: { class: 'textarea-resizable' } %>
   <%= f.input :portrait, as: :file %>

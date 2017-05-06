@@ -3,7 +3,7 @@
     <%= image_tag 'default_image.png', class: 'img-fluid' %>
   </div>
   <div class="col-12 col-sm-7 col-lg-8">
-    <%= simple_form_for @opinion, url: admin_opinions_path(opinion_id: @opinion.id), remote: true, authenticity_token: true do |f| %>
+    <%= simple_form_for @opinion, url: admin_opinions_path(opinion_id: @opinion.id), html: { autocomplete: 'off' }, remote: true, authenticity_token: true do |f| %>
       <%= f.input :image, as: :file %>
       <%= f.input :text, label: false, placeholder: 'Text', input_html: { class: 'textarea-resizable' } %>
       <%= f.input :author, label: false, placeholder: 'Author' %>

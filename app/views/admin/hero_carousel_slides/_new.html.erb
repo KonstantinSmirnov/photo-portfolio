@@ -3,7 +3,7 @@
     <%= image_tag 'default_image.png', class: 'img-fluid' %>
   </div>
   <div class="col-12 col-sm-7 col-lg-8">
-    <%= simple_form_for @hero_carousel_slide, url: admin_hero_carousel_slides_path(slide_id: @hero_carousel_slide.id), remote: true, authenticity_token: true do |f| %>
+    <%= simple_form_for @hero_carousel_slide, url: admin_hero_carousel_slides_path(slide_id: @hero_carousel_slide.id), html: { autocomplete: 'off' }, remote: true, authenticity_token: true do |f| %>
       <%= f.input :image, as: :file %>
       <%= f.input :title, label: false, placeholder: 'Title' %>
       <%= f.input :subtitle, label: false, placeholder: 'Subtitle' %>
