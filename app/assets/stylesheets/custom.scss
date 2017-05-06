@@ -247,6 +247,18 @@ nav .navbar-nav .nav-item.active a.nav-link {
     height: 90%;
     z-index: -1;
     background-attachment:fixed;
+    /* Extra small */
+    @media only screen and (max-width : 480px) {
+      width: 100vw;
+      height: auto;
+      bottom: -10px;
+    }
+    /* Small */
+    @media only screen and (max-width : 768px) {
+      width: 70vw;
+      height: auto;
+      bottom: -100px;
+    }
   }
   .description {
     background-color: rgba(255,255,255,0.7);
