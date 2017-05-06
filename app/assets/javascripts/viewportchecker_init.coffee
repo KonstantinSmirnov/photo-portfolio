@@ -1,19 +1,19 @@
 jQuery(document).on 'turbolinks:load', ->
   $('#about-me-section .description h2').addClass('hidden').viewportChecker({
-    classToAdd: 'visible magictime slideUpReturn',
+    classToAdd: 'visible animated slideInUp',
     offset: 100
   });
   $('#about-me-section .description p').addClass('hidden').viewportChecker({
-    classToAdd: 'visible magictime slideRightReturn',
+    classToAdd: 'visible animated slideInUp',
     offset: 100
   });
   $('#about-me-section .description img').addClass('hidden').viewportChecker({
-    classToAdd: 'visible magictime slideDownReturn',
+    classToAdd: 'visible animated slideInUp',
     offset: 100
   });
 
   $('#projects-section .project-preview').addClass('hidden').viewportChecker({
-    classToAdd: 'visible magictime vanishIn',
+    classToAdd: 'visible animated slideInUp',
     offset: 100
   });
   # $('#recent-projects-section .project-preview.right').addClass('hidden').viewportChecker({
@@ -22,10 +22,6 @@ jQuery(document).on 'turbolinks:load', ->
   # });
 
   $('#instagram-section .capture').addClass('hidden').viewportChecker({
-    classToAdd: 'visible magictime slideUpReturn',
-    offset: 100
-    });
-  $('#instagram-section .gallery img').addClass('hidden').viewportChecker({
-    classToAdd: 'visible magictime perspectiveRightReturn',
+    classToAdd: 'visible animated slideInUp',
     offset: 100
     });
