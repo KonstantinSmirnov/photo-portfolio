@@ -35,7 +35,7 @@ if (navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.
 
        //  изменяем значение позиционирования от верха
         $(".about-portrait").css("top", iPadPosition);
-      }
+      };
 
       // вешаем хэндлер на прикосновение пальцем к экрану
       window.ontouchstart = function ()
@@ -44,10 +44,11 @@ if (navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.
         $(".about-portrait").css("position", "fixed");
         // возвращаем значение позиционирования от верха
         $(".about-portrait").css("top", "0");
-      }
+      };
 
       // вешаем хэндлер на "убирание" пальца с экрана
       window.ontouchend = function () {
         // возвращаем фиксированное позиционирование
         $(".about-portrait").css("position", "fixed");
-      }
+      };
+    }
