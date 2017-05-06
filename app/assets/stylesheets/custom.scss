@@ -251,13 +251,13 @@ nav .navbar-nav .nav-item.active a.nav-link {
     @media only screen and (max-width : 480px) {
       width: 100vw;
       height: auto;
-      bottom: -10px;
+      //bottom: -10px;
     }
     /* Small */
     @media only screen and (max-width : 768px) {
       width: 70vw;
       height: auto;
-      bottom: -100px;
+      //bottom: -100px;
     }
   }
   .description {
