@@ -264,6 +264,8 @@ nav .navbar-nav .nav-item.active a.nav-link {
       height: auto;
     }
     &.vertical {
+      left: 0px;
+      bottom: -30px;
       width: 100vw;
       height: auto;
     }
