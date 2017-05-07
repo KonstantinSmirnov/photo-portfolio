@@ -7,7 +7,7 @@
     <div class="col-sm-12" id="projects-section">
       <div class="row">
         <% @portfolio.projects.each do |project| %>
-          <div class="col-sm-3 project-preview">
+          <div class="col-6 col-md-3 project-preview">
             <%= link_to project_path(project) do %>
               <div class="overlay">
                 <h3 class="text-center"><%= project.title %></h3>
