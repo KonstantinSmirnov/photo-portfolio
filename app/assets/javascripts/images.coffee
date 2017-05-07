@@ -4,8 +4,3 @@ jQuery(document).on 'turbolinks:load', ->
   $('.project-preview').css('height', $('.project-preview').width()*2/3)
   if window.innerHeight > window.innerWidth
     $('.about-portrait img').addClass('vertical')
-
-#
-# if(window.innerHeight > window.innerWidth){
-#     alert("Please use Landscape!");
-# }
