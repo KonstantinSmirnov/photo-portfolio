@@ -100,11 +100,14 @@
           </div>
         </div>
         <div class="col-md-8 gallery">
-          <% @last_instagram_fotos.each do |instagram_foto| %>
+          <% @last_instagram_fotos[0...-1].each do |instagram_foto| %>
             <div class="col-6 col-md-4 col-lg-3">
               <a href="<%= instagram_foto[0][:link] %>" target="_blank"><%= image_tag instagram_foto[0][:image], class: 'img-fluid instagram-image' %></a>
             </div>
           <% end %>
+          <div class="col-6 col-md-4 col-lg-3 hidden-sm-down hidden-lg-up">
+            <a href="<%= @last_instagram_fotos.last[0][:link] %>" target="_blank"><%= image_tag @last_instagram_fotos.last[0][:image], class: 'img-fluid instagram-image' %></a>
+          </div>
         </div>
     </div>
   <% end %>
