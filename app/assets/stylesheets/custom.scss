@@ -585,9 +585,10 @@ footer {
     line-height: 1;
   }
   div.creator {
+    clear: both;
     position: relative;
     float: right;
-    margin-top: 10px;
+    margin-top: 5px;
     a {
       color: #00A4B2;
     }
