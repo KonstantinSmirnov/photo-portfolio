@@ -211,16 +211,24 @@ nav .navbar-nav .nav-item.active a.nav-link {
       float: left;
       background-color: $text-light;
       padding: 5px;
+      @media (max-width : 480px) {
+        font-size: 14pt;
+        padding: 2px;
+      }
     }
     p {
       clear: both;
       float: left;
-      font-size: 24pt;
+      font-size: 20pt;
       text-transform: uppercase;
       background-color: $text-dark;
       color: $text-medium;
       font-family: 'Ropa Sans', sans-serif;
       padding: 5px;
+      @media (max-width : 480px) {
+        font-size: 14pt;
+        padding: 2px;
+      }
     }
   }
 }
