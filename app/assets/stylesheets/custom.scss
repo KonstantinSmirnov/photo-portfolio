@@ -538,9 +538,9 @@ nav .navbar-nav .nav-item.active a.nav-link {
   #contact-form {
     display: block;
     width: 100vw;
-    min-height: calc(100vh - 95px);
+    min-height: calc(100vh - 90px);
     padding-top: 75px;
-    padding-bottom: 35px;
+    //padding-bottom: 15px;
     h2, p, form {
       color: $text-light;
     }
@@ -587,7 +587,7 @@ footer {
   div.creator {
     position: relative;
     float: right;
-    margin-top: 30px;
+    margin-top: 10px;
     a {
       color: #00A4B2;
     }
