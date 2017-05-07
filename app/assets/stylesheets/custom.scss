@@ -237,9 +237,6 @@ nav .navbar-nav .nav-item.active a.nav-link {
 #about-me-section {
   display: block;
   width: 100%;
-  height: auto;
-  min-height: 70vh;
-
   .about-portrait img {
     position: fixed;
     bottom: -10px;
@@ -262,7 +259,8 @@ nav .navbar-nav .nav-item.active a.nav-link {
   }
   .description {
     background-color: rgba(255,255,255,0.7);
-    padding: 10px;
+    padding: 10px 30px;
+    min-height: 70vh;
     text-align: justify;
     img.signature {
       margin-top: 30px;
@@ -452,7 +450,9 @@ nav .navbar-nav .nav-item.active a.nav-link {
   height: auto;
   background-color: $text-dark;
   padding-top: 35px;
-  padding-bottom: 35px;
+  @media (min-width: 766px) {
+    padding-bottom: 35px;
+  }
   .row {
     width: 100%;
   }
@@ -476,7 +476,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
       text-align: justify;
       margin-bottom: 20px;
     }
-    button {
+    a.btn {
       margin-bottom: 35px;
     }
   }

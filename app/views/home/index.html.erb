@@ -24,7 +24,7 @@
   <% if @about %>
     <div class="row">
       <div id="about-me-section">
-        <div class="col-md-12">
+        <div class="">
           <div class="about-portrait">
             <%= image_tag @about.portrait.url(:normal) %>
           </div>
@@ -49,7 +49,7 @@
           <h2 class="text-center"><%= @portfolio.home_title %></h2>
           <div class="row">
             <% @portfolio.projects.each do |project| %>
-              <div class="col-sm-3 project-preview animated">
+              <div class="col-6 col-md-3 project-preview animated">
                 <%= link_to project_path(project) do %>
                   <div class="overlay">
                     <h3 class="text-center"><%= project.title %></h3>
@@ -105,7 +105,7 @@
         </div>
         <div class="col-md-8 gallery">
           <% @last_instagram_fotos.each do |instagram_foto| %>
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-6 col-md-4 col-lg-3">
               <a href="<%= instagram_foto[0][:link] %>" target="_blank"><%= image_tag instagram_foto[0][:image], class: 'img-fluid instagram-image' %></a>
             </div>
           <% end %>
