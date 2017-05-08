@@ -1,9 +1,3 @@
-  <!-- PAGE OVERLAY -->
-  <div id="page-overlay">
-
-  </div>
-  <!-- END PAGE OVERLAY -->
-
   <!-- SECTION HERO SLIDER -->
   <div class="row">
     <div id="hero-slider">
@@ -48,7 +42,7 @@
         <h2 class="text-center"><%= @portfolio.home_title %></h2>
         <% @portfolio.projects.each do |project| %>
           <div class="col-6 col-md-3 project-preview animated">
-            <%= link_to project_path(project) do %>
+            <%= link_to project_path(project, go_back_page: 'home_page') do %>
               <div class="overlay">
                 <h3 class="text-center"><%= project.title %></h3>
               </div>

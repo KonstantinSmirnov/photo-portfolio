@@ -1,33 +1,31 @@
-<div class="row">
-  <nav class="navbar transparent fixed-top navbar-toggleable-md navbar-inverse">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <%= link_to 'Novikov Dvinsky', root_path, class: 'navbar-brand' %>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item <%= is_active?('home') %>">
-          <%= link_to 'Home', root_path, class: 'nav-link' %>
+<nav class="navbar transparent fixed-top navbar-toggleable-md navbar-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= link_to 'Novikov Dvinsky', root_path, class: 'navbar-brand' %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item <%= is_active?('home') %>">
+        <%= link_to 'Home', root_path, class: 'nav-link' %>
+      </li>
+      <% if @portfolio %>
+        <li class="nav-item <%= is_active?('portfolios') %> <%= is_active?('projects') %>">
+          <%= link_to 'Portfolio', portfolio_path, class: 'nav-link' %>
         </li>
-        <% if @portfolio %>
-          <li class="nav-item <%= is_active?('portfolios') %> <%= is_active?('projects') %>">
-            <%= link_to 'Portfolio', portfolio_path, class: 'nav-link' %>
-          </li>
-        <% end %>
-        <% if @contact %>
-          <li class="nav-item <%= is_active?('contacts') %>">
-            <%= link_to 'Contact', contact_path, class: 'nav-link' %>
-          </li>
-        <% end %>
-        <% if current_user %>
-          <li class="nav-item <%= is_active_namespace?('admin') %>">
-            <%= link_to 'Admin', admin_dashboard_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Log out', logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
-</div>
+      <% end %>
+      <% if @contact %>
+        <li class="nav-item <%= is_active?('contacts') %>">
+          <%= link_to 'Contact', contact_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+      <% if current_user %>
+        <li class="nav-item <%= is_active_namespace?('admin') %>">
+          <%= link_to 'Admin', admin_dashboard_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Log out', logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

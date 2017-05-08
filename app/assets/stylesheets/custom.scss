@@ -13,17 +13,6 @@ $text-dark: #1E1E1E;
 $text-light: #FFF;
 $text-medium: #CCC;
 
-// Page overlay
-#page-overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: $text-dark;
-  z-index: 999999;
-}
-
 // For animations when visible in viewport
 .hidden{
      opacity:0;
@@ -183,6 +172,13 @@ nav .navbar-nav .nav-item a.nav-link {
 
 nav .navbar-nav .nav-item.active a.nav-link {
   color: $primary;
+}
+
+// PROJECT NAVBAR
+#project_navbar {
+  a.nav-link {
+    background-color: rgba(30,30,30,0.5);
+  }
 }
 /* ===================== END NAVBAR ======================= */
 
@@ -577,6 +573,10 @@ footer {
     margin-bottom: 0;
     @media (max-width : 480px) {
       font-size: 14pt;
+    }
+    a {
+      text-decoration: none;
+      color: $text-dark;
     }
   }
   div.contacts {

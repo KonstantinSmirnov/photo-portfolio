@@ -13,4 +13,17 @@ module ApplicationHelper
     "https://api.instagram.com/oauth/authorize/?client_id=" + ENV['INSTAGRAM_CLIENT_ID'] + "&redirect_uri=" + redirect_uri + "&response_type=code"
   end
 
+  def is_portfolio_project?(controller)
+    true if controller.include?(params[:controller])
+  end
+
+  def go_back_link(page_from_params)
+    case page_from_params
+    when 'home_page'
+      link_to '< Home', root_path, class: 'nav-link'
+    when 'portfolio_page'
+      link_to '< Portfolio', portfolio_path, class: 'nav-link'
+    end
+  end
+
 end
