@@ -14,10 +14,4 @@ RSpec.describe Project, type: :model do
     expect(project.errors[:title]).to include("can't be blank")
   end
 
-  it "is invalid without description" do
-    project.description = ''
-
-    expect(project).to be_invalid
-    expect(project.errors[:description]).to include("can't be blank")
-  end
 end

@@ -23,25 +23,14 @@ feature 'PORTFOLIO PROJECTS', js: true do
 
     scenario 'it fails without title' do
       fill_in 'project_title', with: ''
-      fill_in 'project_description', with: 'test description'
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
       expect(page).to have_selector('.project_title.has-error span.help-block', text: "can't be blank")
     end
 
-    scenario 'it fails without description' do
-      fill_in 'project_title', with: 'test title'
-      fill_in 'project_description', with: ''
-      click_button 'Create'
-
-      expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.project_description.has-error span.help-block', text: "can't be blank")
-    end
-
     scenario 'it succeed with correct data' do
       fill_in 'project_title', with: 'test title'
-      fill_in 'project_description', with: 'test description'
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-success', text: 'PROJECT HAS BEEN CREATED')
@@ -96,17 +85,8 @@ feature 'PORTFOLIO PROJECTS', js: true do
       expect(page).to have_selector('.project_title.has-error span.help-block', text: "can't be blank")
     end
 
-    scenario 'it fails without description' do
-      fill_in 'project_description', with: ''
-      click_button 'Update'
-
-      expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.project_description.has-error span.help-block', text: "can't be blank")
-    end
-
     scenario 'it succeed with valid data' do
       fill_in 'project_title', with: 'some title'
-      fill_in 'project_description', with: 'some description'
       click_button 'Update'
 
       expect(page).to have_selector('.flash-alert.flash-success', text: 'PROJECT HAS BEEN UPDATED')

@@ -3,6 +3,5 @@
 FactoryGirl.define do
   factory :project do
     title "MyString"
-    description "Test description"
   end
 end
