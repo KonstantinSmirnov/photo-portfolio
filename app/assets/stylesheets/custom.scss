@@ -176,6 +176,9 @@ nav .navbar-nav .nav-item.active a.nav-link {
 
 // PROJECT NAVBAR
 #project_navbar {
+  li.nav-item {
+    padding-left: 0;
+  }
   a.nav-link {
     background-color: rgba(30,30,30,0.5);
   }
