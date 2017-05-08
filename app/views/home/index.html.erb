@@ -84,7 +84,7 @@
   <!-- END OPINIONS -->
 
   <!-- INSTAGRAM -->
-  <% if @last_instagram_fotos %>
+  <% if @instagram && @instagram.access_token %>
     <div class="row" id="instagram-section">
         <div class="col-md-4" >
           <div class="capture">

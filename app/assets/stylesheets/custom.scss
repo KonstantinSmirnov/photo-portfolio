@@ -594,6 +594,12 @@ footer {
     float: right;
     font-size: 30px;
     line-height: 1;
+    a {
+      color: $text-dark;
+      &:hover {
+        color: $primary;
+      }
+    }
   }
   div.creator {
     clear: both;
@@ -601,7 +607,7 @@ footer {
     float: right;
     margin-top: 5px;
     a {
-      color: #00A4B2;
+      color: $text-dark;
     }
   }
 }

@@ -8,7 +8,11 @@
       </div>
       <div class="social">
         <i class="fa fa-facebook-official"></i>
-        <i class="fa fa-instagram"></i>
+        <% if @instagram && @instagram.access_token %>
+          <a href="https://www.instagram.com/<%= @instagram.username %>" target="_blank">
+            <i class="fa fa-instagram"></i>
+          </a>
+        <% end %>
       </div>
       <div class="creator">
         <small>Copyright © <%= Time.now.year %> <a href="https://www.facebook.com/kostya.smirnov.7" target="_blank">Konstantin Smirnov</a>. All Rights Reserved.</small>
