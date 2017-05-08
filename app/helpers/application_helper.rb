@@ -21,7 +21,7 @@ module ApplicationHelper
     case page_from_params
     when 'home_page'
       link_to '< Home', root_path, class: 'nav-link'
-    when 'portfolio_page'
+    else
       link_to '< Portfolio', portfolio_path, class: 'nav-link'
     end
   end
