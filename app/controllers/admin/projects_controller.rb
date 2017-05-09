@@ -64,6 +64,6 @@ class Admin::ProjectsController < AdminController
   private
 
   def project_params
-    params.require(:project).permit(:title)
+    params.require(:project).permit(:title, :category_id)
   end
 end
