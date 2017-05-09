@@ -4,4 +4,5 @@ class Portfolio < ApplicationRecord
   validates :description, presence: true
 
   has_many :projects, dependent: :destroy
+  has_many :categories, dependent: :destroy
 end

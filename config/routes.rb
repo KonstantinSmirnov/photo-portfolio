@@ -29,6 +29,10 @@ Rails.application.routes.draw do
     resource :portfolio do
       get 'cancel' => 'portfolios#cancel'
     end
+    resources :categories, except: [:index] do
+      get 'cancel' => 'categories#cancel'
+      delete 'remove_new' => 'categories#remove_new_form'
+    end
     resources :projects do
       get 'cancel' => 'projects#cancel'
       resources :photos

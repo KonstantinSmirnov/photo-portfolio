@@ -9,6 +9,14 @@
   <%= link_to 'Edit', edit_admin_portfolio_path, remote: true, class: 'btn btn-default-light' %>
   <%= link_to 'Delete', admin_portfolio_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
   <hr>
+  <h3>Categories</h3>
+  <%= link_to 'Add category', new_admin_category_path, remote: true, class: 'btn btn-default-light' %>
+  <div id="categories-list">
+    <% @portfolio.categories.each do |category| %>
+      <%= render 'admin/categories/show', object: category %>
+    <% end %>
+  </div>
+  <hr>
   <h3>Projects</h3>
   <%= link_to 'Add project', new_admin_project_path, class: 'btn btn-default-light' %>
   <hr>

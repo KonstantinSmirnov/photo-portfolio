@@ -1,0 +1,7 @@
+<div class="col-12">
+  <%= simple_form_for @category, url: admin_category_path(@category), html: { autocomplete: 'off', class: 'form-inline' }, remote: true do |f| %>
+    <%= f.input :title, label: false, placeholder: 'Title' %>
+    <%= f.submit 'Update', class: 'btn btn-default-light' %>
+    <%= link_to 'Cancel', admin_category_path(@opinion), remote: true, class: 'btn btn-default-light' %>
+  <% end %>
+</div>

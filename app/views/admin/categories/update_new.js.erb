@@ -1,0 +1,2 @@
+$("#category-<%= params[:category_id] %>").replaceWith("<%= escape_javascript(render 'new', object: @category) %>");
+$("#flash").html("<%= escape_javascript(render 'shared/flash') %>");

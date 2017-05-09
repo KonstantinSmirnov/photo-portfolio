@@ -18,8 +18,9 @@ class Admin::OpinionsController < AdminController
     respond_to do |format|
       if @opinion.save
         flash.now[:success] = 'New opinion has been created'
-        format.js { render 'replace', object: @opinion }
+        format.js { render 'replace' }
       else
+        @opinion.id = params[:opinion_id]
         flash.now[:danger] = 'Please check errors'
         format.js { render 'update_new' }
       end
@@ -61,7 +62,7 @@ class Admin::OpinionsController < AdminController
   def remove_new_form
     @opinion = Opinion.new
     @opinion.id = params[:opinion_id]
-    
+
     respond_to do |format|
       format.js { render 'destroy', object: @opinion }
     end
