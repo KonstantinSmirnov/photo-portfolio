@@ -11,14 +11,14 @@ feature 'PORTFOLIO PROJECTS', js: true do
 
   context 'Add project' do
     before(:each) do
-      visit admin_portfolio_path
+      visit admin_projects_path
       click_link 'Add project'
     end
 
     scenario 'it has a button to go back to the list' do
       click_link 'Back'
 
-      expect(current_path).to eq(admin_portfolio_path)
+      expect(current_path).to eq(admin_projects_path)
       expect(page).to have_selector('h3', text: 'PROJECTS')
     end
 
@@ -59,7 +59,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
     let!(:project) { FactoryGirl.create(:project, portfolio: portfolio) }
 
     before(:each) do
-      visit admin_portfolio_path
+      visit admin_projects_path
     end
 
     scenario 'it has show button on index page' do
@@ -109,6 +109,14 @@ feature 'PORTFOLIO PROJECTS', js: true do
       expect(page).to have_selector('.flash-alert.flash-success', text: 'PROJECT HAS BEEN UPDATED')
     end
 
+  end
+
+  scenario 'it is unavailable if portfolio page not created' do
+    portfolio.delete
+
+    visit admin_dashboard_path
+
+    expect(page).not_to have_selector('a.nav-link', text: 'Projects')
   end
 
 end
