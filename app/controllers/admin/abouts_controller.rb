@@ -50,7 +50,7 @@ class Admin::AboutsController < AdminController
   def destroy
     @about = About.first
 
-    @about.delete
+    @about.destroy
 
     flash[:success] = 'Successfully deleted'
     redirect_to admin_about_path

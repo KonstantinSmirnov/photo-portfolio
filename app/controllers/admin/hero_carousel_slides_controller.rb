@@ -52,7 +52,7 @@ class Admin::HeroCarouselSlidesController < AdminController
     @hero_carousel_slide = HeroCarouselSlide.find(params[:id])
 
     respond_to do |format|
-      @hero_carousel_slide.delete
+      @hero_carousel_slide.destroy
       flash.now[:success] = 'Slide has been deleted'
       format.js { render 'destroy', object: @hero_carousel_slide }
     end

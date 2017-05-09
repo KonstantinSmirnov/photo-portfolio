@@ -51,7 +51,7 @@ class Admin::CategoriesController < AdminController
     @category = Category.find(params[:id])
 
     respond_to do |format|
-      @category.delete
+      @category.destroy
       flash.now[:success] = 'Category has been deleted'
       format.js { render 'destroy', object: @category }
     end

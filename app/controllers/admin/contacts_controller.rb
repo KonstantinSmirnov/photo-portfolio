@@ -50,7 +50,7 @@ class Admin::ContactsController < AdminController
   def destroy
     @contact = Contact.first
 
-    @contact.delete
+    @contact.destroy
 
     flash[:success] = 'Successfully deleted'
     redirect_to admin_contact_path

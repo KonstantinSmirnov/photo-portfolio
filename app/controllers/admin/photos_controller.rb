@@ -51,7 +51,7 @@ class Admin::PhotosController < AdminController
     @photo = Photo.find(params[:id])
 
     respond_to do |format|
-      @photo.delete
+      @photo.destroy
       flash.now[:success] = 'Photo has been deleted'
       format.js { render 'destroy', object: @photo }
     end

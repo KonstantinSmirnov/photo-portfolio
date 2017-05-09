@@ -49,7 +49,7 @@ class Admin::ProjectsController < AdminController
 
   def destroy
     @project = Project.find(params[:id])
-    @project.delete
+    @project.destroy
 
     respond_to do |format|
       flash.now[:success] = "Project has been deleted"

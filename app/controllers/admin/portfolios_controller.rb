@@ -50,7 +50,7 @@ class Admin::PortfoliosController < AdminController
   def destroy
     @portfolio = Portfolio.first
 
-    @portfolio.delete
+    @portfolio.destroy
 
     flash[:success] = 'Successfully deleted'
     redirect_to admin_portfolio_path

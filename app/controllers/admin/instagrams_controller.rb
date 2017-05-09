@@ -52,7 +52,7 @@ class Admin::InstagramsController < AdminController
 
   def destroy
     @instagram = Instagram.first
-    @instagram.delete
+    @instagram.destroy
 
     flash[:success] = 'Successfully deleted'
     redirect_to admin_instagram_path

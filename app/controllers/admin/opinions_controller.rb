@@ -53,7 +53,7 @@ class Admin::OpinionsController < AdminController
     @opinion = Opinion.find(params[:id])
 
     respond_to do |format|
-      @opinion.delete
+      @opinion.destroy
       flash.now[:success] = 'opinion has been deleted'
       format.js { render 'destroy', object: @opinion }
     end
