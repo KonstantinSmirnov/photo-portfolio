@@ -16,7 +16,7 @@ jQuery(document).on 'turbolinks:load', ->
     });
   $('.project-gallery').slick({
     dots: true;
-    infinite: true,
+    infinite: false,
     slidesToShow: 5,
     slidesToScroll: 5,
     variableWidth: true
@@ -29,11 +29,10 @@ jQuery(document).on 'turbolinks:load', ->
     asNavFor: '.slider-nav'
   });
   $('.slider-nav').slick({
-    slidesToShow: 5,
+    slidesToShow: 3,
     slidesToScroll: 1,
-    infinite: true,
+    infinite: false,
     asNavFor: '.slider-for',
-    #dots: true,
     centerMode: true,
     focusOnSelect: true,
     variableWidth: true

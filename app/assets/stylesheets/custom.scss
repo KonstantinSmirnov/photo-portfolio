@@ -349,12 +349,15 @@ nav .navbar-nav .nav-item.active a.nav-link {
   margin-top: 70px;
   width: 100%;
   div.projects-categories {
+    height: auto;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-transform: uppercase;
-    font-family: 'Ropa Sans', sans-serif;
-    color: $text-light;
+    h5 {
+      padding-top: 10px;
+      padding-bottom: 0px;
+      font-family: 'Ropa Sans', sans-serif;
+      text-transform: uppercase;
+      color: $text-light;
+    }
   }
 }
 #project-page {
