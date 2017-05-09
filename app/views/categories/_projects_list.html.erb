@@ -6,10 +6,15 @@
     </div>
     <div class="col-sm-12" id="projects-section">
       <div class="row">
-        <div class="col-12 projects-categories">
-          <h5>Categories</h5>
-        </div>
-        <% @portfolio.projects.each do |project| %>
+        <% if @portfolio.categories_with_projects.any? %>
+          <div class="col-12 projects-categories">
+            <%= link_to 'All', categories_path, class: "category-link #{is_active_category?(nil)}" %>
+            <% @portfolio.categories_with_projects.each do |category| %>
+              <%= link_to category.title, category_path(category), class: "category-link #{is_active_category?(category.id)}" %>
+            <% end %>
+          </div>
+        <% end %>
+        <% @projects.each do |project| %>
           <div class="col-6 col-md-3 project-preview">
             <%= link_to project_path(project) do %>
               <div class="overlay">

@@ -349,14 +349,27 @@ nav .navbar-nav .nav-item.active a.nav-link {
   margin-top: 70px;
   width: 100%;
   div.projects-categories {
-    height: auto;
     text-align: center;
-    h5 {
-      padding-top: 10px;
-      padding-bottom: 0px;
+    margin: 10px 0;
+    a.category-link {
       font-family: 'Ropa Sans', sans-serif;
       text-transform: uppercase;
       color: $text-light;
+      &.active {
+        color: $primary;
+      }
+      &:hover {
+        text-decoration: none;
+        color: $primary;
+      }
+      &:not(:last-child):after {
+        content: '/';
+        padding-left: 5px;
+        &:hover {
+          color: $text-light !important;
+        }
+      }
+
     }
   }
 }

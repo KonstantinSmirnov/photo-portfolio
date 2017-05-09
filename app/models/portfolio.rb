@@ -5,4 +5,8 @@ class Portfolio < ApplicationRecord
 
   has_many :projects, dependent: :destroy
   has_many :categories, dependent: :destroy
+
+  def categories_with_projects
+    categories.select { |c| c.projects.any? }
+  end
 end

@@ -27,19 +27,19 @@ feature 'PROJECT PAGE', js: true do
   end
 
   scenario 'has a nav link PORTFOLIO if entered to a project from portfolio page' do
-    visit portfolio_path
+    visit categories_path
 
     find('div.project-preview').click
 
     expect(page).to have_selector('a.nav-link', text: '< PORTFOLIO')
   end
 
-  scenario 'nav link HOME leads to home page' do
-    visit portfolio_path
+  scenario 'nav link PORTFOLIO leads to home page' do
+    visit categories_path
 
     find('div.project-preview').click
     find('a.nav-link', text: '< PORTFOLIO').click
 
-    expect(current_path).to eq(portfolio_path)
+    expect(current_path).to eq(categories_path)
   end
 end

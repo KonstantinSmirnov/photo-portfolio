@@ -9,8 +9,8 @@
         <%= link_to 'Home', root_path, class: 'nav-link' %>
       </li>
       <% if @portfolio %>
-        <li class="nav-item <%= is_active?('portfolios') %> <%= is_active?('projects') %>">
-          <%= link_to 'Portfolio', portfolio_path, class: 'nav-link' %>
+        <li class="nav-item <%= is_active?('portfolios') %> <%= is_active?('categories') %>">
+          <%= link_to 'Portfolio', categories_path, class: 'nav-link' %>
         </li>
       <% end %>
       <% if @contact %>
