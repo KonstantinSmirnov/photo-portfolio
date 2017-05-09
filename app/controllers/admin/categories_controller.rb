@@ -62,7 +62,7 @@ class Admin::CategoriesController < AdminController
     @category.id = params[:category_id]
 
     respond_to do |format|
-      format.js { render 'destroy', object: @category }
+      format.js { render 'destroy' }
     end
   end
 
@@ -71,6 +71,14 @@ class Admin::CategoriesController < AdminController
 
     respond_to do |format|
       format.js { render 'show', object: @opinion }
+    end
+  end
+
+  def cancel
+    @category = Category.find(params[:category_id])
+
+    respond_to do |format|
+      format.js { render 'update' }
     end
   end
 

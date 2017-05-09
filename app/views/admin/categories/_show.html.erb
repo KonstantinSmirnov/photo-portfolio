@@ -1,8 +1,9 @@
 <div id="category-<%= object.id %>" class="row category">
-  <div class="col-12">
-    <p><%= object.title %>
-      <%= link_to 'Edit', edit_admin_category_path(object), remote: true, class: 'btn btn-default-light' %>
-      <%= link_to 'Delete', admin_category_path(object), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'btn btn-default-light' %>
-    </p>
+  <div class="col-6">
+    <h5><%= object.title %></h5>
+  </div>
+  <div class="col-6">
+    <%= link_to 'Edit', edit_admin_category_path(object), remote: true, class: 'btn btn-default-light' %>
+    <%= link_to 'Delete', admin_category_path(object), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'btn btn-default-light' %>
   </div>
 </div>

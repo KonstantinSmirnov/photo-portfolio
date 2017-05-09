@@ -1,9 +1,13 @@
 <div class="row category-new" id="category-<%= @category.id %>">
   <div class="col-12">
     <%= simple_form_for @category, url: admin_categories_path(category_id: @category.id), html: { autocomplete: 'off', class: 'form-inline' }, remote: true, authenticity_token: true do |f| %>
-      <%= f.input :title, label: false, placeholder: 'Title' %>
-      <%= f.submit 'Create', class: 'btn btn-default-light' %>
-      <%= link_to 'Cancel', admin_category_remove_new_path(category_id: @category.id), method: :delete, remote: true, class: 'btn btn-default-light' %>
+      <div class="col-6">
+        <%= f.input :title, label: false, placeholder: 'Title' %>
+      </div>
+      <div class="col-6">
+        <%= f.submit 'Create', class: 'btn btn-default-light' %>
+        <%= link_to 'Cancel', admin_remove_new_category_form_path(category_id: @category.id), method: :delete, remote: true, class: 'btn btn-default-light' %>
+      </div>
     <% end %>
   </div>
 </div>
