@@ -348,6 +348,14 @@ nav .navbar-nav .nav-item.active a.nav-link {
 #portfolio-page {
   margin-top: 70px;
   width: 100%;
+  div.projects-categories {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Ropa Sans', sans-serif;
+    color: $text-light;
+  }
 }
 #project-page {
   width: 100%;
