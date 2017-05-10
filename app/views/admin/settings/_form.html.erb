@@ -1,6 +1,9 @@
 <% if !@settings.nil? %>
   <%= simple_form_for @settings, url: admin_setting_path, html: { autocomplete: 'off' } do |f| %>
     <%= f.input :webpage_title %>
+    <%= f.input :contact_phone %>
+    <%= f.input :contact_email %>
+    <%= f.input :facebook %>
     <%= f.input :seo_description, input_html: { class: 'textarea-resizable' }, placeholder: '170 characters max' %>
     <%= f.input :seo_keywords, input_html: { class: 'textarea-resizable' }, placeholder: '255 characters max' %>
     <%= f.input :seo_text, input_html: { class: 'textarea-resizable' } %>

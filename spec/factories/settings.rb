@@ -6,5 +6,8 @@ FactoryGirl.define do
     seo_description "MyText"
     seo_keywords "My, text"
     seo_text "MyText"
+    contact_phone '+919000'
+    contact_email 'test@test.com'
+    facebook 'http://test.com'
   end
 end

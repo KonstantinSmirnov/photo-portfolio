@@ -7,11 +7,17 @@
         <% end %>
       </h2>
       <div class="contacts">
-        <small>Phone: +123-123-123</small><br>
-        <small>Email: test@test.com</small>
+        <% if @setting %>
+          <small><%= "Phone: #{@setting.contact_phone}" if !@setting.contact_phone.blank? %></small><br>
+          <small><%= "Email: #{@setting.contact_email}" if !@setting.contact_email.blank? %></small>
+        <% end %>
       </div>
       <div class="social">
-        <i class="fa fa-facebook-official"></i>
+        <% if @setting && !@setting.facebook.blank? %>
+          <a href="<%= @setting.facebook %>" target="_blank">
+            <i class="fa fa-facebook-official"></i>
+          </a>
+        <% end %>
         <% if @instagram && @instagram.access_token %>
           <a href="https://www.instagram.com/<%= @instagram.username %>" target="_blank">
             <i class="fa fa-instagram"></i>

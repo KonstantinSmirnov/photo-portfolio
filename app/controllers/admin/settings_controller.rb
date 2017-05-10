@@ -46,7 +46,10 @@ class Admin::SettingsController < AdminController
     params.require(:setting).permit(:webpage_title,
                                     :seo_description,
                                     :seo_keywords,
-                                    :seo_text)
+                                    :seo_text,
+                                    :contact_phone,
+                                    :contact_email,
+                                    :facebook)
   end
 
 
