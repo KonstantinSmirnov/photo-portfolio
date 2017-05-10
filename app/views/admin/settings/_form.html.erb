@@ -1,0 +1,13 @@
+<% if !@settings.nil? %>
+  <%= simple_form_for @settings, url: admin_setting_path, html: { autocomplete: 'off' } do |f| %>
+    <%= f.input :webpage_title %>
+    <%= f.input :seo_description, input_html: { class: 'textarea-resizable' }, placeholder: '170 characters max' %>
+    <%= f.input :seo_keywords, input_html: { class: 'textarea-resizable' }, placeholder: '255 characters max' %>
+    <%= f.input :seo_text, input_html: { class: 'textarea-resizable' } %>
+    <%= f.submit class: 'btn btn-default-light' %>
+    <%= link_to 'Delete settings', admin_setting_path, method: :delete, class: 'btn btn-default-light', data: { confirm: 'Are you sure?' } if @settings.persisted? %>
+  <% end %>
+<% else %>
+  <h3>Settings not created</h3>
+  <%= link_to 'Create', new_admin_setting_path, class: 'btn btn-default-light' %>
+<% end %>

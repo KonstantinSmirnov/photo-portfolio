@@ -106,3 +106,16 @@
     </div>
   <% end %>
   <!-- END INSTAGRAM -->
+
+  <!-- SEO TEXT -->
+  <% if @setting && !@setting.seo_text.blank? %>
+    <div class="row">
+      <div id="seo-text">
+        <div class="col-12">
+          <%= simple_format @setting.seo_text %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- END SEO TEXT -->

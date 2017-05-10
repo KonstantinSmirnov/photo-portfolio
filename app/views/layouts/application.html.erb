@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NovikovDvinsky</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +8,23 @@
 
     <script src="https://use.fontawesome.com/f2f87b72d2.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      <% if yield(:title).present? %>
+        <%= yield(:title) %>
+      <% else %>
+        <%= @setting.webpage_title.upcase if @setting %>
+      <% end %>
+    </title>
+    <% if yield(:meta_description).present? %>
+      <meta name="description" content="<%= yield(:meta_description) %>" />
+    <% else %>
+      <meta name="description" content="<%= @setting.seo_description if @setting %>" />
+    <% end %>
+    <% if yield(:meta_keywords).present? %>
+      <meta name="keywords" content="<%= yield(:meta_keywords) %>" />
+    <% else %>
+      <meta name="keywords" content="<%= @setting.seo_keywords if @setting %>" />
+    <% end %>
   </head>
 
   <body>

@@ -7,5 +7,6 @@ class ApplicationController < ActionController::Base
     @contact = Contact.first
     @portfolio = Portfolio.first
     @instagram = Instagram.first
+    @setting = Setting.first
   end
 end

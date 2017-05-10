@@ -1,7 +1,11 @@
 <div class="row">
   <footer>
     <div class="col-sm-12">
-      <h2 class="footer-brand"><%= link_to 'Novikov Dvinsky', root_path %></h2>
+      <h2 class="footer-brand">
+        <%= link_to root_path do %>
+          <%= @setting ? @setting.webpage_title : 'PHOTO WEBPAGE' %>
+        <% end %>
+      </h2>
       <div class="contacts">
         <small>Phone: +123-123-123</small><br>
         <small>Email: test@test.com</small>

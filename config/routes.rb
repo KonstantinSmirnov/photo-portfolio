@@ -33,7 +33,6 @@ Rails.application.routes.draw do
       get 'cancel' => 'categories#cancel'
     end
     delete 'remove_new_category_form' => 'categories#remove_new_form'
-
     resources :projects do
       get 'cancel' => 'projects#cancel'
       resources :photos
@@ -44,6 +43,7 @@ Rails.application.routes.draw do
     resource :contact do
       get 'cancel' => 'contacts#cancel'
     end
+    resource :setting
   end
 
 end
