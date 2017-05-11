@@ -6,6 +6,6 @@ class HomeController < ApplicationController
     if @instagram = Instagram.first
       @last_instagram_fotos = Instagram.first.get_last_posts
     end
-    @opinions = Opinion.all
+    @opinions = Opinion.order(:position)
   end
 end

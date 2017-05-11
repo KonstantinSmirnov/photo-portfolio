@@ -1,6 +1,6 @@
 class Admin::OpinionsController < AdminController
   def index
-    @opinions = Opinion.all
+    @opinions = Opinion.order(:position)
   end
 
   def new
@@ -74,6 +74,14 @@ class Admin::OpinionsController < AdminController
     respond_to do |format|
       format.js { render 'show', object: @opinion }
     end
+  end
+
+  def sort
+    params[:opinion].each_with_index do |id, index|
+      Opinion.find(id).update_attribute(:position, index)
+    end
+
+    render nothing: true
   end
 
   private

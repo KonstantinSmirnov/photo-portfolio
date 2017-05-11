@@ -12,6 +12,7 @@ $primary: #00EBFF;
 $text-dark: #1E1E1E;
 $text-light: #FFF;
 $text-medium: #CCC;
+$grey-light: #F4F4F7;
 
 // For animations when visible in viewport
 .hidden{
@@ -463,6 +464,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
     }
     div:first-child:hover {
       cursor: grab;
+      background-color: $grey-light;
       h5 i {
         color: $primary;
       }
@@ -514,6 +516,20 @@ nav .navbar-nav .nav-item.active a.nav-link {
   .opinion,
   .opinion-new {
     margin-bottom: 10px;
+    &:hover {
+      cursor: grab;
+      background-color: $grey-light;
+      i.fa {
+        color: $primary;
+      }
+    }
+  }
+  i.fa {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 14px;
+    color: $text-medium;
   }
 }
 /* ===================== END OPINIONS ======================== */

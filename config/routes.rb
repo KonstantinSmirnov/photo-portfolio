@@ -39,7 +39,9 @@ Rails.application.routes.draw do
       resources :photos
       delete 'remove_new_photo' => 'photos#remove_new_form'
     end
-    resources :opinions
+    resources :opinions do
+      collection { post :sort }
+    end
     delete 'remove_new_opinion_form' => 'opinions#remove_new_form'
     resource :contact do
       get 'cancel' => 'contacts#cancel'

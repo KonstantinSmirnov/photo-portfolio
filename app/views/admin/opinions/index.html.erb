@@ -2,7 +2,7 @@
 
 <%= link_to 'Add', new_admin_opinion_path, remote: true, class: 'btn btn-default-light' %>
 <hr>
-<div id="opinions-list">
+<div id="opinions-list" data-update-url="<%= sort_admin_opinions_url %>">
   <% @opinions.each do |opinion| %>
     <%= render 'show', object: opinion %>
   <% end %>
