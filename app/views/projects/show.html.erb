@@ -2,7 +2,7 @@
 <div class="row">
   <div id="project-page">
     <div class="slider-for">
-      <% @project.photos.each do |photo| %>
+      <% @photos.each do |photo| %>
         <div class="slider-cover-photo">
           <%= image_tag photo.image.url(:cover) %>
         </div>
@@ -10,7 +10,7 @@
     </div>
 
     <div class="slider-nav">
-      <% @project.photos.each do |photo| %>
+      <% @photos.each do |photo| %>
         <%= image_tag photo.image.url(:thumb) %>
       <% end %>
     </div>

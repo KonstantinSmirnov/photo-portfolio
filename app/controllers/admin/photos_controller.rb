@@ -75,6 +75,14 @@ class Admin::PhotosController < AdminController
     end
   end
 
+  def sort
+    params[:photo].each_with_index do |id, index|
+      Photo.find(id).update_attribute(:position, index)
+    end
+
+    render nothing: true
+  end
+
   private
 
   def photo_params

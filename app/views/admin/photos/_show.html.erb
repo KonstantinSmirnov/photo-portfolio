@@ -3,6 +3,7 @@
     <%= image_tag object.image.url(:thumb), class: 'img-fluid' %>
   </div>
   <div class="col-12 col-sm-7 col-lg-8">
+    <i class="fa fa-arrows"></i>
     <h5><%= object.alt %></h5>
     <%= link_to 'Edit', edit_admin_project_photo_path(object.project, object), remote: true, class: 'btn btn-default-light btn-processable' %>
     <%= link_to 'Delete', admin_project_photo_path(object.project, object), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'btn btn-default-light' %>

@@ -9,3 +9,6 @@ jQuery ->
     $('#slides-list').sortable
       update: ->
         $.post($(this).data('update-url'), $(this).sortable('serialize'))
+    $('#project-photos').sortable
+      update: ->
+        $.post($(this).data('update-url'), $(this).sortable('serialize'))

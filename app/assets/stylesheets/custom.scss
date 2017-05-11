@@ -466,6 +466,22 @@ nav .navbar-nav .nav-item.active a.nav-link {
   .photo-new {
     margin-bottom: 10px;
   }
+  .photo {
+    &:hover {
+      cursor: grab;
+      background-color: $grey-light;
+      i.fa {
+        color: $primary;
+      }
+    }
+  }
+  i.fa {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 14px;
+    color: $text-medium;
+  }
 }
 
 #categories-list {
