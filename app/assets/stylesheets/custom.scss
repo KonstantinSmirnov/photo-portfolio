@@ -455,7 +455,15 @@ nav .navbar-nav .nav-item.active a.nav-link {
   .category {
     padding-top: 10px;
     input.form-control {
-      width: 100%;
+      width: 100% !important;
+    }
+    h5 i {
+        font-size: 14px;
+        color: $text-medium;
+    }
+    div:first-child:hover {
+      border-left: 3px solid $text-medium;
+      cursor: grab;
     }
   }
 }

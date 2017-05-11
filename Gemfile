@@ -75,8 +75,13 @@ gem 'sorcery'
 gem 'simple_form'
 
 gem "paperclip", "~> 5.0.0"
+
 # Remote files upload
 gem 'remotipart', '~> 1.2'
+
+# Sortable list
+gem 'acts_as_list'
+gem 'jquery-ui-rails'
 
 # Deploy
 gem 'dotenv-rails'

@@ -1,6 +1,7 @@
 class Admin::PortfoliosController < AdminController
   def show
     @portfolio = Portfolio.first
+    @categories = @portfolio.categories.order(:position)
   end
 
   def new

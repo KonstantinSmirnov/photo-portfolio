@@ -6,10 +6,10 @@
     </div>
     <div class="col-sm-12" id="projects-section">
       <div class="row">
-        <% if @portfolio.categories_with_projects.any? %>
+        <% if @categories %>
           <div class="col-12 projects-categories">
             <%= link_to 'All', categories_path, class: "category-link #{is_active_category?(nil)}" %>
-            <% @portfolio.categories_with_projects.each do |category| %>
+            <% @categories.each do |category| %>
               <%= link_to category.title, category_path(category), class: "category-link #{is_active_category?(category.id)}" %>
             <% end %>
           </div>

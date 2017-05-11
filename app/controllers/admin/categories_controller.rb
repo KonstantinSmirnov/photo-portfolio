@@ -82,6 +82,14 @@ class Admin::CategoriesController < AdminController
     end
   end
 
+  def sort
+    params[:category].each_with_index do |id, index|
+      Category.find(id).update_attribute(:position, index)
+    end
+
+    render nothing: true
+  end
+
   private
 
   def category_params

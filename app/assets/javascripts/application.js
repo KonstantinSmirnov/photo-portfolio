@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require jquery.slick
 //= require jquery_ujs
+//= require jquery-ui/widgets/sortable
 //= require turbolinks
 //= require viewportchecker
 //= require_tree .
