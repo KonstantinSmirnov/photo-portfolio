@@ -84,7 +84,7 @@ p {
   }
 }
 .btn-processing {
-  animation: stripes-move 1.75s infinite linear;
+  animation: stripes-move 2.75s infinite linear;
   background: repeating-linear-gradient(45deg, $text-medium 0, $text-medium 0.25em, transparent 0.25em, transparent .5em);
   color: adjust-hue($text-medium,180);
 }
