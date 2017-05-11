@@ -4,8 +4,8 @@
       <%= f.input :title, label: false, placeholder: 'Title' %>
     </div>
     <div class="col-6">
-      <%= f.submit 'Update', class: 'btn btn-default-light' %>
-      <%= link_to 'Cancel', admin_category_cancel_path(@category), remote: true, class: 'btn btn-default-light' %>
+      <%= f.submit 'Update', class: 'btn btn-default-light btn-processable' %>
+      <%= link_to 'Cancel', admin_category_cancel_path(@category), remote: true, class: 'btn btn-default-light btn-processable' %>
     </div>
   <% end %>
 </div>

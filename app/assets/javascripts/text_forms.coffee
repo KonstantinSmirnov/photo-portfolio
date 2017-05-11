@@ -5,3 +5,5 @@ jQuery ($) ->
     ).on 'input', ->
       @.style.height = 'auto'
       @.style.height = @.scrollHeight + 'px'
+    $('.btn-processable').on 'click', ->
+        $(@).addClass 'btn-processing'

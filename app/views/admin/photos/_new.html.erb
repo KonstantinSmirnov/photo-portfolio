@@ -6,9 +6,8 @@
     <%= simple_form_for @photo, url: admin_project_photos_path(photo_id: @photo.id), html: { autocomplete: 'off' }, remote: true, authenticity_token: true do |f| %>
       <%= f.input :image, as: :file %>
       <%= f.input :alt, label: false, placeholder: 'Alt text' %>
-      <%= f.submit 'Create', class: 'btn btn-default-light' %>
+      <%= f.submit 'Create', class: 'btn btn-default-light btn-processable' %>
       <%= link_to 'Cancel', admin_project_remove_new_photo_path(photo_id: @photo.id), method: :delete, remote: true, class: 'btn btn-default-light' %>
     <% end %>
-
   </div>
 </div>

@@ -5,8 +5,8 @@
         <%= f.input :title, label: false, placeholder: 'Title' %>
       </div>
       <div class="col-6">
-        <%= f.submit 'Create', class: 'btn btn-default-light' %>
-        <%= link_to 'Cancel', admin_remove_new_category_form_path(category_id: @category.id), method: :delete, remote: true, class: 'btn btn-default-light' %>
+        <%= f.submit 'Create', class: 'btn btn-default-light btn-processable' %>
+        <%= link_to 'Cancel', admin_remove_new_category_form_path(category_id: @category.id), method: :delete, remote: true, class: 'btn btn-default-light btn-processable' %>
       </div>
     <% end %>
   </div>

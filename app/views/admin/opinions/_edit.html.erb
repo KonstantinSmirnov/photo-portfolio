@@ -6,7 +6,7 @@
     <%= f.input :image, as: :file %>
     <%= f.input :text, label: false, placeholder: 'Text', input_html: { class: 'textarea-resizable' } %>
     <%= f.input :author, label: false, placeholder: 'Subtitle' %>
-    <%= f.submit 'Update', class: 'btn btn-default-light' %>
+    <%= f.submit 'Update', class: 'btn btn-default-light btn-processable' %>
     <%= link_to 'Cancel', admin_opinion_path(@opinion), remote: true, class: 'btn btn-default-light' %>
   <% end %>
 </div>

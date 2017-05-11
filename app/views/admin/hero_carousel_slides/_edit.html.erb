@@ -6,7 +6,7 @@
     <%= f.input :image, as: :file %>
     <%= f.input :title, label: false, placeholder: 'Title' %>
     <%= f.input :subtitle, label: false, placeholder: 'Subtitle' %>
-    <%= f.submit 'Update', class: 'btn btn-default-light' %>
+    <%= f.submit 'Update', class: 'btn btn-default-light btn-processable' %>
     <%= link_to 'Cancel', admin_hero_carousel_slide_path(@hero_carousel_slide), remote: true, class: 'btn btn-default-light' %>
   <% end %>
 </div>

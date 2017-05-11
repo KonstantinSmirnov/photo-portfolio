@@ -1,6 +1,6 @@
 <%= simple_form_for @contact, url: admin_contact_path, html: { autocomplete: 'off' }, remote: true do |f| %>
   <%= f.input :text, input_html: { class: 'textarea-resizable' } %>
   <%= f.input :image, as: :file %>
-  <%= f.submit class: 'btn btn-default-light' %>
+  <%= f.submit class: 'btn btn-default-light btn-processable' %>
   <%= link_to 'Cancel', cancel_admin_contact_path, class: 'btn btn-default-light', remote: true %>
 <% end %>

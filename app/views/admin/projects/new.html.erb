@@ -3,6 +3,6 @@
 <%= simple_form_for [:admin, @project], html: { autocomplete: 'off' } do |f| %>
   <%= f.input :title %>
   <%= f.association :category %>
-  <%= f.submit 'Create', class: 'btn btn-default-light' %>
+  <%= f.submit 'Create', class: 'btn btn-default-light btn-processable' %>
   <%= link_to 'Back', admin_projects_path, class: 'btn btn-default-light' %>
 <% end %>

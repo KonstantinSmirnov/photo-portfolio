@@ -7,7 +7,7 @@
     <%= f.input :seo_description, input_html: { class: 'textarea-resizable' }, placeholder: '170 characters max' %>
     <%= f.input :seo_keywords, input_html: { class: 'textarea-resizable' }, placeholder: '255 characters max' %>
     <%= f.input :seo_text, input_html: { class: 'textarea-resizable' } %>
-    <%= f.submit class: 'btn btn-default-light' %>
+    <%= f.submit class: 'btn btn-default-light btn-processable' %>
     <%= link_to 'Delete settings', admin_setting_path, method: :delete, class: 'btn btn-default-light', data: { confirm: 'Are you sure?' } if @settings.persisted? %>
   <% end %>
 <% else %>

@@ -5,7 +5,7 @@
   <%= simple_form_for @photo, url: admin_project_photo_path(@photo), html: { autocomplete: 'off' }, remote: true do |f| %>
     <%= f.input :image, as: :file %>
     <%= f.input :alt, label: false, placeholder: 'Alt text' %>
-    <%= f.submit 'Update', class: 'btn btn-default-light' %>
+    <%= f.submit 'Update', class: 'btn btn-default-light btn-processable' %>
     <%= link_to 'Cancel', admin_project_photo_path(@photo), remote: true, class: 'btn btn-default-light' %>
   <% end %>
 </div>

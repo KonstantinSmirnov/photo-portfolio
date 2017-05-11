@@ -3,6 +3,6 @@
   <%= f.input :text, input_html: { class: 'textarea-resizable' } %>
   <%= f.input :portrait, as: :file %>
   <%= f.input :signature, as: :file %>
-  <%= f.submit class: 'btn btn-default-light' %>
+  <%= f.submit class: 'btn btn-default-light btn-processable' %>
   <%= link_to 'Cancel', cancel_admin_about_path, class: 'btn btn-default-light', remote: true %>
 <% end %>

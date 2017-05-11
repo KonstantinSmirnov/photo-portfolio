@@ -1,6 +1,6 @@
 <%= simple_form_for [:admin, @project], html: { autocomplete: 'off' }, remote: true do |f| %>
   <%= f.input :title %>
   <%= f.association :category %>
-  <%= f.submit 'Update', class: 'btn btn-default-light' %>
+  <%= f.submit 'Update', class: 'btn btn-default-light btn-processable' %>
   <%= link_to 'Cancel', admin_project_cancel_path(@project), class: 'btn btn-default-light', remote: true %>
 <% end %>

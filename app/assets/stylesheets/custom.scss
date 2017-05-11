@@ -83,6 +83,17 @@ p {
     cursor: pointer;
   }
 }
+.btn-processing {
+  animation: stripes-move 1.75s infinite linear;
+  background: repeating-linear-gradient(45deg, $text-medium 0, $text-medium 0.25em, transparent 0.25em, transparent .5em);
+  color: adjust-hue($text-medium,180);
+}
+
+@keyframes stripes-move {
+  100% {
+    background-position: 5em 0px;
+  }
+}
 
 .flash-alert-wrapper {
   position: fixed;
