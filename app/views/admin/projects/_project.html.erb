@@ -1,6 +1,12 @@
 <div id="project-<%= project.id %>">
-  <h3><%= project.title %></h3>
-  <h5>Category: <%= project.category ? project.category.title : 'No category' %></h5>
+  <div class="content">
+    <h3><%= project.title %></h3>
+    <h5>Category: <%= project.category ? project.category.title : 'No category' %></h5>
+  </div>
+  <div class="controls">
+    <%= link_to 'Show', admin_project_path(project), class: 'btn btn-default-light btn-processable' %>
+    <%= link_to 'Delete', admin_project_path(project), class: 'btn btn-default-light', method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+  </div>
   <div class="project-gallery">
     <% project.photos.each do |photo| %>
       <div class="photo-thumbnail">
@@ -8,6 +14,4 @@
       </div>
     <% end %>
   </div>
-  <%= link_to 'Show', admin_project_path(project), class: 'btn btn-default-light btn-processable' %>
-  <%= link_to 'Delete', admin_project_path(project), class: 'btn btn-default-light', method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
 </div>
