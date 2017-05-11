@@ -6,7 +6,7 @@
       <p><%= simple_format @portfolio.description %></p>
     </div>
   </div>
-  <%= link_to 'Edit', edit_admin_portfolio_path, remote: true, class: 'btn btn-default-light' %>
+  <%= link_to 'Edit', edit_admin_portfolio_path, remote: true, class: 'btn btn-default-light btn-processable' %>
   <%= link_to 'Delete', admin_portfolio_path, method: :delete, data: { confirm: 'Are you sure? All your projects will be deleted!' }, class: 'btn btn-default-light' %>
   <hr>
   <h3>Categories</h3>
@@ -19,5 +19,5 @@
   <hr>
 <% else %>
   <h3>Page is not created</h3>
-  <%= link_to 'Create', new_admin_portfolio_path, class: 'btn btn-default-light', remote: true %>
+  <%= link_to 'Create', new_admin_portfolio_path, class: 'btn btn-default-light btn-processable', remote: true %>
 <% end %>

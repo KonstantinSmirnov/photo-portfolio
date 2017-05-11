@@ -18,12 +18,12 @@
   <a class="btn btn-default-light" href=<%= get_instagram_access_token_url %>>
     <%= @instagram.access_token.nil? ? 'Authorize' : 'Reauthorize' %>
   </a>
-  <%= link_to 'Edit', edit_admin_instagram_path, remote: true, class: 'btn btn-default-light' %>
+  <%= link_to 'Edit', edit_admin_instagram_path, remote: true, class: 'btn btn-default-light btn-processable' %>
   <%= link_to 'Delete', admin_instagram_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
 
   <hr>
 
 <% else %>
   <h3>Section is not created</h3>
-  <%= link_to 'Create', new_admin_instagram_path, class: 'btn btn-default-light', remote: true %>
+  <%= link_to 'Create', new_admin_instagram_path, class: 'btn btn-default-light btn-processable', remote: true %>
 <% end %>

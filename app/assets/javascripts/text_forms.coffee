@@ -1,3 +1,9 @@
+$.fn.wait = (ms, callback) ->
+  @each ->
+    setTimeout callback.bind(this), ms
+    return
+
+
 jQuery ($) ->
   $(document).on "turbolinks:load ajaxComplete", ->
     $('.textarea-resizable').each( ->
@@ -6,4 +12,6 @@ jQuery ($) ->
       @.style.height = 'auto'
       @.style.height = @.scrollHeight + 'px'
     $('.btn-processable').on 'click', ->
-        $(@).addClass 'btn-processing'
+      $(@).wait 800, ->
+        $(this).addClass('btn-processing')
+      
