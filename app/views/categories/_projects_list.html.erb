@@ -6,7 +6,7 @@
     </div>
     <div class="col-sm-12" id="projects-section">
       <div class="row">
-        <% if @categories %>
+        <% if @categories.any? %>
           <div class="col-12 projects-categories">
             <%= link_to 'All', categories_path, class: "category-link #{is_active_category?(nil)}" %>
             <% @categories.each do |category| %>

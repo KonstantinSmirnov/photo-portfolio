@@ -12,8 +12,10 @@
   <h3>Categories</h3>
   <%= link_to 'Add category', new_admin_category_path, remote: true, class: 'btn btn-default-light' %>
   <div id="categories-list" data-update-url="<%= sort_admin_categories_url %>">
-    <% @categories.each do |category| %>
-      <%= render 'admin/categories/show', object: category %>
+    <% if !@categories.nil? %>
+      <% @categories.each do |category| %>
+        <%= render 'admin/categories/show', object: category %>
+      <% end %>
     <% end %>
   </div>
   <hr>
