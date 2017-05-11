@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     get 'dashboard' => 'dashboard#index'
     get 'account' => 'account#index'
     patch 'account' => 'account#update'
-    resources :hero_carousel_slides
+    resources :hero_carousel_slides do
+      collection { post :sort }
+    end
     delete 'remove_new_slide_form' => 'hero_carousel_slides#remove_new_form'
     resource :about do
       get 'cancel' => 'abouts#cancel'

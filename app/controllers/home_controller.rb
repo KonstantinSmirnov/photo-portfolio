@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @hero_carousel_slides = HeroCarouselSlide.all
+    @hero_carousel_slides = HeroCarouselSlide.order(:position)
     @about = About.first
     @projects = Project.all
     if @instagram = Instagram.first

@@ -3,7 +3,8 @@
     <%= image_tag object.image.url(:thumb), class: 'img-fluid' %>
   </div>
   <div class="col-12 col-sm-7 col-lg-8">
-    <p><%= object.text %></p><i class="fa fa-arrows"></i>
+    <i class="fa fa-arrows"></i>
+    <p><%= object.text %></p>
     <p><i><%= object.author %></i></p>
     <%= link_to 'Edit', edit_admin_opinion_path(object), remote: true, class: 'btn btn-default-light btn-processable' %>
     <%= link_to 'Delete', admin_opinion_path(object), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'btn btn-default-light' %>

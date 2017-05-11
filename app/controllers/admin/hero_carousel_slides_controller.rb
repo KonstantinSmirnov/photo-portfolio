@@ -1,6 +1,6 @@
 class Admin::HeroCarouselSlidesController < AdminController
   def index
-    @slides = HeroCarouselSlide.all
+    @slides = HeroCarouselSlide.order(:position)
   end
 
   def new
@@ -73,6 +73,15 @@ class Admin::HeroCarouselSlidesController < AdminController
     respond_to do |format|
       format.js { render 'show', object: @hero_carousel_slide }
     end
+  end
+
+  def sort
+    puts params.inspect
+    params[:slide].each_with_index do |id, index|
+      HeroCarouselSlide.find(id).update_attribute(:position, index)
+    end
+
+    render nothing: true
   end
 
   private

@@ -254,6 +254,22 @@ nav .navbar-nav .nav-item.active a.nav-link {
   .slide-new {
     margin-bottom: 10px;
   }
+  .slide {
+    &:hover {
+      cursor: grab;
+      background-color: $grey-light;
+      i.fa {
+        color: $primary;
+      }
+    }
+  }
+  i.fa {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 14px;
+    color: $text-medium;
+  }
 }
 /* ===================== END HERO SLIDER ======================= */
 
@@ -516,6 +532,8 @@ nav .navbar-nav .nav-item.active a.nav-link {
   .opinion,
   .opinion-new {
     margin-bottom: 10px;
+  }
+  .opinion {
     &:hover {
       cursor: grab;
       background-color: $grey-light;
