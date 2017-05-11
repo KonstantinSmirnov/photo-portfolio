@@ -462,8 +462,10 @@ nav .navbar-nav .nav-item.active a.nav-link {
         color: $text-medium;
     }
     div:first-child:hover {
-      border-left: 3px solid $text-medium;
       cursor: grab;
+      h5 i {
+        color: $primary;
+      }
     }
   }
 }
