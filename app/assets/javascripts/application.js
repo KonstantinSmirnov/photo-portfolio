@@ -17,6 +17,7 @@
 //= require jquery.slick
 //= require jquery_ujs
 //= require jquery-ui/widgets/sortable
+//= require jquery.simulate.drag-sortable
 //= require turbolinks
 //= require viewportchecker
 //= require_tree .

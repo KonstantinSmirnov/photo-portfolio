@@ -112,4 +112,35 @@ feature 'HERO CAROUSEL', js: true do
     end
 
   end
+
+  context 'Drag and drop' do
+    let!(:slide_1) { FactoryGirl.create(:hero_carousel_slide, title: 'Slide 1') }
+    let!(:slide_2) { FactoryGirl.create(:hero_carousel_slide, title: 'Slide 2') }
+
+    scenario 'can change order in admin' do
+      visit admin_hero_carousel_slides_path
+      expect(page).to have_selector('#slides-list div.slide h3', text: 'SLIDE 1')
+
+      # using jquery.simulate.drag-sortable.js
+      page.execute_script %Q{
+        $('#slides-list div.slide:first').simulateDragSortable({move: 4});
+      }
+
+      expect(page).to have_selector('#slides-list div.slide h3', text: 'SLIDE 2')
+    end
+
+    scenario 'can change order of slides on home page' do
+      visit root_path
+      expect(page).to have_selector('.slick-slide h1', text: 'SLIDE 1')
+
+      visit admin_hero_carousel_slides_path
+      # using jquery.simulate.drag-sortable.js
+      page.execute_script %Q{
+        $('#slides-list div.slide:first').simulateDragSortable({move: 4});
+      }
+
+      visit root_path
+      expect(page).to have_selector('.slick-slide h1', text: 'SLIDE 2')
+    end
+  end
 end
