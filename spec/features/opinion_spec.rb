@@ -84,15 +84,10 @@ feature 'OPINION', js: true do
   end
 
   context 'Update opinion' do
+    let!(:opinion) { FactoryGirl.create(:opinion) }
 
     before(:each) do
-      click_link 'Add'
-
-      page.attach_file('opinion_image', Rails.root + 'public/images/test_image.png')
-      fill_in 'opinion_text', with: 'some text'
-      fill_in 'opinion_author', with: 'some text'
-
-      click_button 'Create'
+      visit admin_opinions_path
     end
 
     scenario 'can start editing opinion' do
@@ -158,7 +153,7 @@ feature 'OPINION', js: true do
       page.execute_script %Q{
         $('#opinions-list div.opinion:first').simulateDragSortable({move: 1});
       }
-
+      sleep 1
       visit root_path
       expect(page).to have_selector('.opinion.slick-current p', text: 'Opinion 2')
     end

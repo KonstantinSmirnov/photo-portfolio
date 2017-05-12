@@ -140,7 +140,7 @@ feature 'HERO CAROUSEL', js: true do
       page.execute_script %Q{
         $('#slides-list div.slide:first').simulateDragSortable({move: 1});
       }
-
+      sleep 1
       visit root_path
       expect(page).to have_selector('.slick-slide h1', text: 'SLIDE 2')
     end
