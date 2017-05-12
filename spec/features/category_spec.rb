@@ -139,4 +139,39 @@ feature 'CATEGORY', js: true do
       expect(page).to have_selector('h3.text-center', text: project2.title, visible: false)
     end
   end
+
+  context 'Drag and drop' do
+    let!(:category_1) { FactoryGirl.create(:category, portfolio: portfolio, title: 'Category 1') }
+    let!(:category_2) { FactoryGirl.create(:category, portfolio: portfolio, title: 'Category 2') }
+    let!(:project_1) { FactoryGirl.create(:project, portfolio: portfolio, category: category_1)}
+    let!(:project_2) { FactoryGirl.create(:project, portfolio: portfolio, category: category_2)}
+
+
+    scenario 'can change order in admin' do
+      visit admin_portfolio_path
+      expect(page).to have_selector('#categories-list div.category h5', text: 'Category 1')
+
+      # using jquery.simulate.drag-sortable.js
+      page.execute_script %Q{
+        $('#categories-list div.category:first').simulateDragSortable({move: 2});
+      }
+
+      expect(page).to have_selector('#categories-list div.category h5', text: 'Category 2')
+    end
+
+    scenario 'can change order of slides on home page' do
+      visit categories_path
+      expect(page).to have_selector('.projects-categories a.category-link:nth-child(2)', text: 'CATEGORY 1')
+      expect(page).to have_selector('.projects-categories a.category-link:nth-child(3)', text: 'CATEGORY 2')
+
+      visit admin_portfolio_path
+      # using jquery.simulate.drag-sortable.js
+      page.execute_script %Q{
+        $('#categories-list div.category:first').simulateDragSortable({move: 2});
+      }
+
+      visit categories_path
+      expect(page).to have_selector('.projects-categories a.category-link:nth-child(2)', text: 'CATEGORY 2')
+    end
+  end
 end

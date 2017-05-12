@@ -136,7 +136,7 @@ feature 'HERO CAROUSEL', js: true do
       visit admin_hero_carousel_slides_path
       # using jquery.simulate.drag-sortable.js
       page.execute_script %Q{
-        $('#slides-list div.slide:first').simulateDragSortable({move: 4});
+        $('#slides-list div.slide:first').simulateDragSortable({move: 2});
       }
 
       visit root_path
