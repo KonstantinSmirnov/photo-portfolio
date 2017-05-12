@@ -14,4 +14,11 @@ RSpec.describe Project, type: :model do
     expect(project.errors[:title]).to include("can't be blank")
   end
 
+  it "is invalid without date" do
+    project.date = ""
+
+    expect(project).to be_invalid
+    expect(project.errors[:date]).to include("can't be blank")
+  end
+
 end

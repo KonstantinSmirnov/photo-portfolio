@@ -14,4 +14,6 @@ jQuery ($) ->
     $('.btn-processable').on 'click', ->
       $(@).wait 800, ->
         $(this).addClass('btn-processing')
-      
+    $('.calendar').datepicker
+      autoclose: true
+      format: 'yyyy-mm-dd'

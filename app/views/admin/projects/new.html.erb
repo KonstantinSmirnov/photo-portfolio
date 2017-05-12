@@ -1,6 +1,7 @@
 <h3>New project</h3>
 
 <%= simple_form_for [:admin, @project], html: { autocomplete: 'off' } do |f| %>
+  <%= f.input :date, as: :date, html5: true, input_html: { class: 'calendar' } %>
   <%= f.input :title %>
   <%= f.association :category %>
   <%= f.submit 'Create', class: 'btn btn-default-light btn-processable' %>

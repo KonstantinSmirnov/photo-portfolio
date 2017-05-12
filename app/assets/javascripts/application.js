@@ -18,6 +18,7 @@
 //= require jquery_ujs
 //= require jquery-ui/widgets/sortable
 //= require jquery.simulate.drag-sortable
+//= require bootstrap-datepicker
 //= require turbolinks
 //= require viewportchecker
 //= require_tree .

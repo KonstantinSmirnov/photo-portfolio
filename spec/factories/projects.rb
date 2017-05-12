@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :project do
     title "MyString"
+    date Time.now
   end
 end

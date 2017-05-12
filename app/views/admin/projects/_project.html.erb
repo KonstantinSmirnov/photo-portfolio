@@ -1,6 +1,7 @@
 <div id="project-<%= project.id %>">
   <div class="row">
     <div class="col-lg-4">
+      <small><%= project.date.strftime("%d %B %Y") %></small>
       <h3><%= project.title %></h3>
       <h5>Category: <%= project.category ? project.category.title : 'No category' %></h5>
       <%= link_to 'Show', admin_project_path(project), class: 'btn btn-default-light btn-processable' %>

@@ -1,7 +1,7 @@
 class Admin::ProjectsController < AdminController
 
   def index
-    @projects = Project.all
+    @projects = Portfolio.first.projects.order('date DESC')
   end
 
   def show
@@ -9,13 +9,11 @@ class Admin::ProjectsController < AdminController
   end
 
   def new
-    @portfolio = Portfolio.first
-    @project = @portfolio.projects.new
+    @project = Portfolio.first.projects.new
   end
 
   def create
-    @portfolio = Portfolio.first
-    @project = @portfolio.projects.new(project_params)
+    @project = Portfolio.first.projects.new(project_params)
 
     if @project.save
       flash[:success] = "Project has been created"
@@ -68,6 +66,6 @@ class Admin::ProjectsController < AdminController
   private
 
   def project_params
-    params.require(:project).permit(:title, :category_id)
+    params.require(:project).permit(:title, :date, :category_id)
   end
 end

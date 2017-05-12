@@ -1,3 +1,4 @@
+<small><%= @project.date.strftime("%d %B %Y") %></small>
 <h3><%= @project.title %></h3>
 <h5>Category: <%= @project.category ? @project.category.title : 'No category' %></h5>
 <%= link_to 'Edit', edit_admin_project_path(@project), class: 'btn btn-default-light btn-processable', remote: true %>

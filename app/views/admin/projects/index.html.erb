@@ -2,7 +2,7 @@
 <%= link_to 'Add project', new_admin_project_path, class: 'btn btn-default-light' %>
 <hr>
 <div id="projects">
-  <% @portfolio.projects.each do |project| %>
+  <% @projects.each do |project| %>
     <%= render partial: 'admin/projects/project', locals: { project: project } %>
   <% end %>
 </div>
