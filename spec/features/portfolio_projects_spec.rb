@@ -178,6 +178,26 @@ feature 'PORTFOLIO PROJECTS', js: true do
 
       expect(projects[0]['innerHTML']).to have_text('Project 2')
     end
+
+    scenario 'newest best project first on home page' do
+      visit categories_path
+
+      projects = page.all('.project-preview .overlay h3', visible: :hidden)
+
+      expect(projects[0]['innerHTML']).to have_text('Project 1')
+    end
+
+    scenario 'newest best project first on home page after changing date' do
+      project_2.date = Time.now
+      project_2.save!
+
+      visit categories_path
+
+      projects = page.all('.project-preview .overlay h3', visible: :hidden)
+
+      expect(projects[0]['innerHTML']).to have_text('Project 2')
+    end
+
   end
 
 end

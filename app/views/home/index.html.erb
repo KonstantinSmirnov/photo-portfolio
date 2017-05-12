@@ -40,7 +40,7 @@
     <div class="row">
       <div id="projects-section">
         <h2 class="text-center"><%= @portfolio.home_title %></h2>
-        <% @portfolio.projects.each do |project| %>
+        <% @projects.each do |project| %>
           <div class="col-6 col-md-3 project-preview animated">
             <%= link_to project_path(project, go_back_page: 'home_page') do %>
               <div class="overlay">
