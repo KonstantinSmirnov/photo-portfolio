@@ -149,17 +149,19 @@ feature 'CATEGORY', js: true do
 
     scenario 'can change order in admin' do
       visit admin_portfolio_path
-      expect(page).to have_selector('#categories-list div.category h5', text: 'Category 1')
+      expect(page).to have_selector('#categories-list div.category:nth-child(1) h5', text: 'Category 1')
+      expect(page).to have_selector('#categories-list div.category:nth-child(2) h5', text: 'Category 2')
 
       # using jquery.simulate.drag-sortable.js
       page.execute_script %Q{
-        $('#categories-list div.category:first').simulateDragSortable({move: 2});
+        $('#categories-list div.category:first').simulateDragSortable({move: 1});
       }
 
-      expect(page).to have_selector('#categories-list div.category h5', text: 'Category 2')
+      expect(page).to have_selector('#categories-list div.category:nth-child(1) h5', text: 'Category 2')
+      expect(page).to have_selector('#categories-list div.category:nth-child(2) h5', text: 'Category 1')
     end
 
-    scenario 'can change order of slides on home page' do
+    scenario 'can change order of categories on categories page' do
       visit categories_path
       expect(page).to have_selector('.projects-categories a.category-link:nth-child(2)', text: 'CATEGORY 1')
       expect(page).to have_selector('.projects-categories a.category-link:nth-child(3)', text: 'CATEGORY 2')
@@ -167,11 +169,12 @@ feature 'CATEGORY', js: true do
       visit admin_portfolio_path
       # using jquery.simulate.drag-sortable.js
       page.execute_script %Q{
-        $('#categories-list div.category:first').simulateDragSortable({move: 2});
+        $('#categories-list div.category:first').simulateDragSortable({move: 1});
       }
-
+      sleep 1
       visit categories_path
       expect(page).to have_selector('.projects-categories a.category-link:nth-child(2)', text: 'CATEGORY 2')
+      expect(page).to have_selector('.projects-categories a.category-link:nth-child(3)', text: 'CATEGORY 1')
     end
   end
 end

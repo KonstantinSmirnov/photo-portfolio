@@ -119,14 +119,16 @@ feature 'HERO CAROUSEL', js: true do
 
     scenario 'can change order in admin' do
       visit admin_hero_carousel_slides_path
-      expect(page).to have_selector('#slides-list div.slide h3', text: 'SLIDE 1')
+      expect(page).to have_selector('#slides-list div.slide:nth-child(1) h3', text: 'SLIDE 1')
+      expect(page).to have_selector('#slides-list div.slide:nth-child(2) h3', text: 'SLIDE 2')
 
       # using jquery.simulate.drag-sortable.js
       page.execute_script %Q{
-        $('#slides-list div.slide:first').simulateDragSortable({move: 4});
+        $('#slides-list div.slide:first').simulateDragSortable({move: 1});
       }
 
-      expect(page).to have_selector('#slides-list div.slide h3', text: 'SLIDE 2')
+      expect(page).to have_selector('#slides-list div.slide:nth-child(1) h3', text: 'SLIDE 2')
+      expect(page).to have_selector('#slides-list div.slide:nth-child(2) h3', text: 'SLIDE 1')
     end
 
     scenario 'can change order of slides on home page' do
@@ -136,7 +138,7 @@ feature 'HERO CAROUSEL', js: true do
       visit admin_hero_carousel_slides_path
       # using jquery.simulate.drag-sortable.js
       page.execute_script %Q{
-        $('#slides-list div.slide:first').simulateDragSortable({move: 2});
+        $('#slides-list div.slide:first').simulateDragSortable({move: 1});
       }
 
       visit root_path

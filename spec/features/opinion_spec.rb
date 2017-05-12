@@ -130,4 +130,37 @@ feature 'OPINION', js: true do
     end
 
   end
+
+  context 'Drag and drop' do
+    let!(:opinion_1) { FactoryGirl.create(:opinion, text: 'Opinion 1') }
+    let!(:opinion_2) { FactoryGirl.create(:opinion, text: 'Opinion 2') }
+
+    scenario 'can change order in admin' do
+      visit admin_opinions_path
+      expect(page).to have_selector('#opinions-list div.opinion:nth-child(1) p', text: 'Opinion 1')
+      expect(page).to have_selector('#opinions-list div.opinion:nth-child(2) p', text: 'Opinion 2')
+
+      # using jquery.simulate.drag-sortable.js
+      page.execute_script %Q{
+        $('#opinions-list div.opinion:first').simulateDragSortable({move: 1});
+      }
+
+      expect(page).to have_selector('#opinions-list div.opinion:nth-child(1) p', text: 'Opinion 2')
+      expect(page).to have_selector('#opinions-list div.opinion:nth-child(2) p', text: 'Opinion 1')
+    end
+
+    scenario 'can change order of opinions on home page' do
+      visit root_path
+      expect(page).to have_selector('.opinion.slick-current p', text: 'Opinion 1')
+
+      visit admin_opinions_path
+      # using jquery.simulate.drag-sortable.js
+      page.execute_script %Q{
+        $('#opinions-list div.opinion:first').simulateDragSortable({move: 1});
+      }
+
+      visit root_path
+      expect(page).to have_selector('.opinion.slick-current p', text: 'Opinion 2')
+    end
+  end
 end
