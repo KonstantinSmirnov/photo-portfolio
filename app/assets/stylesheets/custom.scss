@@ -12,7 +12,7 @@ $primary: #00EBFF;
 $text-dark: #1E1E1E;
 $text-light: #FFF;
 $text-medium: #CCC;
-$grey-light: #F4F4F7;
+$grey-transparent: rgba(0, 0, 0, 0.1);
 
 // For animations when visible in viewport
 .hidden{
@@ -257,7 +257,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
   .slide {
     &:hover {
       cursor: grab;
-      background-color: $grey-light;
+      background-color: $grey-transparent;
       i.fa {
         color: $primary;
       }
@@ -469,7 +469,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
   .photo {
     &:hover {
       cursor: grab;
-      background-color: $grey-light;
+      background-color: $grey-transparent;
       i.fa {
         color: $primary;
       }
@@ -496,7 +496,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
     }
     div:first-child:hover {
       cursor: grab;
-      background-color: $grey-light;
+      background-color: $grey-transparent;
       h5 i {
         color: $primary;
       }
@@ -552,7 +552,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
   .opinion {
     &:hover {
       cursor: grab;
-      background-color: $grey-light;
+      background-color: $grey-transparent;
       i.fa {
         color: $primary;
       }
