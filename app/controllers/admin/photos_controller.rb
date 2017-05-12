@@ -77,6 +77,7 @@ class Admin::PhotosController < AdminController
 
   def sort
     params[:photo].each_with_index do |id, index|
+      puts "ID #{id} - INDEX #{index}"
       Photo.find(id).update_attribute(:position, index)
     end
 

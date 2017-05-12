@@ -6,6 +6,7 @@ class Admin::ProjectsController < AdminController
 
   def show
     @project = Project.find(params[:id])
+    @photos = @project.photos.order(:position)
   end
 
   def new
