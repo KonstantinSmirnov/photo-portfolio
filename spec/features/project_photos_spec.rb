@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'PORTFOLIO PHOTO', js: true do
+feature 'PROJECT PHOTO', js: true do
   let(:admin) { FactoryGirl.create(:admin) }
   let!(:portfolio) { FactoryGirl.create(:portfolio) }
   let!(:project) { FactoryGirl.create(:project, portfolio: portfolio) }
@@ -50,11 +50,10 @@ feature 'PORTFOLIO PHOTO', js: true do
   end
 
   context 'Update photo' do
+    let!(:photo) { FactoryGirl.create(:photo, project: project) }
+
     before(:each) do
-      click_link 'Add'
-      page.attach_file('photo_image', Rails.root + 'public/images/test_image.png')
-      fill_in 'photo_alt', with: 'test alt description'
-      click_button 'Create'
+      visit admin_project_path(project)
     end
 
     scenario 'can start editing photo' do
@@ -110,35 +109,36 @@ feature 'PORTFOLIO PHOTO', js: true do
   end
 
   context 'Drag and drop' do
-    let!(:photo_1) { FactoryGirl.create(:photo, title: 'Slide 1') }
-    let!(:photo_2) { FactoryGirl.create(:hero_carousel_slide, title: 'Slide 2') }
+    let!(:photo_1) { FactoryGirl.create(:photo, alt: 'Photo 1', project: project) }
+    let!(:photo_2) { FactoryGirl.create(:photo, alt: 'Photo 2', project: project) }
 
     scenario 'can change order in admin' do
-      visit admin_hero_carousel_slides_path
-      expect(page).to have_selector('#slides-list div.slide:nth-child(1) h3', text: 'SLIDE 1')
-      expect(page).to have_selector('#slides-list div.slide:nth-child(2) h3', text: 'SLIDE 2')
+      visit admin_project_path(project)
+      expect(page).to have_selector('#project-photos div.photo:nth-child(1) h5', text: 'Photo 1')
+      expect(page).to have_selector('#project-photos div.photo:nth-child(2) h5', text: 'Photo 2')
 
       # using jquery.simulate.drag-sortable.js
       page.execute_script %Q{
-        $('#slides-list div.slide:first').simulateDragSortable({move: 1});
+        $('#project-photos div.photo:first').simulateDragSortable({move: 1});
       }
 
-      expect(page).to have_selector('#slides-list div.slide:nth-child(1) h3', text: 'SLIDE 2')
-      expect(page).to have_selector('#slides-list div.slide:nth-child(2) h3', text: 'SLIDE 1')
+      expect(page).to have_selector('#project-photos div.photo:nth-child(1) h5', text: 'Photo 2')
+      expect(page).to have_selector('#project-photos div.photo:nth-child(2) h5', text: 'Photo 1')
     end
 
     scenario 'can change order of slides on home page' do
-      visit root_path
-      expect(page).to have_selector('.slick-slide h1', text: 'SLIDE 1')
+      visit project_path(project)
 
-      visit admin_hero_carousel_slides_path
+      page.should have_xpath("//img[@alt='Photo 1' and @class='slick-slide slick-current slick-center']")
+
+      visit admin_project_path(project)
       # using jquery.simulate.drag-sortable.js
       page.execute_script %Q{
-        $('#slides-list div.slide:first').simulateDragSortable({move: 1});
+        $('#project-photos div.photo:first').simulateDragSortable({move: 1});
       }
-
-      visit root_path
-      expect(page).to have_selector('.slick-slide h1', text: 'SLIDE 2')
+      sleep 1
+      visit project_path(project)
+      page.should have_xpath("//img[@alt='Photo 2' and @class='slick-slide slick-current slick-center']")
     end
   end
 end

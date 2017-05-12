@@ -11,7 +11,7 @@
 
     <div class="slider-nav">
       <% @photos.each do |photo| %>
-        <%= image_tag photo.image.url(:thumb) %>
+        <%= image_tag photo.image.url(:thumb), alt: photo.alt %>
       <% end %>
     </div>
   </div>
