@@ -126,7 +126,23 @@ feature 'PROJECT PHOTO', js: true do
       expect(page).to have_selector('#project-photos div.photo:nth-child(2) h5', text: 'Photo 1')
     end
 
-    scenario 'can change order of slides on home page' do
+    scenario 'can change cover photo of project' do
+      visit categories_path
+      page.should have_xpath("//img[@alt='Photo 1' and @class='img-fluid']")
+      page.should_not have_xpath("//img[@alt='Photo 2' and @class='img-fluid']")
+
+      visit admin_project_path(project)
+      # using jquery.simulate.drag-sortable.js
+      page.execute_script %Q{
+        $('#project-photos div.photo:first').simulateDragSortable({move: 1});
+      }
+      sleep 1
+      visit categories_path
+      page.should have_xpath("//img[@alt='Photo 2' and @class='img-fluid']")
+      page.should_not have_xpath("//img[@alt='Photo 1' and @class='img-fluid']")
+    end
+
+    scenario 'can change order of photos on project page' do
       visit project_path(project)
 
       page.should have_xpath("//img[@alt='Photo 1' and @class='slick-slide slick-current slick-center']")
