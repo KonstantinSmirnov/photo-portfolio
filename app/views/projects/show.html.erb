@@ -1,7 +1,7 @@
 <!-- for Facebook -->
 <meta property="og:title" content="<%= @project.title %>" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="<%= URI.base_url + @photos.first.image.url(:cover) %>" />
+<meta property="og:image" content="<%= request.base_url + @photos.first.image.url(:cover) %>" />
 <meta property="og:url" content="<%= request.original_url %>" />
 
 <% title @project.title %>
