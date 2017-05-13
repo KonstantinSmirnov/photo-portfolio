@@ -200,11 +200,11 @@ nav .navbar-nav .nav-item.active a.nav-link {
     i {
       color: $text-light;
     }
-  }
-  .share-button.facebook {
     &:hover {
-      background-color: $primary;
       cursor: pointer;
+      i {
+        color: $primary;
+      }
     }
   }
 }
