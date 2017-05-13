@@ -5,6 +5,7 @@ jQuery ($) ->
         method      : 'feed'
         link        : link
         name        : title
-        picture     : image
+        #picture     : image
+        picture     : $('.slider-cover-photo.slick-current img').src
         caption     : caption
         description : description
