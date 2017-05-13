@@ -36,7 +36,9 @@
       <% end %>
       <%= render 'shared/flash' %>
       <%= yield %>
-      <%= render 'shared/footer' %>
+      <% unless is_portfolio_project?('projects') %>
+        <%= render 'shared/footer' %>
+      <% end %>
     </div>
     <%= debug(params) if Rails.env.development? %>
   </body>
