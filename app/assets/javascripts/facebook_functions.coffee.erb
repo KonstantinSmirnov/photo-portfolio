@@ -5,3 +5,5 @@ jQuery ($) ->
         method      : 'feed'
         link        : link
         caption      : title
+    $('.slick-slide').on 'click', ->
+      $('meta[property=og\\:image]').attr('content', @.src);
