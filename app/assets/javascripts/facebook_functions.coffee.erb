@@ -4,7 +4,7 @@ jQuery ($) ->
       relative_image_url = $('.slider-cover-photo.slick-current img').attr('src')
       image_url = base_url + relative_image_url
       FB.ui
-        method      : 'feed'
+        method      : 'share'
         href        : link
-        title        : title
+        title       : title
         picture     : image_url
