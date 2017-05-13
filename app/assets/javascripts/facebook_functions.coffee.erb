@@ -1,11 +1,7 @@
 jQuery ($) ->
   $(document).on "turbolinks:load", ->
-    @share_facebook = (link, title, base_url) ->
-      relative_image_url = $('.slider-cover-photo.slick-current img').attr('src')
-      cover_image = base_url + relative_image_url
-      console.log cover_image
+    @share_facebook = (link, title) ->
       FB.ui
-        method      : 'share'
-        href        : link
-        title       : title
-        picture     : image_url
+        method      : 'feed'
+        link        : link
+        caption      : title
