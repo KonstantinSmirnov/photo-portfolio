@@ -196,6 +196,17 @@ nav .navbar-nav .nav-item.active a.nav-link {
   a.nav-link {
     background-color: rgba(30,30,30,0.5);
   }
+  .share-button {
+    i {
+      color: $text-light;
+    }
+  }
+  .share-button.facebook {
+    &:hover {
+      background-color: $primary;
+      cursor: pointer;
+    }
+  }
 }
 /* ===================== END NAVBAR ======================= */
 
