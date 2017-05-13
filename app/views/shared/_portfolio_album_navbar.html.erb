@@ -9,10 +9,7 @@
       <li class="nav-item">
         <a class="nav-link share-button" onclick='share_facebook(
                 "<%= "#{project_url(@project)}" %>",
-                "<%= "#{@project.title}" %>",
-                "<%= "#{URI(request.base_url)}#{@project.photos.first.image.url(:thumb)}" %>",
-                "<%= URI(request.base_url) %>",
-                "<%= "#{@project.title.gsub("\r\n", " ").gsub('"', '')}" %>"
+                "<%= "#{@project.title}" %>"
         )'>
           Share <i class="fa fa-facebook"></i>
         </a>
