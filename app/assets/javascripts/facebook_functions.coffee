@@ -5,4 +5,4 @@ jQuery ($) ->
         method      : 'feed'
         link        : link
         name        : title
-        picture     : $('.slider-cover-photo.slick-current img').src
+        picture     : $('.slider-cover-photo.slick-current img').attr('src')
