@@ -757,7 +757,20 @@ footer {
   }
 }
 /* ===================== END SESSIONS ============================ */
-
+/* ===================== 404 PAGE ================================ */
+#error-page {
+  padding-top: 70px;
+  display: block;
+  width: 100%;
+  min-height: 86vh;
+  padding-top: 100px;
+  background-color: $text-dark;
+  color: $text-light;
+  h1 {
+    color: $text-light;
+  }
+}
+/* ===================== END 404 PAGE ============================ */
 /* ===================== ADMIN =================================== */
 .admin_dashboard {
   h1, h2, h3 {

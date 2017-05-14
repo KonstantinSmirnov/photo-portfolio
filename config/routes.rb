@@ -62,4 +62,8 @@ Rails.application.routes.draw do
     resource :setting
   end
 
+  match "/404", :to => 'errors#error_404', via: :all
+  get '*url' => 'errors#error_404'
+
+
 end
