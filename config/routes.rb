@@ -63,7 +63,9 @@ Rails.application.routes.draw do
   end
 
   match "/404", :to => 'errors#error_404', via: :all
-  get '*url' => 'errors#error_404'
 
+  get '/sitemap.xml', :to => 'sitemap#show', :format => 'xml', :as => :sitemap
+
+  get '*url' => 'errors#error_404'
 
 end
