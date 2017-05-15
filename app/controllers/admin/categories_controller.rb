@@ -13,6 +13,7 @@ class Admin::CategoriesController < AdminController
   def create
     @portfolio = Portfolio.first
     @category = @portfolio.categories.new(category_params)
+    @category.position = Category.count
 
     respond_to do |format|
       if @category.save

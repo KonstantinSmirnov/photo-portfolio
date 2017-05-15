@@ -10,7 +10,6 @@
   <%= link_to 'Delete', admin_portfolio_path, method: :delete, data: { confirm: 'Are you sure? All your projects will be deleted!' }, class: 'btn btn-default-light' %>
   <hr>
   <h3>Categories</h3>
-  <%= link_to 'Add category', new_admin_category_path, remote: true, class: 'btn btn-default-light' %>
   <div id="categories-list" data-update-url="<%= sort_admin_categories_url %>">
     <% if !@categories.nil? %>
       <% @categories.each do |category| %>
@@ -18,6 +17,7 @@
       <% end %>
     <% end %>
   </div>
+  <%= link_to 'Add category', new_admin_category_path, remote: true, class: 'btn btn-default-light' %>
   <hr>
 <% else %>
   <h3>Page is not created</h3>

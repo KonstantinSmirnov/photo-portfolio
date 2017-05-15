@@ -500,8 +500,13 @@ nav .navbar-nav .nav-item.active a.nav-link {
 }
 
 #categories-list {
+  .category-new {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
   .category {
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     input.form-control {
       width: 100% !important;
     }

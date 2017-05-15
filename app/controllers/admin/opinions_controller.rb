@@ -14,6 +14,7 @@ class Admin::OpinionsController < AdminController
 
   def create
     @opinion = Opinion.new(opinion_params)
+    @opinion.position = Opinion.count
 
     respond_to do |format|
       if @opinion.save
