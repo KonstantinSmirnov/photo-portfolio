@@ -62,6 +62,8 @@ Rails.application.routes.draw do
     resource :setting
   end
 
+  get '/robots.:format' => 'robots#show'
+
   match "/404", :to => 'errors#error_404', via: :all
 
   get '/sitemap.xml', :to => 'sitemap#show', :format => 'xml', :as => :sitemap
