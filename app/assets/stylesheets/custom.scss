@@ -185,6 +185,11 @@ a.nav-link,
 
 }
 
+.ui-sortable-placeholder {
+    visibility: visible !important;
+    border: 1px dashed $text-medium !important;
+}
+
 /* ===================== NAVBAR ======================= */
 
 nav.navbar.transparent {
