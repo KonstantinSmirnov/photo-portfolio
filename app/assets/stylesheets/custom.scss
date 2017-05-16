@@ -63,7 +63,8 @@ a.nav-link,
 #instagram-section .gallery img,
 #project-page.slider-nav img.slider-slide,
 #projects-section .project-preview,
-#projects-section .project-preview img {
+#projects-section .project-preview img,
+#portfolio-page .projects-categories a {
   transition: all 0.5s cubic-bezier(.25,.8,.25,1);
   -webkit-transition: all 0.5s cubic-bezier(.25,.8,.25,1);
   // Fix the issue with text boldering on hover
