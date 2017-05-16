@@ -13,4 +13,11 @@ RSpec.describe Category, type: :model do
     expect(category).to be_invalid
     expect(category.errors[:title]).to include("can't be blank")
   end
+
+  it "assigns next position id when created" do
+    position = Category.count
+    category = FactoryGirl.create(:category)
+
+    expect(category.position).to eq(position)
+  end
 end

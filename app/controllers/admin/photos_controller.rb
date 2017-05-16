@@ -13,8 +13,6 @@ class Admin::PhotosController < AdminController
   def create
     @project = Project.find(params[:project_id])
     @photo = @project.photos.build(photo_params)
-    @photo.position = @project.photos.count
-
 
     respond_to do |format|
       if @photo.save

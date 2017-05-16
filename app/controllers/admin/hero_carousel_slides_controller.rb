@@ -14,7 +14,6 @@ class Admin::HeroCarouselSlidesController < AdminController
 
   def create
     @hero_carousel_slide = HeroCarouselSlide.new(slide_params)
-    @hero_carousel_slide.position = HeroCarouselSlide.count
 
     respond_to do |format|
       if @hero_carousel_slide.save

@@ -27,4 +27,11 @@ RSpec.describe Opinion, type: :model do
     expect(opinion).to be_invalid
     expect(opinion.errors[:image]).to include("can't be blank")
   end
+
+  it "assigns next position id when created" do
+    position = Opinion.count
+    opinion = FactoryGirl.create(:opinion)
+
+    expect(opinion.position).to eq(position)
+  end
 end

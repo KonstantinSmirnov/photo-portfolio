@@ -50,6 +50,13 @@ RSpec.describe HeroCarouselSlide, type: :model do
 
       expect(hero_carousel_slide).to be_valid
     end
+
+    it "assigns next position id when created" do
+      position = HeroCarouselSlide.count
+      hero_carousel_slide = FactoryGirl.create(:hero_carousel_slide)
+
+      expect(hero_carousel_slide.position).to eq(position)
+    end
   end
 
   describe 'Update' do

@@ -21,4 +21,15 @@ RSpec.describe Photo, type: :model do
     expect(photo).to be_invalid
     expect(photo.errors[:image]).to include("can't be blank")
   end
+
+  it "assigns next position id when created" do
+    project = FactoryGirl.create(:project)
+    position_1 = project.photos.count
+    photo_1 = FactoryGirl.create(:photo, project: project)
+    position_2 = project.photos.count
+    photo_2 = FactoryGirl.create(:photo, project: project)
+
+    expect(photo_1.position).to eq(position_1)
+    expect(photo_2.position).to eq(position_2)
+  end
 end

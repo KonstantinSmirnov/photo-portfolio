@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def index
     @hero_carousel_slides = HeroCarouselSlide.order(:position)
     @about = About.first
-    @projects = Project.order('date DESC').limit(16)
+    @projects = Project.order('date DESC').limit(8)
     if @instagram = Instagram.first
       @last_instagram_fotos = Instagram.first.get_last_posts
     end

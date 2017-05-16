@@ -1,5 +1,7 @@
 class Photo < ApplicationRecord
 
+  before_create :set_position
+
   validates :alt, presence: true
   validates :image, presence: true
 
@@ -7,4 +9,8 @@ class Photo < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   belongs_to :project
+
+  def set_position
+    self.position = project.photos.count
+  end
 end
