@@ -29,7 +29,7 @@ jQuery(document).on 'turbolinks:load', ->
     asNavFor: '.slider-nav'
   });
   $('.slider-nav').slick({
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     infinite: false,
     asNavFor: '.slider-for',
