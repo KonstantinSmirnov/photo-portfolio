@@ -6,7 +6,7 @@
 
 <h3>Photos</h3>
 
-<div id="project-photos" data-update-url="<%= sort_admin_project_photos_url(@project) %>">
+<div id="project-photos" class="row" data-update-url="<%= sort_admin_project_photos_url(@project) %>">
   <% @photos.each do |photo| %>
     <%= render partial: 'admin/photos/show', locals: { object: photo } %>
   <% end %>

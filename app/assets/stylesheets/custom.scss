@@ -57,7 +57,9 @@ p {
   font-weight: 200;
   line-height: 30px;
 }
-
+.btn {
+  border-radius: 0;
+}
 .btn-default-dark {
   background-color: transparent;
   border: 1px solid $text-light;
@@ -81,6 +83,22 @@ p {
   &:hover {
     color: $primary;
     border-color: $primary;
+    cursor: pointer;
+  }
+}
+.btn-photo-dark {
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 5px;
+  background-color: rgba(0,0,0, 0.5);
+  color: $text-light;
+  text-transform: uppercase;
+  &:hover {
+    color: $primary !important;
     cursor: pointer;
   }
 }
@@ -474,28 +492,52 @@ nav .navbar-nav .nav-item.active a.nav-link {
   }
 }
 #project-photos {
-  img {
-    width: 100%;
-  }
   .photo,
   .photo-new {
     margin-bottom: 10px;
   }
   .photo {
+    display: inline-block;
+    img {
+      width: 100%;
+      height: 100%;
+    }
     &:hover {
       cursor: grab;
-      background-color: $grey-transparent;
-      i.fa {
+      i.fa,
+      h5 {
         color: $primary;
       }
     }
   }
-  i.fa {
+  .change-controls {
     position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 14px;
-    color: $text-medium;
+    width: 80%;
+    padding-top: 10px;
+    padding-left: 10px;
+    z-index: 999;
+    h5, a, i.fa {
+      color: $text-light;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+    }
+    i.fa {
+      position: relative;
+      float: left;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    h5 {
+      clear: both;
+      position: relative;
+      float: left;
+    }
+    .buttons {
+      clear: both;
+      position: relative;
+      float: left;
+    }
   }
 }
 
