@@ -1,0 +1,149 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ru:
+  hello: "Привет"
+  home:
+    title: 'Главная'
+  portfolio:
+    title: 'Портфолио'
+    all_categories: 'Все'
+    back_portfolio: '< Портфолио'
+    back_home: '< Главная'
+    share_album: 'Поделиться альбомом'
+  contact:
+    title: 'Обо мне'
+    phone: 'Телефон'
+    name: 'Имя'
+    email: 'Email'
+    topic: 'Тема'
+    message: 'Сообщение'
+    send: 'Отправить'
+  admin:
+    title: 'Админ'
+  sorcery:
+    log_in: 'Войти'
+    log_out: 'Выйти'
+  opinions:
+    title: 'Отзывы'
+  instagram:
+    title: 'Инстаграм'
+    profile: 'Профиль'
+  error_page:
+    title: 'Страница не найдена'
+  flash:
+
+  activerecord:
+    errors:
+      models:
+        opinion:
+          attributes:
+            author:
+              blank: "поле не заполнено"
+            text:
+              blank: "поле не заполнено"
+            image:
+              blank: "поле не заполнено"
+        contact:
+          attributes:
+            text:
+              blank: "поле не заполнено"
+            image:
+              blank: "поле не заполнено"
+        instagram:
+          attributes:
+            text:
+              blank: "поле не заполнено"
+        hero_carousel_slide:
+          attributes:
+            title:
+              too_short: 'минимум 1 символ, не более 50 символов'
+              too_long: 'не более 50 символов'
+            subtitle:
+              too_short: 'минимум 1 символ, не более 70 символов'
+              too_long: 'не более 70 символов'
+            image:
+              blank: "поле не заполнено"
+        portfolio:
+          attributes:
+            title:
+              blank: "поле не заполнено"
+            home_title:
+              blank: "поле не заполнено"
+            description:
+              blank: "поле не заполнено"
+        category:
+          attributes:
+            title:
+              blank: "поле не заполнено"
+        project:
+          attributes:
+            date:
+              blank: "поле не заполнено"
+            title:
+              blank: "поле не заполнено"
+        photo:
+          attributes:
+            alt:
+              blank: "поле не заполнено"
+            image:
+              blank: "поле не заполнено"
+        about:
+          attributes:
+            title:
+              blank: "поле не заполнено"
+            text:
+              blank: "поле не заполнено"
+            portrait:
+              blank: "поле не заполнено"
+            signature:
+              blank: "поле не заполнено"
+        setting:
+          attributes:
+            webpage_title:
+              blank: "поле не заполнено"
+            seo_keywords:
+              too_long: 'не более 255 символов'
+            seo_description:
+              too_long: "не более 170 символов"
+        user:
+          attributes:
+            password:
+              too_short: 'минимум 3 символа'
+            password_confirmation:
+              confirmation: 'не совпадает с паролем'
+              blank: "поле не заполнено"
+            email:
+              blank: "поле не заполнено"
+              taken: "уже было использовано"
+  activemodel:
+    errors:
+      models:
+        email:
+          attributes:
+            name:
+              blank: "поле не заполнено"
+            email:
+              blank: "поле не заполнено"
+            topic:
+              blank: "поле не заполнено"
+            message:
+              blank: "поле не заполнено"

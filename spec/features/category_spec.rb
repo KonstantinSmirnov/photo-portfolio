@@ -18,7 +18,7 @@ feature 'CATEGORY', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.category_title.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.category_title.has-error span.help-block', text: "поле не заполнено")
     end
 
 
@@ -117,7 +117,7 @@ feature 'CATEGORY', js: true do
 
       visit categories_path
 
-      expect(page).to have_selector('.category-link', text: 'ALL')
+      expect(page).to have_selector('.category-link', text: 'ВСЕ')
     end
 
     scenario 'it shows projects assigned to a category inside the category' do

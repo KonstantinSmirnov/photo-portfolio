@@ -21,7 +21,7 @@ feature "ABOUT", js: true do
       click_button 'Create About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_title.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.about_title.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without text' do
@@ -32,7 +32,7 @@ feature "ABOUT", js: true do
       click_button 'Create About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_text.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.about_text.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without portrait' do
@@ -43,7 +43,7 @@ feature "ABOUT", js: true do
       click_button 'Create About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_portrait.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.about_portrait.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without signature' do
@@ -54,7 +54,7 @@ feature "ABOUT", js: true do
       click_button 'Create About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_signature.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.about_signature.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it succeed with valid data' do
@@ -107,7 +107,7 @@ feature "ABOUT", js: true do
       click_button 'Update About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_title.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.about_title.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without text' do
@@ -116,7 +116,7 @@ feature "ABOUT", js: true do
       click_button 'Update About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_text.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.about_text.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it has cancel button' do

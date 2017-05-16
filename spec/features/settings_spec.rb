@@ -27,7 +27,7 @@ feature 'SETTINGS' do
     end
 
     scenario 'webpage does not have a contact phone in the footer' do
-      expect(page).not_to have_selector('footer .contacts small', text: 'Phone:')
+      expect(page).not_to have_selector('footer .contacts small', text: 'Телефон:')
     end
 
     scenario 'webpage does not have a contact email in the footer' do
@@ -43,7 +43,7 @@ feature 'SETTINGS' do
         visit contact_path
       end
       scenario 'webpage does not have a contact phone on the contact page' do
-        expect(page).not_to have_selector('#contact-form p', text: 'Phone:')
+        expect(page).not_to have_selector('#contact-form p', text: 'Телефон:')
       end
 
       scenario 'webpage does not have a contact email on the contact page' do
@@ -77,7 +77,7 @@ feature 'SETTINGS' do
     end
 
     scenario 'webpage has a proper contact phone number in the footer' do
-      expect(page).to have_selector('footer .contacts small', text: "Phone: #{setting.contact_phone}")
+      expect(page).to have_selector('footer .contacts small', text: "Телефон: #{setting.contact_phone}")
     end
 
     scenario 'webpage has a proper contact email in the footer' do

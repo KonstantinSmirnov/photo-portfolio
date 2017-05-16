@@ -11,21 +11,21 @@ RSpec.describe Opinion, type: :model do
     opinion = FactoryGirl.build(:opinion, text: '')
 
     expect(opinion).to be_invalid
-    expect(opinion.errors[:text]).to include("can't be blank")
+    expect(opinion.errors[:text]).to include("поле не заполнено")
   end
 
   it 'is invalid without author' do
     opinion = FactoryGirl.build(:opinion, author: '')
 
     expect(opinion).to be_invalid
-    expect(opinion.errors[:author]).to include("can't be blank")
+    expect(opinion.errors[:author]).to include("поле не заполнено")
   end
 
   it 'is invalid without image' do
     opinion = FactoryGirl.build(:opinion, image: '')
 
     expect(opinion).to be_invalid
-    expect(opinion.errors[:image]).to include("can't be blank")
+    expect(opinion.errors[:image]).to include("поле не заполнено")
   end
 
   it "assigns next position id when created" do

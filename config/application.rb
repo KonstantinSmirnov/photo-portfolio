@@ -23,3 +23,7 @@ module PhotoPortfolio
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+Rails.application.configure do
+  config.i18n.default_locale = :ru
+end

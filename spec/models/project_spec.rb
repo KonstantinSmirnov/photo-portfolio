@@ -11,14 +11,14 @@ RSpec.describe Project, type: :model do
     project.title = ''
 
     expect(project).to be_invalid
-    expect(project.errors[:title]).to include("can't be blank")
+    expect(project.errors[:title]).to include("поле не заполнено")
   end
 
   it "is invalid without date" do
     project.date = ""
 
     expect(project).to be_invalid
-    expect(project.errors[:date]).to include("can't be blank")
+    expect(project.errors[:date]).to include("поле не заполнено")
   end
 
 end

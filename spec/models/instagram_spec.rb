@@ -13,7 +13,7 @@ RSpec.describe Instagram, type: :model do
       instagram = FactoryGirl.build(:instagram, text: '')
 
       expect(instagram).to be_invalid
-      expect(instagram.errors[:text]).to include("can't be blank")
+      expect(instagram.errors[:text]).to include("поле не заполнено")
     end
 
   end
@@ -25,7 +25,7 @@ RSpec.describe Instagram, type: :model do
       instagram.text = ''
 
       expect(instagram).to be_invalid
-      expect(instagram.errors[:text]).to include("can't be blank")
+      expect(instagram.errors[:text]).to include("поле не заполнено")
     end
   end
 end

@@ -8,8 +8,8 @@
       </h2>
       <div class="contacts">
         <% if @setting %>
-          <small><%= "Phone: #{@setting.contact_phone}" if !@setting.contact_phone.blank? %></small><br>
-          <small><%= "Email: #{@setting.contact_email}" if !@setting.contact_email.blank? %></small>
+          <small><%= "#{t('contact.phone')}: #{@setting.contact_phone}" if !@setting.contact_phone.blank? %></small><br>
+          <small><%= "#{t('contact.email')}: #{@setting.contact_email}" if !@setting.contact_email.blank? %></small>
         <% end %>
       </div>
       <div class="social">

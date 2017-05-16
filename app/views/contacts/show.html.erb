@@ -4,21 +4,21 @@
     <%= image_tag @contact.image.url(:cover), class: '' %>
     <div id="contact-form">
       <div class="offset-sm-6 col-sm-6 col-md-6 col-lg-5">
-        <h2>Contact</h2>
+        <h2><%= t('contact.title') %></h2>
         <%= simple_format @contact.text %>
         <% if @setting %>
           <p>
-            <%= "Phone: #{@setting.contact_phone}" if !@setting.contact_phone.blank? %><br>
-            <%= "Email: #{@setting.contact_email}" if !@setting.contact_email.blank? %>
+            <%= "#{t('contact.phone')}: #{@setting.contact_phone}" if !@setting.contact_phone.blank? %><br>
+            <%= "#{t('contact.email')}: #{@setting.contact_email}" if !@setting.contact_email.blank? %>
           </p>
         <% end %>
         <%= simple_form_for @email, html: { class: 'light' }, url: contact_path  do |f| %>
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-          <%= f.input :name, label: false, placeholder: 'Name' %>
-          <%= f.input :email, label: false, placeholder: 'Email' %>
-          <%= f.input :topic, label: false, placeholder: 'Topic' %>
-          <%= f.input :message, as: :text, label: false, placeholder: 'Message' %>
-          <%= f.submit 'Send', class: 'btn btn-default-dark' %>
+          <%= f.input :name, label: false, placeholder: t('contact.name') %>
+          <%= f.input :email, label: false, placeholder: t('contact.email') %>
+          <%= f.input :topic, label: false, placeholder: t('contact.topic') %>
+          <%= f.input :message, as: :text, label: false, placeholder: t('contact.message') %>
+          <%= f.submit t('contact.send'), class: 'btn btn-default-dark' %>
         <% end %>
       </div>
     </div>

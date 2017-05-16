@@ -5,7 +5,7 @@ feature 'DASHBOARD' do
     scenario 'does not have access' do
       visit admin_dashboard_path
 
-      expect(page).not_to have_selector('a.nav-link', text: 'Admin')
+      expect(page).not_to have_selector('a.nav-link', text: 'Админ')
       expect(current_path).to eq(root_path)
     end
   end
@@ -20,7 +20,7 @@ feature 'DASHBOARD' do
     scenario 'has admin page' do
       visit admin_dashboard_path
 
-      expect(page).to have_selector('a.nav-link', text: 'Admin')
+      expect(page).to have_selector('a.nav-link', text: 'Админ')
       expect(current_path).to eq(admin_dashboard_path)
     end
   end

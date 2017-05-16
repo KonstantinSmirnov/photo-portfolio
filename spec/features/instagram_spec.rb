@@ -18,7 +18,7 @@ feature "INSTGRAM", js: true do
       click_button 'Create Instagram'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.instagram_text.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.instagram_text.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it succeed with valid data' do
@@ -61,7 +61,7 @@ feature "INSTGRAM", js: true do
       click_button 'Update Instagram'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.instagram_text.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.instagram_text.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it has cancel button' do

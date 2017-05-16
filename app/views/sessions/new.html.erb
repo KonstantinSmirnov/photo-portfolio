@@ -1,7 +1,7 @@
 <div class="row ">
   <div class="new-session">
     <div class="offset-md-4 col-md-4">
-      <h2 class="text-center">Log in</h2>
+      <h2 class="text-center"><%= t('sorcery.log_in') %></h2>
       <%= simple_form_for @admin, url: login_path do |f| %>
         <%= f.input :email %>
         <%= f.input :password %>

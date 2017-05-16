@@ -8,7 +8,7 @@ feature 'LOGIN' do
   end
 
   scenario 'has login page' do
-    expect(page).to have_selector('h2.text-center', text: 'Log in')
+    expect(page).to have_selector('h2.text-center', text: 'Войти')
   end
 
   scenario 'fails without email' do

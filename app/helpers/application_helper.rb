@@ -28,9 +28,9 @@ module ApplicationHelper
   def go_back_link(page_from_params)
     case page_from_params
     when 'home_page'
-      link_to '< Home', root_path, class: 'nav-link'
+      link_to t('portfolio.back_home'), root_path, class: 'nav-link'
     else
-      link_to '< Portfolio', categories_path, class: 'nav-link'
+      link_to t('portfolio.back_portfolio'), categories_path, class: 'nav-link'
     end
   end
 

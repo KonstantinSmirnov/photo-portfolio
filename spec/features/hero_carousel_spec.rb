@@ -18,7 +18,7 @@ feature 'HERO CAROUSEL', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.hero_carousel_slide_image.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.hero_carousel_slide_image.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without title' do
@@ -30,7 +30,7 @@ feature 'HERO CAROUSEL', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.hero_carousel_slide_title.has-error span.help-block', text: 'is too short (minimum is 1 character)')
+      expect(page).to have_selector('.hero_carousel_slide_title.has-error span.help-block', text: 'минимум 1 символ, не более 50 символов')
     end
 
     scenario 'it fails without subtitle' do
@@ -42,7 +42,7 @@ feature 'HERO CAROUSEL', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.hero_carousel_slide_subtitle.has-error span.help-block', text: 'is too short (minimum is 1 character)')
+      expect(page).to have_selector('.hero_carousel_slide_subtitle.has-error span.help-block', text: 'минимум 1 символ, не более 70 символов')
     end
 
     scenario 'it succeed with valid data' do

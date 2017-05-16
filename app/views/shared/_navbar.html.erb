@@ -8,24 +8,24 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item <%= is_active?('home') %>">
-        <%= link_to 'Home', root_path, class: 'nav-link' %>
+        <%= link_to t('home.title'), root_path, class: 'nav-link' %>
       </li>
       <% if @portfolio %>
         <li class="nav-item <%= is_active?('portfolios') %> <%= is_active?('categories') %>">
-          <%= link_to 'Portfolio', categories_path, class: 'nav-link' %>
+          <%= link_to t('portfolio.title'), categories_path, class: 'nav-link' %>
         </li>
       <% end %>
       <% if @contact %>
         <li class="nav-item <%= is_active?('contacts') %>">
-          <%= link_to 'Contact', contact_path, class: 'nav-link' %>
+          <%= link_to  t('contact.title'), contact_path, class: 'nav-link' %>
         </li>
       <% end %>
       <% if current_user %>
         <li class="nav-item <%= is_active_namespace?('admin') %>">
-          <%= link_to 'Admin', admin_dashboard_path, class: 'nav-link' %>
+          <%= link_to t('admin.title'), admin_dashboard_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Log out', logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
+          <%= link_to t('sorcery.log_out'), logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
         </li>
       <% end %>
     </ul>

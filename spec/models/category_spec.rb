@@ -11,7 +11,7 @@ RSpec.describe Category, type: :model do
     category.title = ''
 
     expect(category).to be_invalid
-    expect(category.errors[:title]).to include("can't be blank")
+    expect(category.errors[:title]).to include("поле не заполнено")
   end
 
   it "assigns next position id when created" do

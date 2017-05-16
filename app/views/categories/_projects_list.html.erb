@@ -8,7 +8,7 @@
       <div class="row">
         <% if @categories.any? %>
           <div class="col-12 projects-categories">
-            <%= link_to 'All', categories_path, class: "category-link #{is_active_category?(nil)}" %>
+            <%= link_to t('portfolio.all_categories'), categories_path, class: "category-link #{is_active_category?(nil)}" %>
             <% @categories.each do |category| %>
               <%= link_to category.title, category_path(category), class: "category-link #{is_active_category?(category.id)}" %>
             <% end %>

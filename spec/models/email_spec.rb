@@ -12,28 +12,28 @@ RSpec.describe Email, type: :model do
     email.name = ''
 
     expect(email).to be_invalid
-    expect(email.errors[:name]).to include("can't be blank")
+    expect(email.errors[:name]).to include("поле не заполнено")
   end
 
   it "is invalid wihtout email" do
     email.email = ''
 
     expect(email).to be_invalid
-    expect(email.errors[:email]).to include("can't be blank")
+    expect(email.errors[:email]).to include("поле не заполнено")
   end
 
   it "is invalid wihtout topic" do
     email.topic = ''
 
     expect(email).to be_invalid
-    expect(email.errors[:topic]).to include("can't be blank")
+    expect(email.errors[:topic]).to include("поле не заполнено")
   end
 
   it "is invalid without message" do
     email.message = ''
 
     expect(email).to be_invalid
-    expect(email.errors[:message]).to include("can't be blank")
+    expect(email.errors[:message]).to include("поле не заполнено")
   end
 
   it 'sends an email' do

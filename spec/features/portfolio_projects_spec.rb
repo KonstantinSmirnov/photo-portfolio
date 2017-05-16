@@ -27,7 +27,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.project_date.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.project_date.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without title' do
@@ -37,7 +37,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.project_title.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.project_title.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it succeed with correct data' do
@@ -119,7 +119,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
       click_button 'Update'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.project_title.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.project_title.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it succeed with valid data' do

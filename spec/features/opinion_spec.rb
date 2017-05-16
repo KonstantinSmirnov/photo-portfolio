@@ -13,7 +13,7 @@ feature 'OPINION', js: true do
     scenario 'opinions section is hidden on home page if no opinions created' do
       visit root_path
 
-      expect(page).not_to have_selector('h2.text-center', text: 'OPINIONS')
+      expect(page).not_to have_selector('h2.text-center', text: 'ОТЗЫВЫ')
     end
 
     scenario 'it fails without image' do
@@ -24,7 +24,7 @@ feature 'OPINION', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.opinion_image.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.opinion_image.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without text' do
@@ -36,7 +36,7 @@ feature 'OPINION', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.opinion_text.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.opinion_text.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without author' do
@@ -48,7 +48,7 @@ feature 'OPINION', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.opinion_author.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.opinion_author.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it succeed with valid data' do
@@ -71,7 +71,7 @@ feature 'OPINION', js: true do
       click_button 'Create'
 
       visit root_path
-      expect(page).to have_selector('h2.text-center', text: 'OPINIONS')
+      expect(page).to have_selector('h2.text-center', text: 'ОТЗЫВЫ')
     end
 
     scenario 'it can be cancelled when creating "new" opinion' do

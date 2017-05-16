@@ -51,7 +51,7 @@
           </div>
         <% end %>
         <div class="action-button text-center">
-          <%= link_to 'Portfolio', categories_path, class: 'btn btn-default-dark btn-lg' %>
+          <%= link_to t('portfolio.title'), categories_path, class: 'btn btn-default-dark btn-lg' %>
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@
   <% if @opinions.any? %>
     <div class="row">
       <div id="slick-opinions-header">
-        <h2 class="text-center">Opinions</h2>
+        <h2 class="text-center"><%= t('opinions.title') %></h2>
       </div>
       <div id="opinions-section">
         <% @opinions.each do |opinion| %>
@@ -88,9 +88,9 @@
     <div class="row" id="instagram-section">
         <div class="col-md-4" >
           <div class="capture">
-            <h2>Instagram</h2>
+            <h2><%= t('instagram.title') %></h2>
             <p><%= simple_format @instagram.text %></p>
-            <a href="https://www.instagram.com/<%= @instagram.username %>" class="btn btn-default-dark btn-lg" target="_blank">Profile</a>
+            <a href="https://www.instagram.com/<%= @instagram.username %>" class="btn btn-default-dark btn-lg" target="_blank"><%= t('instagram.profile') %></a>
           </div>
         </div>
         <div class="col-md-8 gallery">

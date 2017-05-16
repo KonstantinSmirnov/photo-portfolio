@@ -28,7 +28,7 @@ feature 'PROJECT PHOTO', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.photo_alt.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.photo_alt.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without image' do
@@ -37,7 +37,7 @@ feature 'PROJECT PHOTO', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.photo_image.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.photo_image.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it succeeds with valid data' do
@@ -92,7 +92,7 @@ feature 'PROJECT PHOTO', js: true do
       click_button 'Update'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.photo_alt.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.photo_alt.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'can update photo with valid data' do

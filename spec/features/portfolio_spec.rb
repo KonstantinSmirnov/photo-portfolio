@@ -20,7 +20,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Create Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_title.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.portfolio_title.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without home title' do
@@ -30,7 +30,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Create Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_home_title.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.portfolio_home_title.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without description' do
@@ -40,7 +40,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Create Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_description.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.portfolio_description.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it succeed with valid data' do
@@ -62,7 +62,7 @@ feature 'PORTFOLIO', js: true do
     scenario 'is not visible if not created' do
       visit root_path
 
-      expect(page).not_to have_selector('a.nav-link', text: 'PORTFOLIO')
+      expect(page).not_to have_selector('a.nav-link', text: 'ПОРТФОЛИО')
     end
 
     scenario 'is visible if created' do
@@ -70,7 +70,7 @@ feature 'PORTFOLIO', js: true do
 
       visit root_path
 
-      expect(page).to have_selector('a.nav-link', text: 'PORTFOLIO')
+      expect(page).to have_selector('a.nav-link', text: 'ПОРТФОЛИО')
       expect(page).to have_selector('h2', text: portfolio.home_title.upcase)
 
       visit categories_path
@@ -95,7 +95,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Update Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_title.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.portfolio_title.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without home title' do
@@ -105,7 +105,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Update Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_home_title.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.portfolio_home_title.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it fails without description' do
@@ -115,7 +115,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Update Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_description.has-error span.help-block', text: "can't be blank")
+      expect(page).to have_selector('.portfolio_description.has-error span.help-block', text: "поле не заполнено")
     end
 
     scenario 'it succeed with valid data' do

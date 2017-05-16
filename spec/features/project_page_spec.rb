@@ -14,14 +14,14 @@ feature 'PROJECT PAGE', js: true do
 
     find('div.project-preview').click
 
-    expect(page).to have_selector('a.nav-link', text: '< HOME')
+    expect(page).to have_selector('a.nav-link', text: '< ГЛАВНАЯ')
   end
 
   scenario 'nav link HOME leads to home page' do
     visit root_path
 
     find('div.project-preview').click
-    find('a.nav-link', text: '< HOME').click
+    find('a.nav-link', text: '< ГЛАВНАЯ').click
 
     expect(current_path).to eq(root_path)
   end
@@ -31,14 +31,14 @@ feature 'PROJECT PAGE', js: true do
 
     find('div.project-preview').click
 
-    expect(page).to have_selector('a.nav-link', text: '< PORTFOLIO')
+    expect(page).to have_selector('a.nav-link', text: '< ПОРТФОЛИО')
   end
 
   scenario 'nav link PORTFOLIO leads to home page' do
     visit categories_path
 
     find('div.project-preview').click
-    find('a.nav-link', text: '< PORTFOLIO').click
+    find('a.nav-link', text: '< ПОРТФОЛИО').click
 
     expect(current_path).to eq(categories_path)
   end
