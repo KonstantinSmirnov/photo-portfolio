@@ -2,11 +2,10 @@ jQuery(document).on 'turbolinks:load', ->
   $('#hero-slider').slick({
     dots: false,
     infinite: true,
-    speed: 2000,
     fade: true,
     cssEase: 'ease-out',
     autoplay: true,
-    autoplaySpeed: 2000
+    autoplaySpeed: 5000
   });
   $('#opinions-section').slick({
     dots: true,
