@@ -4,7 +4,8 @@
 // HEADERS
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 // PARAGRAPH
-@import url('https://fonts.googleapis.com/css?family=Raleway:200,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
 
 
 // COLORS
@@ -23,8 +24,8 @@ $grey-transparent: rgba(0, 0, 0, 0.1);
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 h1, h2 {
@@ -165,7 +166,7 @@ a.nav-link,
   }
   input.form-control, textarea.form-control {
     border-radius: 0px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 }
 
