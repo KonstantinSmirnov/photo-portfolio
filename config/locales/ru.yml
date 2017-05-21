@@ -30,7 +30,7 @@ ru:
     back_home: '< Главная'
     share_album: 'Поделиться альбомом'
   contact:
-    title: 'Обо мне'
+    title: 'Контакты'
     phone: 'Телефон'
     name: 'Имя'
     email: 'Email'

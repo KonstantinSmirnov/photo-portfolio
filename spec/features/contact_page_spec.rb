@@ -54,7 +54,7 @@ feature 'CONTACT PAGE', js: true do
       click_button 'Create Contact'
 
       visit root_path
-      click_link 'Обо мне'
+      click_link 'Контакты'
 
       expect(page).to have_text(control_text)
     end
