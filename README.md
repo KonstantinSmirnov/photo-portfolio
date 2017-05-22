@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+INSTAGRAM_CLIENT_ID=
+INSTAGRAM_CLIENT_SECRET=
 
-Things you may want to cover:
+FACEBOOK_APP_ID=
 
-* Ruby version
+DATABASE_USERNAME=
+DATABASE_PASSWORD=
 
-* System dependencies
+SECRET_KEY_BASE=
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MAILER_ADDRESS=
+MAILER_DOMAIN=
+MAILER_USER_NAME=
+MAILER_PASSWORD=
