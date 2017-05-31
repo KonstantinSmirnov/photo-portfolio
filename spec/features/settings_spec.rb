@@ -38,6 +38,10 @@ feature 'SETTINGS' do
       expect(page).not_to have_selector('footer .social i.fa-facebook-official')
     end
 
+    scenario 'webpage does not have analytics' do
+      expect(page).not_to have_selector('small', text: 'Metrika')
+    end
+
     context 'contact page' do
       before(:each) do
         visit contact_path
@@ -86,6 +90,10 @@ feature 'SETTINGS' do
 
     scenario 'webpage does not have a facebook link in the footer' do
       expect(page).to have_selector('footer .social i.fa-facebook-official')
+    end
+
+    scenario 'webpage has analytics' do
+      expect(page).to have_selector('small', text: 'Metrika')
     end
 
     context 'contact page default values' do

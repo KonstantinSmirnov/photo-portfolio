@@ -9,5 +9,6 @@ FactoryGirl.define do
     contact_phone '+919000'
     contact_email 'test@test.com'
     facebook 'http://test.com'
+    analytics '<small>Metrika</small>'
   end
 end

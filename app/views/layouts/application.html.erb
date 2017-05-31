@@ -28,6 +28,7 @@
   </head>
 
   <body>
+    <%= raw @setting.analytics if @setting %>
     <div class="container-fluid">
       <% unless is_portfolio_project?('projects') %>
         <%= render 'shared/navbar' %>

@@ -37,4 +37,10 @@ RSpec.describe Setting, type: :model do
 
     expect(setting).to be_valid
   end
+
+  it 'is valid with analytics text' do
+    setting.analytics = 'Test'
+
+    expect(setting).to be_valid
+  end
 end

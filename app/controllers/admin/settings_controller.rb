@@ -49,7 +49,8 @@ class Admin::SettingsController < AdminController
                                     :seo_text,
                                     :contact_phone,
                                     :contact_email,
-                                    :facebook)
+                                    :facebook,
+                                    :analytics)
   end
 
 
