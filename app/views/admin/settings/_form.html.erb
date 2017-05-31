@@ -4,12 +4,12 @@
     <%= f.input :contact_phone %>
     <%= f.input :contact_email %>
     <%= f.input :facebook %>
-    <%= f.input :seo_description, input_html: { class: 'textarea-resizable', id: 'seo_description' }, placeholder: '170 characters max' %>
-    <small><span id="seo_description_counter"></span></small>
-    <%= f.input :seo_keywords, input_html: { class: 'textarea-resizable', id: 'seo_keywords' }, placeholder: '255 characters max' %>
-    <small><span id="seo_keywords_counter"></span></small>
+    <%= f.input :seo_description, input_html: { class: 'textarea-resizable', id: 'seo_description' } %>
+    <small><span id="seo_description_counter" class="counter"></span></small>
+    <%= f.input :seo_keywords, input_html: { class: 'textarea-resizable', id: 'seo_keywords' } %>
+    <small><span id="seo_keywords_counter"  class="counter"></span></small>
     <%= f.input :seo_text, input_html: { class: 'textarea-resizable', id: 'seo_text' } %>
-    <small><span id="seo_text_counter"></span></small>
+    <small><span id="seo_text_counter"  class="counter"></span></small>
     <%= f.input :analytics, input_html: { class: 'textarea-resizable' } %>
     <%= f.submit class: 'btn btn-default-light btn-processable' %>
     <%= link_to 'Delete settings', admin_setting_path, method: :delete, class: 'btn btn-default-light', data: { confirm: 'Are you sure?' } if @settings.persisted? %>
