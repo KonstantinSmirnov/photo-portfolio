@@ -733,7 +733,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
     position: absolute;
     top: 0;
     display: block;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     height: 100%;
     object-fit: cover;
@@ -741,7 +741,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
   }
   #contact-form {
     display: block;
-    width: 100vw;
+    width: 100%;
     min-height: calc(100vh - 90px);
     padding-top: 75px;
     padding-bottom: 30px;

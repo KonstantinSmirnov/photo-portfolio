@@ -6,11 +6,10 @@
     <div class="col-md-8">
       <h3>Text</h3>
       <p><%= simple_format @contact.text %></p>
+      <%= link_to 'Edit', edit_admin_contact_path, remote: true, class: 'btn btn-default-light btn-processable' %>
+      <%= link_to 'Delete', admin_contact_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
     </div>
   </div>
-  <hr>
-  <%= link_to 'Edit', edit_admin_contact_path, remote: true, class: 'btn btn-default-light btn-processable' %>
-  <%= link_to 'Delete', admin_contact_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
 <% else %>
   <h3>Page is not created</h3>
   <%= link_to 'Create', new_admin_contact_path, class: 'btn btn-default-light btn-processable', remote: true %>
