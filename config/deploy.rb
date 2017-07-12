@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.8.0'
 
-server '85.143.209.212', user: 'deployer', roles: [:web, :app, :db], primary: true
+# server '85.143.209.212', user: 'deployer', roles: [:web, :app, :db], primary: true
 
 set :application, 'photo_portfolio'
 set :repo_url, 'git@github.com:KonstantinSmirnov/photo-portfolio.git'

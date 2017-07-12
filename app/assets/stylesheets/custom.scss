@@ -200,7 +200,7 @@ a.nav-link,
 
 nav.navbar.transparent {
   background-color:transparent;
-  background-color: rgba(30,30,30,0.5);
+  background-color: rgba(0,0,0,0.7);
 }
 
 .navbar-brand {
@@ -399,7 +399,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
       left:0;
       width:100%;
       height:100%;
-      h3 {
+      h5 {
         color: $text-light;
         position: relative;
         top: 50%;

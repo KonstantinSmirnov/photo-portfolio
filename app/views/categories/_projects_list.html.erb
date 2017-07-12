@@ -19,7 +19,7 @@
             <%= image_tag project.cover_photo.image.url(:thumb), class: 'img-fluid', alt: project.cover_photo.alt if project.cover_photo %>
             <%= link_to project_path(project) do %>
               <div class="overlay">
-                <h3 class="text-center"><%= project.title %></h3>
+                <h5 class="text-center"><%= project.title %></h3>
               </div>
             <% end %>
           </div>
