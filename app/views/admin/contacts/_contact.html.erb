@@ -1,7 +1,7 @@
 <% if !@contact.nil? %>
   <div class="row">
     <div class="col-md-4">
-      <%= image_tag @contact.image.url(:thumb) %>
+      <%= image_tag @contact.image.url(:thumb), class: 'img-fluid' %>
     </div>
     <div class="col-md-8">
       <h3>Text</h3>
