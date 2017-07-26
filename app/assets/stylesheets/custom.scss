@@ -1,6 +1,4 @@
 
-// LOGO FONT
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
 // HEADERS
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 // PARAGRAPH
@@ -205,8 +203,9 @@ nav.navbar.transparent {
 
 .navbar-brand {
   text-transform: uppercase;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 20pt;
+  font-weight: 400;
   @media (max-width : 480px) {
     font-size: 14pt;
   }
@@ -402,11 +401,8 @@ nav .navbar-nav .nav-item.active a.nav-link {
       h5 {
         color: $text-light;
         position: relative;
-        top: 50%;
+        top: 30%;
         text-transform: uppercase;
-        transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
       }
     }
   }
@@ -768,7 +764,7 @@ footer {
   padding-top: 30px;
   .footer-brand {
     display: inline-block;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 24pt;
     margin-right: 10px;
     position: relative;
