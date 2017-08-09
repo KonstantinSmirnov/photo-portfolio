@@ -277,6 +277,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
     padding-bottom: 70px;
     h1 {
       float: left;
+      font-size: 30pt;
       background-color: rgba(255, 255, 255, 0.5);
       padding: 5px;
       @media (max-width : 766px) {
@@ -294,7 +295,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
       font-family: 'Fira Sans', sans-serif;
       padding: 5px;
       @media (max-width : 766px) {
-        font-size: 14pt;
+        font-size: 12pt;
         padding: 2px;
       }
     }
