@@ -2,7 +2,7 @@
   <div id="portfolio-page">
     <div class="col-md-12">
       <h2 class="text-center"><%= @portfolio.title %></h2>
-      <p class="text-center"><%= @portfolio.description %></p>
+      <p><%= simple_format @portfolio.description %></p>
     </div>
     <div class="col-sm-12" id="projects-section">
       <div class="row">
