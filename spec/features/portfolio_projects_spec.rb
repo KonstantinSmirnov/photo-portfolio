@@ -163,7 +163,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
     scenario 'newest project first on projects page' do
       visit categories_path
 
-      projects = page.all('.project-preview .overlay h3', visible: :hidden)
+      projects = page.all('.project-preview .overlay h5', visible: :hidden)
 
       expect(projects[0]['innerHTML']).to have_text('Project 1')
     end
@@ -173,8 +173,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
       project_2.save!
 
       visit categories_path
-
-      projects = page.all('.project-preview .overlay h3', visible: :hidden)
+      projects = page.all('.project-preview .overlay h5', visible: :hidden)
 
       expect(projects[0]['innerHTML']).to have_text('Project 2')
     end
@@ -182,7 +181,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
     scenario 'newest best project first on home page' do
       visit categories_path
 
-      projects = page.all('.project-preview .overlay h3', visible: :hidden)
+      projects = page.all('.project-preview .overlay h5', visible: :hidden)
 
       expect(projects[0]['innerHTML']).to have_text('Project 1')
     end
@@ -193,7 +192,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
 
       visit categories_path
 
-      projects = page.all('.project-preview .overlay h3', visible: :hidden)
+      projects = page.all('.project-preview .overlay h5', visible: :hidden)
 
       expect(projects[0]['innerHTML']).to have_text('Project 2')
     end

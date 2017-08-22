@@ -47,6 +47,8 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     animate-rails (1.0.10)
       rails
+    archive-zip (0.7.0)
+      io-like (~> 0.3.0)
     arel (7.1.4)
     autoprefixer-rails (6.6.1)
       execjs
@@ -84,6 +86,9 @@ GEM
       xpath (~> 2.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
+    chromedriver-helper (1.1.0)
+      archive-zip (~> 0.7.0)
+      nokogiri (~> 1.6)
     climate_control (0.1.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -114,6 +119,7 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.1)
+    io-like (0.3.0)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
@@ -289,6 +295,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano3-puma
   capybara
+  chromedriver-helper
   coffee-rails (~> 4.2)
   database_cleaner
   dotenv-rails
@@ -306,7 +313,7 @@ DEPENDENCIES
   remotipart (~> 1.2)
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
-  selenium-webdriver
+  selenium-webdriver (~> 3.0.5)
   simple_form
   sorcery
   spring
@@ -318,4 +325,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.1
+   1.15.4

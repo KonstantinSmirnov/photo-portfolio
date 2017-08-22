@@ -126,17 +126,15 @@ feature 'CATEGORY', js: true do
 
       visit category_path(category)
 
-      expect(page).to have_selector('h3.text-center', text: project.title, visible: false)
+      expect(page).to have_selector('h5.text-center', text: project.title, visible: false)
     end
 
     scenario 'a project without category is not displayed in category' do
       project2 = FactoryGirl.create(:project, portfolio: portfolio)
-      project.category = category
-      project.save!
 
       visit category_path(category)
-
-      expect(page).to have_selector('h3.text-center', text: project2.title, visible: false)
+      
+      expect(page).not_to have_selector('h3.text-center', text: project2.title, visible: false)
     end
   end
 

@@ -20,9 +20,9 @@ feature 'CONTACT PAGE', js: true do
 
     scenario 'it fails without text' do
       fill_in 'contact_text', with: ''
-      page.attach_file('contact_image', Rails.root + 'public/images/test_image.png')
+      # page.attach_file('contact_image', Rails.root + 'public/images/test_image.png')
       click_button 'Create Contact'
-
+      
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
       expect(page).to have_selector('.contact_text.has-error span.help-block', text: "поле не заполнено")
     end
