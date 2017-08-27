@@ -62,6 +62,18 @@ RSpec.describe Article, type: :model do
         expect(article.status).to eq('draft')
         expect(article.publication_date).to eq(nil)
       end
+      
+      it 'does not update publication date for already published article' do
+        article.published!
+        article.publication_date = Date.yesterday
+        article.save
+        
+        expect(article.publication_date).to eq(Date.yesterday)
+        
+        article.published!
+        
+        expect(article.publication_date).not_to eq(Date.today)
+      end
     end
   end
 end
