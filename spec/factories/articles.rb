@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :article do
-    title "MyString"
-    content "MyText"
+    title 'MyString'
+    content 'MyText'
     blog nil
   end
 end

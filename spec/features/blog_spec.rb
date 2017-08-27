@@ -63,7 +63,7 @@ feature 'BLOG', js: true do
     scenario 'delete blog' do
       FactoryGirl.create(:article, blog: Blog.first)
       visit admin_blog_path
-      
+
       expect(Article.count).to eq(1)
       within '#blog-details' do
         click_link 'Delete'

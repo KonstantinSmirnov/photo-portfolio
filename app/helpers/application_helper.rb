@@ -44,7 +44,7 @@ module ApplicationHelper
   def meta_keywords(page_keywords)
     content_for(:meta_keywords) { page_keywords }
   end
-  
+
   def delete_or_move_to_trash_path(article)
     if article.deleted?
       link_to 'Delete', admin_blog_article_path(article), method: :delete, data: { confirm: 'Are you sure? This action can not be reverted!' }
