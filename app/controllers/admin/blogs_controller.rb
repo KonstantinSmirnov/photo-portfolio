@@ -1,8 +1,6 @@
 class Admin::BlogsController < AdminController
   def show
     @blog = Blog.first
-    
-    @articles = @blog.articles.order('created_at desc')
   end
 
   def new
@@ -69,6 +67,6 @@ class Admin::BlogsController < AdminController
   private
 
   def blog_params
-    params.require(:blog).permit(:title)
+    params.require(:blog).permit(:title, :visible)
   end
 end

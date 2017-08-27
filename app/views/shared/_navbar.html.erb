@@ -15,6 +15,11 @@
           <%= link_to t('portfolio.title'), categories_path, class: 'nav-link' %>
         </li>
       <% end %>
+      <% if @blog && @blog.visible? %>
+        <li class="nav-item <%= is_active?('blog') %> <%= is_active?('articles') %>">
+          <%= link_to t('blog.title'), '#', class: 'nav-link' %>
+        </li>
+      <% end %>
       <% if @contact %>
         <li class="nav-item <%= is_active?('contacts') %>">
           <%= link_to  t('contact.title'), contact_path, class: 'nav-link' %>

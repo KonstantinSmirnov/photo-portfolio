@@ -2,6 +2,7 @@
   <div class="col-md-12">
     <%= simple_form_for @blog, url: admin_blog_path, html: { autocomplete: 'off' }, remote: true do |f| %>
       <%= f.input :title  %>
+      <%= f.input :visible, as: :boolean %>
       <%= f.submit class: 'btn btn-default-light btn-processable' %>
       <%= link_to 'Cancel', cancel_admin_blog_path, class: 'btn btn-default-light', remote: true %>
     <% end %>

@@ -6,6 +6,7 @@
     <div class="col-md-12" id='blog-details'>
       <h3>Title</h3>
       <p><%= simple_format @blog.title %></p>
+      <p><%= 'Blog is visible' if @blog.visible? %></p>
       <%= link_to 'Edit', edit_admin_blog_path, remote: true, class: 'btn btn-default-light btn-processable' %>
       <%= link_to 'Delete', admin_blog_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
     </div>      
@@ -26,7 +27,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @articles.each do |article| %>
+          <% @blog.articles.each do |article| %>
             <tr>
               <th scope="row"><%= article.id %></th>
               <td><%= link_to article.title, admin_blog_article_path(article) %></td>
