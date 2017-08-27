@@ -1,6 +1,8 @@
 class Admin::BlogsController < AdminController
   def show
     @blog = Blog.first
+    
+    @articles = @blog.articles.order('created_at desc')
   end
 
   def new
