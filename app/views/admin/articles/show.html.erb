@@ -2,6 +2,6 @@
 <%= link_to 'Edit', edit_admin_blog_article_path(@article), class: 'btn btn-default-light' %>
 <%= delete_or_move_to_trash_path(@article) %>
 <h3><%= @article.title %></h3>
-<p>STATUS: <%= @article.status.upcase %></p>
-<p><%= @article.publication_date %></p>
+<p>STATUS: <%= @article.status.upcase %> | <%= @article.publication_date %></p>
+<p><%= @article.slug %></p>
 <p><%= @article.content %></p>

@@ -76,6 +76,9 @@ gem 'sorcery'
 
 gem 'paperclip', '~> 5.0.0'
 
+# Transliterate from cyrillic letters
+gem 'translit'
+
 # Remote files upload
 gem 'remotipart', '~> 1.2'
 
