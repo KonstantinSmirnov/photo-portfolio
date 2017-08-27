@@ -6,7 +6,7 @@
   <%= link_to 'Portfolio page', admin_portfolio_path, class: "nav-link #{is_active?('admin/portfolios')}" %>
   <%= link_to 'Projects', admin_projects_path, class: "nav-link #{is_active?('admin/projects')}" if @portfolio %>
   <%= link_to 'Opinions', admin_opinions_path, class: "nav-link #{is_active?('admin/opinions')}" %>
-  <%= link_to 'Blog', admin_blog_path, class: "nav-link #{is_active?('admin/blogs')}" %>
+  <%= link_to 'Blog', admin_blog_path, class: "nav-link #{is_active?('admin/blogs')} #{is_active?('admin/articles')}" %>
   <%= link_to 'Contact page', admin_contact_path, class: "nav-link #{is_active?('admin/contacts')}" %>
   <%= link_to 'Account', admin_account_path, class: "nav-link #{is_active?('admin/account')}" %>
   <%= link_to 'Settings', edit_admin_setting_path, class: "nav-link #{is_active?('admin/settings')}" %>

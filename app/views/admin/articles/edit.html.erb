@@ -1,0 +1,16 @@
+<h3>New article</h3>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= simple_form_for @article, url: admin_blog_article_path, html: { autocomplete: 'off' } do |f| %>
+      <%= f.input :title  %>
+      <%= f.input :content, input_html: { class: 'textarea-resizable' } %>
+      <%= f.submit class: 'btn btn-default-light btn-processable' %>
+      <% if @article.persisted? %>
+        <%= link_to 'Cancel', admin_blog_article_path(@article), class: 'btn btn-default-light' %>
+      <% else %>
+        <%= link_to 'Cancel', admin_blog_path, class: 'btn btn-default-light' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

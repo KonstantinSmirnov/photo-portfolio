@@ -61,12 +61,17 @@ feature 'BLOG', js: true do
     end
 
     scenario 'delete blog' do
+      FactoryGirl.create(:article, blog: Blog.first)
       visit admin_blog_path
-
-      click_link 'Delete'
+      
+      expect(Article.count).to eq(1)
+      within '#blog-details' do
+        click_link 'Delete'
+      end
       page.driver.browser.switch_to.alert.accept
 
       expect(page).to have_selector('.flash-alert.flash-success', text: 'SUCCESSFULLY DELETED')
+      expect(Article.count).to eq(0)
     end
   end
 end

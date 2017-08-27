@@ -1,0 +1,5 @@
+<%= link_to '< Back to articles', admin_blog_path, class: 'btn btn-default-light' %>
+<%= link_to 'Edit', edit_admin_blog_article_path(@article), class: 'btn btn-default-light' %>
+<%= link_to 'Delete', admin_blog_article_path(@article), class: 'btn btn-default-light', method: :delete, data: { confirm: 'Are you sure?' } %>
+<h3><%= @article.title %></h3>
+<p><%= @article.content %></p>

@@ -138,6 +138,12 @@ ru:
           attributes:
             title:
               blank: "поле не заполнено"
+        article:
+          attributes:
+            title:
+              blank: "поле не заполнено"
+            content:
+              blank: "поле не заполнено"
   activemodel:
     errors:
       models:

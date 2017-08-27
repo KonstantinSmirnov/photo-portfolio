@@ -63,6 +63,7 @@ Rails.application.routes.draw do
 
     resource :blog do
       get 'cancel' => 'blogs#cancel'
+      resources :articles
     end
   end
 

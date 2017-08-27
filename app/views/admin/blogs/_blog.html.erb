@@ -1,13 +1,43 @@
-<% if !@blog.nil? %>
+<% if @blog.nil? %>
+  <h3>Blog is not created</h3>
+  <%= link_to 'Create', new_admin_blog_path, class: 'btn btn-default-light btn-processable', remote: true %>
+<% else %>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" id='blog-details'>
       <h3>Title</h3>
       <p><%= simple_format @blog.title %></p>
       <%= link_to 'Edit', edit_admin_blog_path, remote: true, class: 'btn btn-default-light btn-processable' %>
       <%= link_to 'Delete', admin_blog_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
+    </div>      
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12" id="articles-list">
+      <h3>Articles</h3>
+      <%= link_to 'New Article', new_admin_blog_article_path, class: 'btn btn-default-light' %>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title
+            <th>Status</ht>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @blog.articles.each do |article| %>
+            <tr>
+              <th scope="row"><%= article.id %></th>
+              <td><%= link_to article.title, admin_blog_article_path(article) %></td>
+              <td>Draft</td>
+              <td>
+                <%= link_to 'Edit', edit_admin_blog_article_path(article) %>
+                <%= link_to 'Delete', admin_blog_article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
-<% else %>
-  <h3>Blog is not created</h3>
-  <%= link_to 'Create', new_admin_blog_path, class: 'btn btn-default-light btn-processable', remote: true %>
 <% end %>
