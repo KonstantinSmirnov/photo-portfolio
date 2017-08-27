@@ -45,10 +45,18 @@ class Admin::ArticlesController < AdminController
     redirect_to admin_blog_path
   end
   
+  def delete
+    @article = @blog.articles.find(params[:article_id])
+    @article.deleted!
+     
+    flash[:success] = 'Article has been moved to deleted'
+    redirect_to :back
+  end
+  
   private
   
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :content, :status)
   end
   
   def get_blog

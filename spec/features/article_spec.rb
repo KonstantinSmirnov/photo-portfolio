@@ -95,6 +95,16 @@ feature 'ARTICLE', js: true do
       expect(current_path).to eq(admin_blog_article_path(article))
     end
     
+    scenario 'can update status' do
+      expect(article.status).to eq('draft')
+      
+      select("published", from: "article_status").select_option
+      click_button 'Update Article'
+      article.reload
+      
+      expect(article.status).to eq('published')
+    end
+    
     scenario 'can edit article from articles list (blog show) as well' do
       visit admin_blog_path
       
@@ -107,9 +117,27 @@ feature 'ARTICLE', js: true do
   end
   
   context 'Delete article' do
-
-    scenario 'can delete article from articles list' do
+      
+    scenario 'assign article status Deleted if not asigned from articles list' do
       article = FactoryGirl.create(:article, blog: blog)
+      expect(article.status).to eq('draft')
+      
+      visit admin_blog_path
+      
+      within '#articles-list' do
+        first(:link, 'Delete').click
+      end
+      
+      expect(page).to have_selector('.flash-alert.flash-success', text: 'ARTICLE HAS BEEN MOVED TO DELETED')
+      expect(current_path).to eq(admin_blog_path)
+      
+      article.reload
+      expect(article.status).to eq('deleted')
+    end
+    
+    scenario 'can delete article from articles list with status Deleted' do
+      article = FactoryGirl.create(:article, blog: blog)
+      article.deleted!
       visit admin_blog_path
       
       within '#articles-list' do
@@ -121,8 +149,24 @@ feature 'ARTICLE', js: true do
       expect(page).not_to have_text(article.title)
     end
     
-    scenario 'can delete articles from show article' do
+    scenario 'assign article status Deleted if not asigned from show article' do
       article = FactoryGirl.create(:article, blog: blog)
+      expect(article.status).to eq('draft')
+      
+      visit admin_blog_article_path(article)
+      
+      click_link 'Delete'
+      
+      expect(page).to have_selector('.flash-alert.flash-success', text: 'ARTICLE HAS BEEN MOVED TO DELETED')
+      expect(current_path).to eq(admin_blog_article_path(article))
+
+      article.reload
+      expect(article.status).to eq('deleted')
+    end
+    
+    scenario 'can delete articles from show article with status deleted' do
+      article = FactoryGirl.create(:article, blog: blog)
+      article.deleted!
       visit admin_blog_article_path(article)
       
       click_link 'Delete'

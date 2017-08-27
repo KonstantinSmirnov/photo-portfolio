@@ -22,6 +22,13 @@ RSpec.describe Article, type: :model do
       expect(article.errors[:content]).to include('поле не заполнено')
     end
     
+    it 'has status Draft after creation' do
+      article = FactoryGirl.create(:article)
+      
+      expect(article).to be_valid
+      expect(article.status).to eq('draft')
+    end
+    
     describe 'Update' do
       let(:article) { FactoryGirl.create(:article) }
       

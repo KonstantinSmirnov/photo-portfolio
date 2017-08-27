@@ -63,7 +63,9 @@ Rails.application.routes.draw do
 
     resource :blog do
       get 'cancel' => 'blogs#cancel'
-      resources :articles
+      resources :articles do
+        get 'delete' => 'articles#delete'
+      end
     end
   end
 
@@ -73,5 +75,5 @@ Rails.application.routes.draw do
 
   get '/sitemap.xml', to: 'sitemap#show', format: 'xml', as: :sitemap
 
-  get '*url' => 'errors#error_404'
+  # get '*url' => 'errors#error_404'
 end

@@ -4,6 +4,7 @@
   <div class="col-md-12">
     <%= simple_form_for @article, url: admin_blog_article_path, html: { autocomplete: 'off' } do |f| %>
       <%= f.input :title  %>
+      <%= f.input :status, collection: Article.statuses.keys.to_a, include_blank: false, selected: @article.status %>
       <%= f.input :content, input_html: { class: 'textarea-resizable' } %>
       <%= f.submit class: 'btn btn-default-light btn-processable' %>
       <% if @article.persisted? %>
