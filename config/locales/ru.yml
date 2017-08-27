@@ -134,6 +134,10 @@ ru:
             email:
               blank: "поле не заполнено"
               taken: "уже было использовано"
+        blog:
+          attributes:
+            title:
+              blank: "поле не заполнено"
   activemodel:
     errors:
       models:

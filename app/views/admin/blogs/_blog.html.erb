@@ -1,0 +1,13 @@
+<% if !@blog.nil? %>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Title</h3>
+      <p><%= simple_format @blog.title %></p>
+      <%= link_to 'Edit', edit_admin_blog_path, remote: true, class: 'btn btn-default-light btn-processable' %>
+      <%= link_to 'Delete', admin_blog_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default-light' %>
+    </div>
+  </div>
+<% else %>
+  <h3>Blog is not created</h3>
+  <%= link_to 'Create', new_admin_blog_path, class: 'btn btn-default-light btn-processable', remote: true %>
+<% end %>

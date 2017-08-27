@@ -60,6 +60,10 @@ Rails.application.routes.draw do
     end
 
     resource :setting
+    
+    resource :blog do
+      get 'cancel' => 'blogs#cancel'
+    end
   end
 
   get '/robots.:format' => 'robots#show'
