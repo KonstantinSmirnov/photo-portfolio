@@ -3,4 +3,5 @@
 <%= delete_or_move_to_trash_path(@article) %>
 <h3><%= @article.title %></h3>
 <p>STATUS: <%= @article.status.upcase %></p>
+<p><%= @article.publication_date %></p>
 <p><%= @article.content %></p>

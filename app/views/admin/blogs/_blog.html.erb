@@ -21,6 +21,7 @@
             <th>#</th>
             <th>Title
             <th>Status</ht>
+            <th>Publication date</th>
             <th></th>
           </tr>
         </thead>
@@ -30,6 +31,7 @@
               <th scope="row"><%= article.id %></th>
               <td><%= link_to article.title, admin_blog_article_path(article) %></td>
               <td><%= article.status.upcase %></td>
+              <td><%= article.publication_date %></td>
               <td>
                 <%= link_to 'Edit', edit_admin_blog_article_path(article) %>
                 <%= delete_or_move_to_trash_path(article) %>

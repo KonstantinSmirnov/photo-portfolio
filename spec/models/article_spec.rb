@@ -45,6 +45,23 @@ RSpec.describe Article, type: :model do
         expect(article).to be_invalid
         expect(article.errors[:content]).to include('поле не заполнено')
       end
+      
+      it 'updates publication date according selected status' do
+        expect(article.status).to eq('draft')
+        expect(article.publication_date).to eq(nil)
+        
+        article.published!
+        article.reload
+        
+        expect(article.status).to eq('published')
+        expect(article.publication_date).to eq(Date.today)
+        
+        article.draft!
+        article.reload
+        
+        expect(article.status).to eq('draft')
+        expect(article.publication_date).to eq(nil)
+      end
     end
   end
 end

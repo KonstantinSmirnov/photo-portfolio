@@ -5,4 +5,9 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
   validates :content, presence: true
+
+  before_update do
+    self.publication_date = Date.today if status == 'published' && status_changed?
+    self.publication_date = nil if status != 'published'
+  end
 end

@@ -95,7 +95,7 @@ feature 'ARTICLE', js: true do
       expect(current_path).to eq(admin_blog_article_path(article))
     end
 
-    scenario 'can update status' do
+    scenario 'can publish'
       expect(article.status).to eq('draft')
 
       select('published', from: 'article_status').select_option
@@ -103,6 +103,7 @@ feature 'ARTICLE', js: true do
       article.reload
 
       expect(article.status).to eq('published')
+      expect(article.publication_date).to eq(Date.today)
     end
 
     scenario 'can edit article from articles list (blog show) as well' do

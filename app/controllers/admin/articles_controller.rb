@@ -27,7 +27,7 @@ class Admin::ArticlesController < AdminController
 
   def update
     @article = @blog.articles.find(params[:id])
-
+    
     if @article.update_attributes(article_params)
       flash[:success] = 'Article has been updated'
       redirect_to admin_blog_article_path(@article)
@@ -56,7 +56,7 @@ class Admin::ArticlesController < AdminController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :status)
+    params.require(:article).permit(:title, :content, :status, :publication_date)
   end
 
   def get_blog
