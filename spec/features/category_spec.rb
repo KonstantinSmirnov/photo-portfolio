@@ -10,7 +10,6 @@ feature 'CATEGORY', js: true do
   end
 
   context 'Add new category' do
-
     scenario 'it fails without text' do
       click_link 'Add category'
 
@@ -18,9 +17,8 @@ feature 'CATEGORY', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.category_title.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.category_title.has-error span.help-block', text: 'поле не заполнено')
     end
-
 
     scenario 'it succeed with valid data' do
       click_link 'Add category'
@@ -41,7 +39,6 @@ feature 'CATEGORY', js: true do
   end
 
   context 'Update category' do
-
     before(:each) do
       click_link 'Add category'
 
@@ -49,8 +46,8 @@ feature 'CATEGORY', js: true do
 
       click_button 'Create'
 
-      within "#categories-list" do
-        first(:link, "Edit").click
+      within '#categories-list' do
+        first(:link, 'Edit').click
       end
     end
 
@@ -77,8 +74,8 @@ feature 'CATEGORY', js: true do
     scenario 'can delete category' do
       visit admin_portfolio_path
 
-      within "#categories-list" do
-        first(:link, "Delete").click
+      within '#categories-list' do
+        first(:link, 'Delete').click
       end
       page.driver.browser.switch_to.alert.accept
 
@@ -88,7 +85,7 @@ feature 'CATEGORY', js: true do
 
   context 'Maintaining categories' do
     let!(:category) { FactoryGirl.create(:category, portfolio: portfolio) }
-    let!(:project) { FactoryGirl.create(:project, portfolio: portfolio)}
+    let!(:project) { FactoryGirl.create(:project, portfolio: portfolio) }
 
     scenario 'does not show categories if a category created, but no projects asigned' do
       visit categories_path
@@ -133,7 +130,7 @@ feature 'CATEGORY', js: true do
       project2 = FactoryGirl.create(:project, portfolio: portfolio)
 
       visit category_path(category)
-      
+
       expect(page).not_to have_selector('h3.text-center', text: project2.title, visible: false)
     end
   end
@@ -141,9 +138,8 @@ feature 'CATEGORY', js: true do
   context 'Drag and drop' do
     let!(:category_1) { FactoryGirl.create(:category, portfolio: portfolio, title: 'Category 1') }
     let!(:category_2) { FactoryGirl.create(:category, portfolio: portfolio, title: 'Category 2') }
-    let!(:project_1) { FactoryGirl.create(:project, portfolio: portfolio, category: category_1)}
-    let!(:project_2) { FactoryGirl.create(:project, portfolio: portfolio, category: category_2)}
-
+    let!(:project_1) { FactoryGirl.create(:project, portfolio: portfolio, category: category_1) }
+    let!(:project_2) { FactoryGirl.create(:project, portfolio: portfolio, category: category_2) }
 
     scenario 'can change order in admin' do
       visit admin_portfolio_path
@@ -151,7 +147,7 @@ feature 'CATEGORY', js: true do
       expect(page).to have_selector('#categories-list div.category:nth-child(2) h5', text: 'Category 2')
 
       # using jquery.simulate.drag-sortable.js
-      page.execute_script %Q{
+      page.execute_script %{
         $('#categories-list div.category:first').simulateDragSortable({move: 1});
       }
 
@@ -166,7 +162,7 @@ feature 'CATEGORY', js: true do
 
       visit admin_portfolio_path
       # using jquery.simulate.drag-sortable.js
-      page.execute_script %Q{
+      page.execute_script %{
         $('#categories-list div.category:first').simulateDragSortable({move: 1});
       }
       sleep 1

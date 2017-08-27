@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   resources :projects, only: [:show]
-  resources :categories, only: [:index, :show]
+  resources :categories, only: %i[index show]
 
   namespace :admin do
     get 'dashboard' => 'dashboard#index'
@@ -60,7 +60,7 @@ Rails.application.routes.draw do
     end
 
     resource :setting
-    
+
     resource :blog do
       get 'cancel' => 'blogs#cancel'
     end
@@ -68,10 +68,9 @@ Rails.application.routes.draw do
 
   get '/robots.:format' => 'robots#show'
 
-  match "/404", :to => 'errors#error_404', via: :all
+  match '/404', to: 'errors#error_404', via: :all
 
-  get '/sitemap.xml', :to => 'sitemap#show', :format => 'xml', :as => :sitemap
+  get '/sitemap.xml', to: 'sitemap#show', format: 'xml', as: :sitemap
 
   get '*url' => 'errors#error_404'
-
 end

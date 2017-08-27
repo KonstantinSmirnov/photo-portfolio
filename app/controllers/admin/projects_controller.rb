@@ -1,5 +1,4 @@
 class Admin::ProjectsController < AdminController
-
   def index
     @projects = Portfolio.first.projects.order('date DESC')
   end
@@ -17,10 +16,10 @@ class Admin::ProjectsController < AdminController
     @project = Portfolio.first.projects.new(project_params)
 
     if @project.save
-      flash[:success] = "Project has been created"
+      flash[:success] = 'Project has been created'
       redirect_to admin_project_path(@project)
     else
-      flash.now[:danger] = "Please check errors"
+      flash.now[:danger] = 'Please check errors'
       render :new
     end
   end
@@ -37,10 +36,10 @@ class Admin::ProjectsController < AdminController
     @project = Project.find(params[:id])
     respond_to do |format|
       if @project.update_attributes(project_params)
-        flash.now[:success] = "Project has been updated"
+        flash.now[:success] = 'Project has been updated'
         format.js
       else
-        flash.now[:danger] = "Please check errors"
+        flash.now[:danger] = 'Please check errors'
         format.js { render 'edit' }
       end
     end
@@ -51,7 +50,7 @@ class Admin::ProjectsController < AdminController
     @project.destroy
 
     respond_to do |format|
-      flash.now[:success] = "Project has been deleted"
+      flash.now[:success] = 'Project has been deleted'
       format.js { render 'destroy' }
     end
   end

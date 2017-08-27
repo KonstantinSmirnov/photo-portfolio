@@ -1,5 +1,4 @@
 class Category < ApplicationRecord
-
   before_create :set_position
 
   validates :title, presence: true

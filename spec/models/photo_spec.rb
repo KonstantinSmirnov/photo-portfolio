@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Photo, type: :model do
-
   it 'has a valid factory' do
     photo = FactoryGirl.build(:photo)
 
@@ -12,17 +11,17 @@ RSpec.describe Photo, type: :model do
     photo = FactoryGirl.build(:photo, alt: '')
 
     expect(photo).to be_invalid
-    expect(photo.errors[:alt]).to include("поле не заполнено")
+    expect(photo.errors[:alt]).to include('поле не заполнено')
   end
 
   it 'is invalid without image' do
     photo = FactoryGirl.build(:photo, image: '')
 
     expect(photo).to be_invalid
-    expect(photo.errors[:image]).to include("поле не заполнено")
+    expect(photo.errors[:image]).to include('поле не заполнено')
   end
 
-  it "assigns next position id when created" do
+  it 'assigns next position id when created' do
     project = FactoryGirl.create(:project)
     position_1 = project.photos.count
     photo_1 = FactoryGirl.create(:photo, project: project)

@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :instagram do
-    text "MyText"
+    text 'MyText'
   end
 end

@@ -7,7 +7,7 @@ class Admin::BlogsController < AdminController
     @blog = Blog.new
 
     respond_to do |format|
-      format.js { render 'render_form'}
+      format.js { render 'render_form' }
     end
   end
 

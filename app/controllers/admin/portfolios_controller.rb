@@ -18,7 +18,7 @@ class Admin::PortfoliosController < AdminController
     respond_to do |format|
       if @portfolio.save
         flash.now[:success] = 'Portfolio page has been created'
-        format.js { render 'update_show'}
+        format.js { render 'update_show' }
       else
         flash.now[:danger] = 'Please check errors'
         format.js { render 'render_form' }
@@ -61,7 +61,7 @@ class Admin::PortfoliosController < AdminController
     @portfolio = Portfolio.first
 
     respond_to do |format|
-      format.js { render 'update_show'}
+      format.js { render 'update_show' }
     end
   end
 

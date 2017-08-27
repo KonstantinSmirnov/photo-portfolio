@@ -11,7 +11,6 @@ feature 'PROJECT PHOTO', js: true do
   end
 
   context 'Add photo' do
-
     before(:each) do
       click_link 'Add'
     end
@@ -28,7 +27,7 @@ feature 'PROJECT PHOTO', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.photo_alt.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.photo_alt.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without image' do
@@ -37,7 +36,7 @@ feature 'PROJECT PHOTO', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.photo_image.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.photo_image.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it succeeds with valid data' do
@@ -64,8 +63,8 @@ feature 'PROJECT PHOTO', js: true do
     end
 
     scenario 'can start editing photo' do
-      within "#project-photos" do
-        first(:link, "Edit").click
+      within '#project-photos' do
+        first(:link, 'Edit').click
       end
 
       expect(page).to have_selector('input.btn[value=Update]')
@@ -73,8 +72,8 @@ feature 'PROJECT PHOTO', js: true do
     end
 
     scenario 'can cancel editing photo' do
-      within "#project-photos" do
-        first(:link, "Edit").click
+      within '#project-photos' do
+        first(:link, 'Edit').click
       end
 
       click_link 'Cancel'
@@ -84,20 +83,20 @@ feature 'PROJECT PHOTO', js: true do
     end
 
     scenario 'it fails without alt text' do
-      within "#project-photos" do
-        first(:link, "Edit").click
+      within '#project-photos' do
+        first(:link, 'Edit').click
       end
 
       fill_in 'photo_alt', with: ''
       click_button 'Update'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.photo_alt.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.photo_alt.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'can update photo with valid data' do
-      within "#project-photos" do
-        first(:link, "Edit").click
+      within '#project-photos' do
+        first(:link, 'Edit').click
       end
 
       page.attach_file('photo_image', Rails.root + 'public/images/test_image.png')
@@ -119,7 +118,7 @@ feature 'PROJECT PHOTO', js: true do
     let!(:photo_1) { FactoryGirl.create(:photo, alt: 'Photo 1', project: project) }
     let!(:photo_2) { FactoryGirl.create(:photo, alt: 'Photo 2', project: project) }
 
-    #jquery.simulate.drag-sortable.js DOES NOT WORK FOR HORIZONTAL LIST
+    # jquery.simulate.drag-sortable.js DOES NOT WORK FOR HORIZONTAL LIST
 
     # scenario 'can change order in admin' do
     #   visit admin_project_path(project)
@@ -135,7 +134,7 @@ feature 'PROJECT PHOTO', js: true do
     #   expect(page).to have_selector('#project-photos div.photo:nth-child(2) h5', text: 'Photo 1')
     # end
 
-    #jquery.simulate.drag-sortable.js DOES NOT WORK FOR HORIZONTAL LIST
+    # jquery.simulate.drag-sortable.js DOES NOT WORK FOR HORIZONTAL LIST
 
     # scenario 'can change cover photo of project' do
     #   visit categories_path
@@ -153,7 +152,7 @@ feature 'PROJECT PHOTO', js: true do
     #   page.should_not have_xpath("//img[@alt='Photo 1' and @class='img-fluid']")
     # end
 
-    #jquery.simulate.drag-sortable.js DOES NOT WORK FOR HORIZONTAL LIST
+    # jquery.simulate.drag-sortable.js DOES NOT WORK FOR HORIZONTAL LIST
 
     # scenario 'can change order of photos on project page' do
     #   visit project_path(project)

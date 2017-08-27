@@ -12,14 +12,14 @@ RSpec.describe Contact, type: :model do
       contact = FactoryGirl.build(:contact, image: '')
 
       expect(contact).to be_invalid
-      expect(contact.errors[:image]).to include("поле не заполнено")
+      expect(contact.errors[:image]).to include('поле не заполнено')
     end
 
     it 'is invalid wihtout text' do
       contact = FactoryGirl.build(:contact, text: '')
 
       expect(contact).to be_invalid
-      expect(contact.errors[:text]).to include("поле не заполнено")
+      expect(contact.errors[:text]).to include('поле не заполнено')
     end
 
     it 'is valid with correct data' do
@@ -33,10 +33,10 @@ RSpec.describe Contact, type: :model do
     let(:contact) { FactoryGirl.create(:contact) }
 
     it 'is invalid without text' do
-      contact.text= ''
+      contact.text = ''
 
       expect(contact).to be_invalid
-      expect(contact.errors[:text]).to include("поле не заполнено")
+      expect(contact.errors[:text]).to include('поле не заполнено')
     end
 
     it 'is valid with correct data' do
@@ -45,5 +45,4 @@ RSpec.describe Contact, type: :model do
       expect(contact).to be_valid
     end
   end
-
 end

@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :portfolio do
-    title "MyString"
-    home_title "test title"
-    description "MyText"
+    title 'MyString'
+    home_title 'test title'
+    description 'MyText'
   end
 end

@@ -11,25 +11,25 @@ RSpec.describe Setting, type: :model do
     setting.webpage_title = ''
 
     expect(setting).to be_invalid
-    expect(setting.errors[:webpage_title]).to include("поле не заполнено")
+    expect(setting.errors[:webpage_title]).to include('поле не заполнено')
   end
 
   it 'is invali with seo description longer than 170 symbols' do
-    description = 'a'* 171
+    description = 'a' * 171
 
     setting.seo_description = description
 
     expect(setting).to be_invalid
-    expect(setting.errors[:seo_description]).to include("не более 170 символов")
+    expect(setting.errors[:seo_description]).to include('не более 170 символов')
   end
 
-  it "is invalid with a seo keywords longer than 255 symbols" do
-    keywords = 'a'* 256
+  it 'is invalid with a seo keywords longer than 255 symbols' do
+    keywords = 'a' * 256
 
     setting.seo_keywords = keywords
 
     expect(setting).to be_invalid
-    expect(setting.errors[:seo_keywords]).to include("не более 255 символов")
+    expect(setting.errors[:seo_keywords]).to include('не более 255 символов')
   end
 
   it 'is valid with webpage title' do

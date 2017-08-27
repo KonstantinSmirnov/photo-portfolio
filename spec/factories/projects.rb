@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :project do
-    title "MyString"
+    title 'MyString'
     date Time.now
   end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "LOGOUT" do
+feature 'LOGOUT' do
   let(:admin) { FactoryGirl.create(:admin) }
 
   before(:each) do

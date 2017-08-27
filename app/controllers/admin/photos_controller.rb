@@ -1,5 +1,4 @@
 class Admin::PhotosController < AdminController
-
   def new
     @project = Project.find(params[:project_id])
     @photo = @project.photos.build

@@ -54,7 +54,6 @@ feature 'SETTINGS' do
         expect(page).not_to have_selector('#contact-form p', text: 'Email:')
       end
     end
-
   end
 
   context 'created' do

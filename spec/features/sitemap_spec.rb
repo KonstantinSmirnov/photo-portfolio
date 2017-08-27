@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'SITEMAP' do
-
   context 'visit /sitemap/xml' do
     scenario 'I can see  alink on portfolio page' do
       portfolio = FactoryGirl.create(:portfolio)

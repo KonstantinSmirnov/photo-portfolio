@@ -1,5 +1,4 @@
 class Project < ApplicationRecord
-
   validates :title, presence: true
   validates :date, presence: true
 

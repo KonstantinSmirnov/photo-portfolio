@@ -9,7 +9,6 @@ feature 'OPINION', js: true do
   end
 
   context 'Add new opinion' do
-
     scenario 'opinions section is hidden on home page if no opinions created' do
       visit root_path
 
@@ -24,7 +23,7 @@ feature 'OPINION', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.opinion_image.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.opinion_image.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without text' do
@@ -36,7 +35,7 @@ feature 'OPINION', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.opinion_text.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.opinion_text.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without author' do
@@ -48,7 +47,7 @@ feature 'OPINION', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.opinion_author.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.opinion_author.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it succeed with valid data' do
@@ -123,7 +122,6 @@ feature 'OPINION', js: true do
 
       expect(page).to have_selector('.flash-alert.flash-success', text: 'OPINION HAS BEEN DELETED')
     end
-
   end
 
   context 'Drag and drop' do
@@ -136,7 +134,7 @@ feature 'OPINION', js: true do
       expect(page).to have_selector('#opinions-list div.opinion:nth-child(2) p', text: 'Opinion 2')
 
       # using jquery.simulate.drag-sortable.js
-      page.execute_script %Q{
+      page.execute_script %{
         $('#opinions-list div.opinion:first').simulateDragSortable({move: 1});
       }
 
@@ -150,7 +148,7 @@ feature 'OPINION', js: true do
 
       visit admin_opinions_path
       # using jquery.simulate.drag-sortable.js
-      page.execute_script %Q{
+      page.execute_script %{
         $('#opinions-list div.opinion:first').simulateDragSortable({move: 1});
       }
       sleep 1

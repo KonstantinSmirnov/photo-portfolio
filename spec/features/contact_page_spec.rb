@@ -22,9 +22,9 @@ feature 'CONTACT PAGE', js: true do
       fill_in 'contact_text', with: ''
       # page.attach_file('contact_image', Rails.root + 'public/images/test_image.png')
       click_button 'Create Contact'
-      
+
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.contact_text.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.contact_text.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without image' do
@@ -33,7 +33,7 @@ feature 'CONTACT PAGE', js: true do
       click_button 'Create Contact'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.contact_image.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.contact_image.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it succeed with valid data' do
@@ -73,7 +73,7 @@ feature 'CONTACT PAGE', js: true do
       click_button 'Update Contact'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.contact_text.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.contact_text.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it has cancel button' do
@@ -114,7 +114,7 @@ feature 'CONTACT PAGE', js: true do
       find('input[name="commit"]').click
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.email_name.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.email_name.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without email' do
@@ -123,7 +123,7 @@ feature 'CONTACT PAGE', js: true do
       find('input[name="commit"]').click
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.email_email.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.email_email.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without topic' do
@@ -132,7 +132,7 @@ feature 'CONTACT PAGE', js: true do
       find('input[name="commit"]').click
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.email_topic.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.email_topic.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without message' do
@@ -141,7 +141,7 @@ feature 'CONTACT PAGE', js: true do
       find('input[name="commit"]').click
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.email_message.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.email_message.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it sends if all data is provided' do

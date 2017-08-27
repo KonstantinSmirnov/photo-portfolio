@@ -20,7 +20,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Create Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_title.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.portfolio_title.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without home title' do
@@ -30,7 +30,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Create Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_home_title.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.portfolio_home_title.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without description' do
@@ -40,7 +40,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Create Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_description.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.portfolio_description.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it succeed with valid data' do
@@ -95,7 +95,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Update Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_title.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.portfolio_title.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without home title' do
@@ -105,7 +105,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Update Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_home_title.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.portfolio_home_title.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without description' do
@@ -115,7 +115,7 @@ feature 'PORTFOLIO', js: true do
       click_button 'Update Portfolio'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.portfolio_description.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.portfolio_description.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it succeed with valid data' do

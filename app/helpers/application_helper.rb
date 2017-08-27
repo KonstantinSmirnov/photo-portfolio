@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def is_active?(controller)
     'active' if controller.include?(params[:controller])
   end
@@ -18,7 +17,7 @@ module ApplicationHelper
 
   def get_instagram_access_token_url
     redirect_uri = request.base_url + '/admin/instagram/access_token'
-    "https://api.instagram.com/oauth/authorize/?client_id=" + ENV['INSTAGRAM_CLIENT_ID'] + "&redirect_uri=" + redirect_uri + "&response_type=code"
+    'https://api.instagram.com/oauth/authorize/?client_id=' + ENV['INSTAGRAM_CLIENT_ID'] + '&redirect_uri=' + redirect_uri + '&response_type=code'
   end
 
   def is_portfolio_project?(controller)
@@ -45,5 +44,4 @@ module ApplicationHelper
   def meta_keywords(page_keywords)
     content_for(:meta_keywords) { page_keywords }
   end
-
 end

@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :contact do
-    text "MyText"
+    text 'MyText'
     image { File.new(Rails.root.join('public', 'images', 'test_image.png')) }
   end
 end

@@ -1,5 +1,4 @@
 class Admin::CategoriesController < AdminController
-
   def new
     @portfolio = Portfolio.first
     @category = @portfolio.categories.new
@@ -95,5 +94,4 @@ class Admin::CategoriesController < AdminController
   def category_params
     params.require(:category).permit(:title)
   end
-
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "ABOUT", js: true do
+feature 'ABOUT', js: true do
   let(:admin) { FactoryGirl.create(:admin) }
 
   before(:each) do
@@ -21,7 +21,7 @@ feature "ABOUT", js: true do
       click_button 'Create About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_title.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.about_title.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without text' do
@@ -32,7 +32,7 @@ feature "ABOUT", js: true do
       click_button 'Create About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_text.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.about_text.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without portrait' do
@@ -43,7 +43,7 @@ feature "ABOUT", js: true do
       click_button 'Create About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_portrait.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.about_portrait.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without signature' do
@@ -54,7 +54,7 @@ feature "ABOUT", js: true do
       click_button 'Create About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_signature.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.about_signature.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it succeed with valid data' do
@@ -82,7 +82,7 @@ feature "ABOUT", js: true do
       visit root_path
 
       # Header does not appear if no hero slides
-      #expect(page).to have_selector('h2', text: title.upcase)
+      # expect(page).to have_selector('h2', text: title.upcase)
       expect(page).to have_selector('p', text: text)
     end
 
@@ -107,7 +107,7 @@ feature "ABOUT", js: true do
       click_button 'Update About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_title.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.about_title.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without text' do
@@ -116,7 +116,7 @@ feature "ABOUT", js: true do
       click_button 'Update About'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.about_text.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.about_text.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it has cancel button' do
@@ -134,5 +134,4 @@ feature "ABOUT", js: true do
       expect(page).to have_selector('.flash-alert.flash-success', text: 'SUCCESSFULLY DELETED')
     end
   end
-
 end

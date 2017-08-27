@@ -9,7 +9,6 @@ feature 'HERO CAROUSEL', js: true do
   end
 
   context 'Add new slide' do
-
     scenario 'it fails without image' do
       click_link 'Add'
 
@@ -18,7 +17,7 @@ feature 'HERO CAROUSEL', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.hero_carousel_slide_image.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.hero_carousel_slide_image.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without title' do
@@ -66,7 +65,6 @@ feature 'HERO CAROUSEL', js: true do
   end
 
   context 'Update slide' do
-
     before(:each) do
       click_link 'Add'
 
@@ -110,7 +108,6 @@ feature 'HERO CAROUSEL', js: true do
 
       expect(page).to have_selector('.flash-alert.flash-success', text: 'SLIDE HAS BEEN DELETED')
     end
-
   end
 
   context 'Drag and drop' do
@@ -123,7 +120,7 @@ feature 'HERO CAROUSEL', js: true do
       expect(page).to have_selector('#slides-list div.slide:nth-child(2) h3', text: 'SLIDE 2')
 
       # using jquery.simulate.drag-sortable.js
-      page.execute_script %Q{
+      page.execute_script %{
         $('#slides-list div.slide:first').simulateDragSortable({move: 1});
       }
 
@@ -137,7 +134,7 @@ feature 'HERO CAROUSEL', js: true do
 
       visit admin_hero_carousel_slides_path
       # using jquery.simulate.drag-sortable.js
-      page.execute_script %Q{
+      page.execute_script %{
         $('#slides-list div.slide:first').simulateDragSortable({move: 1});
       }
       sleep 1

@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :photo do
-    alt "MyString"
+    alt 'MyString'
     image { File.new(Rails.root.join('public', 'images', 'test_image.png')) }
   end
 end

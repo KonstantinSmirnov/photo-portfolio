@@ -12,9 +12,9 @@ class Instagram < ApplicationRecord
     posts = []
     parsed_content['data'].each do |item|
       p item['link']
-      posts << [ image: item['images']['low_resolution']['url'], link: item['link']]
+      posts << [image: item['images']['low_resolution']['url'], link: item['link']]
     end
 
-    return posts
+    posts
   end
 end

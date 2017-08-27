@@ -1,5 +1,4 @@
 class Admin::SettingsController < AdminController
-
   def new
     @settings = Setting.new
   end
@@ -52,6 +51,4 @@ class Admin::SettingsController < AdminController
                                     :facebook,
                                     :analytics)
   end
-
-
 end

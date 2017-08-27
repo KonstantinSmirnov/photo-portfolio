@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :setting do
-    webpage_title "MyString"
-    seo_description "MyText"
-    seo_keywords "My, text"
-    seo_text "MyText"
+    webpage_title 'MyString'
+    seo_description 'MyText'
+    seo_keywords 'My, text'
+    seo_text 'MyText'
     contact_phone '+919000'
     contact_email 'test@test.com'
     facebook 'http://test.com'

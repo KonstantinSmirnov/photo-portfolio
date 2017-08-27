@@ -11,28 +11,28 @@ RSpec.describe User, type: :model do
     admin = FactoryGirl.build(:admin, email: '')
 
     expect(admin).to be_invalid
-    expect(admin.errors[:email]).to include("поле не заполнено")
+    expect(admin.errors[:email]).to include('поле не заполнено')
   end
 
   it 'is invalid without a password' do
     admin = FactoryGirl.build(:admin, password: '')
 
     expect(admin).to be_invalid
-    expect(admin.errors[:password]).to include("минимум 3 символа")
+    expect(admin.errors[:password]).to include('минимум 3 символа')
   end
 
   it 'is invalid without a password confirmation' do
     admin = FactoryGirl.build(:admin, password_confirmation: '')
 
     expect(admin).to be_invalid
-    expect(admin.errors[:password_confirmation]).to include("поле не заполнено")
+    expect(admin.errors[:password_confirmation]).to include('поле не заполнено')
   end
 
   it 'is invalid if password and password confirmation do not match' do
     admin = FactoryGirl.build(:admin, password_confirmation: 'not_match')
 
     expect(admin).to be_invalid
-    expect(admin.errors[:password_confirmation]).to include("не совпадает с паролем")
+    expect(admin.errors[:password_confirmation]).to include('не совпадает с паролем')
   end
 
   it 'is invalid if duplicates email address' do
@@ -40,7 +40,7 @@ RSpec.describe User, type: :model do
     admin_2 = FactoryGirl.build(:admin)
 
     expect(admin_2).to be_invalid
-    expect(admin_2.errors[:email]).to include("уже было использовано")
+    expect(admin_2.errors[:email]).to include('уже было использовано')
   end
 
   it 'is valid with email, password and password confirmation' do
@@ -69,7 +69,7 @@ RSpec.describe User, type: :model do
       admin.password_confirmation = ''
 
       expect(admin).to be_invalid
-      expect(admin.errors[:password_confirmation]).to include("поле не заполнено")
+      expect(admin.errors[:password_confirmation]).to include('поле не заполнено')
     end
 
     it 'is invalid if password and password confirmation do not match' do
@@ -79,7 +79,7 @@ RSpec.describe User, type: :model do
       admin.password_confirmation = 'another_new_password'
 
       expect(admin).to be_invalid
-      expect(admin.errors[:password_confirmation]).to include("не совпадает с паролем")
+      expect(admin.errors[:password_confirmation]).to include('не совпадает с паролем')
     end
   end
 end

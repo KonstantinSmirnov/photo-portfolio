@@ -27,7 +27,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.project_date.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.project_date.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it fails without title' do
@@ -37,7 +37,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
       click_button 'Create'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.project_title.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.project_title.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it succeed with correct data' do
@@ -64,7 +64,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
       fill_in 'project_date', with: '2017-12-01'
       find('td.day', text: '15').click
       fill_in 'project_title', with: 'test'
-      select(category.title, from: "project_category_id").select_option
+      select(category.title, from: 'project_category_id').select_option
       click_button 'Create'
 
       expect(page).to have_selector('h5', text: category.title)
@@ -85,8 +85,8 @@ feature 'PORTFOLIO PROJECTS', js: true do
     end
 
     scenario 'it has delete button on index page' do
-      within "#projects" do
-        first(:link, "Delete").click
+      within '#projects' do
+        first(:link, 'Delete').click
       end
       page.driver.browser.switch_to.alert.accept
 
@@ -95,9 +95,8 @@ feature 'PORTFOLIO PROJECTS', js: true do
     end
 
     scenario 'it has date on index page' do
-      expect(page).to have_selector('small', text: project.date.strftime("%d %B %Y"))
+      expect(page).to have_selector('small', text: project.date.strftime('%d %B %Y'))
     end
-
   end
 
   context 'Update project' do
@@ -119,7 +118,7 @@ feature 'PORTFOLIO PROJECTS', js: true do
       click_button 'Update'
 
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
-      expect(page).to have_selector('.project_title.has-error span.help-block', text: "поле не заполнено")
+      expect(page).to have_selector('.project_title.has-error span.help-block', text: 'поле не заполнено')
     end
 
     scenario 'it succeed with valid data' do
@@ -130,7 +129,6 @@ feature 'PORTFOLIO PROJECTS', js: true do
 
       expect(page).to have_selector('.flash-alert.flash-success', text: 'PROJECT HAS BEEN UPDATED')
     end
-
   end
 
   scenario 'it is unavailable if portfolio page not created' do
@@ -196,7 +194,5 @@ feature 'PORTFOLIO PROJECTS', js: true do
 
       expect(projects[0]['innerHTML']).to have_text('Project 2')
     end
-
   end
-
 end

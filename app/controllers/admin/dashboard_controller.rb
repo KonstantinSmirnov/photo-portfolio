@@ -1,5 +1,3 @@
 class Admin::DashboardController < AdminController
-  def index
-
-  end
+  def index; end
 end

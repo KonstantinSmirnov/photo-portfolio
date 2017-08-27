@@ -89,5 +89,4 @@ class Admin::OpinionsController < AdminController
   def opinion_params
     params.require(:opinion).permit(:text, :author, :image)
   end
-
 end
