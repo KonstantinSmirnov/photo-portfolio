@@ -53,12 +53,12 @@ feature 'BLOG', js: true do
       expect(page).to have_selector('.flash-alert.flash-danger', text: 'PLEASE CHECK ERRORS')
       expect(page).to have_selector('.blog_title.has-error span.help-block', text: 'поле не заполнено')
     end
-    
+
     scenario 'it can be visible' do
       find(:css, '#blog_visible').set(true)
-      
+
       click_button 'Update Blog'
-      
+
       expect(page).to have_selector('p', text: 'Blog is visible')
       # need to reload page
       visit admin_blog_path
