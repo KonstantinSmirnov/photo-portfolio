@@ -5,7 +5,7 @@ lock '3.9.0'
 
 set :application, 'photo_portfolio'
 set :repo_url, 'git@github.com:KonstantinSmirnov/photo-portfolio.git'
-set :rbenv_ruby, '2.3.1'
+set :rbenv_ruby, '2.4.1'
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :user, 'deployer'
 set :puma_threads,    [4, 16]
