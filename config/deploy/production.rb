@@ -6,7 +6,7 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-server '89.223.28.64', user: 'deployer', roles: %i[web app db], primary: true
+server '85.143.175.155', user: 'deployer', roles: %i[web app db], primary: true
 set :rbenv_ruby, '2.4.0'
 
 # role-based syntax
