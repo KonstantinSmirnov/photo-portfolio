@@ -267,6 +267,12 @@ nav .navbar-nav .nav-item.active a.nav-link {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+    &.vertical {
+      margin-top: 10vh;
+      margin-bottom: 10vh;
+      width: 100vh;
+      height: auto;
+    }
   }
 
   .slider-caption {
@@ -275,6 +281,9 @@ nav .navbar-nav .nav-item.active a.nav-link {
     left: 10%;
     right: 10%;
     padding-bottom: 70px;
+    @media (max-width : 766px) {
+      padding-bottom: 30px;
+    }
     h1 {
       float: left;
       font-size: 30pt;
