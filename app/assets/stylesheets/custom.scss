@@ -489,12 +489,6 @@ nav .navbar-nav .nav-item.active a.nav-link {
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
-    @media (max-width: 766px) {
-      img {
-        width: 100vw;
-        height: auto;
-      }
-    }
   }
 
   .slider-nav {
@@ -519,6 +513,13 @@ nav .navbar-nav .nav-item.active a.nav-link {
     }
     .slick-track {
       margin-left:auto; margin-right:auto;
+    }
+  }
+  
+  &.slider-portrait-photo {
+    img {
+      width: 100vw;
+      height: auto;
     }
   }
   
