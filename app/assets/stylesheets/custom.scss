@@ -350,10 +350,10 @@ nav .navbar-nav .nav-item.active a.nav-link {
     height: 90%;
     z-index: -1;
     background-attachment:fixed;
-    @media (max-width : 1025px) {
-      width: 50vw;
-      height: auto;
-    }
+    // @media (max-width : 1025px) {
+    //   width: 50vw;
+    //   height: auto;
+    // }
     @media (max-width : 800px) {
       width: 70vw;
       height: auto;
@@ -369,7 +369,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
     padding: 10px 30px;
     min-height: 70vh;
     text-align: center;
-    @media (min-width : 800px) {
+    @media (min-width : 700px) {
       background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 0.8) 83%, rgba(55,255,255,0) 100%);
       background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0.8) 83%, rgba(255, 255, 255, 0) 100%);
       background: -o-linear-gradient(180deg, rgba(255, 255, 255, 0.8) 83%, rgba(255, 255, 255, 0) 100%);
