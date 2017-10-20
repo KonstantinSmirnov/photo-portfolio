@@ -367,7 +367,7 @@ nav .navbar-nav .nav-item.active a.nav-link {
   .description {
     background-color: rgba(255,255,255,0.7);
     @media (min-width : 800px) {
-      background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.7));
+      background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
     }
     padding: 10px 30px;
     min-height: 70vh;
