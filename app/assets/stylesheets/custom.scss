@@ -350,11 +350,11 @@ nav .navbar-nav .nav-item.active a.nav-link {
     height: 90%;
     z-index: -1;
     background-attachment:fixed;
-    // @media (max-width : 1025px) {
-    //   width: 50vw;
-    //   height: auto;
-    // }
-    @media (max-width : 767px) {
+    @media (max-width : 1025px) {
+      width: 50vw;
+      height: auto;
+    }
+    @media (max-width : 800px) {
       width: 70vw;
       height: auto;
     }
